@@ -46,5 +46,33 @@ namespace GridFreaks.BusinessLayer
             // la contraseña no coincide
             return null;
         }
+         internal bool CrearUsuario(User oUsuario)
+        {
+            return oUserDao.Create(oUsuario);
+        }
+
+        internal object ObtenerUsuario(string usuario)
+        {
+            //SIN PARAMETROS
+            return oUserDao.GetUserSinParametros(usuario);
+
+            //CON PARAMETROS
+            // return oUsuarioDao.GetUserConParametros(usuario);
+        }
+
+        internal IList<User> ConsultarConFiltrosSinParametros(String condiciones)
+        {
+            return oUserDao.GetByFiltersSinParametros(condiciones);
+        }
+
+        internal bool ActualizarUsuario(User oUsuarioSelected)
+        {
+            return oUserDao.Update(oUsuarioSelected);
+        }
+
+        internal bool ModificarEstadoUsuario(User oUsuarioSelected)
+        {
+            return oUserDao.DarBaja(oUsuarioSelected);
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GridFreaks.Entities
 {
-    class User
+    public class User
     {
 
         public string Usuario { get; set; }

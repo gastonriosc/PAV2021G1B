@@ -43,5 +43,25 @@ namespace GridFreaks
             frmUsuarios ventanaUsuarios = new frmUsuarios();
             ventanaUsuarios.ShowDialog();
         }
+
+        private void salirTSMI_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void frmInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Está seguro de abandorar la aplicación...",
+                "SALIENDO",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button1)
+                == DialogResult.Yes)
+
+                e.Cancel = false;
+            else
+                e.Cancel = true;
+        }
     }
 }

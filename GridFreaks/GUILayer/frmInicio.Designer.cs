@@ -34,6 +34,7 @@ namespace GridFreaks
             this.iniciarSesionTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,8 @@ namespace GridFreaks
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sesionTSMI,
-            this.usuariosTSMI});
+            this.usuariosTSMI,
+            this.salirTSMI});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -60,7 +62,7 @@ namespace GridFreaks
             // iniciarSesionTSMI
             // 
             this.iniciarSesionTSMI.Name = "iniciarSesionTSMI";
-            this.iniciarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.iniciarSesionTSMI.Size = new System.Drawing.Size(142, 22);
             this.iniciarSesionTSMI.Text = "iniciar sesion";
             this.iniciarSesionTSMI.Click += new System.EventHandler(this.iniciarSesionTSMI_Click);
             // 
@@ -68,7 +70,7 @@ namespace GridFreaks
             // 
             this.cerrarSesionTSMI.Enabled = false;
             this.cerrarSesionTSMI.Name = "cerrarSesionTSMI";
-            this.cerrarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionTSMI.Size = new System.Drawing.Size(142, 22);
             this.cerrarSesionTSMI.Text = "cerrar sesion";
             // 
             // usuariosTSMI
@@ -79,6 +81,13 @@ namespace GridFreaks
             this.usuariosTSMI.Text = "Usuarios";
             this.usuariosTSMI.Click += new System.EventHandler(this.usuariosTSMI_Click);
             // 
+            // salirTSMI
+            // 
+            this.salirTSMI.Name = "salirTSMI";
+            this.salirTSMI.Size = new System.Drawing.Size(41, 20);
+            this.salirTSMI.Text = "Salir";
+            this.salirTSMI.Click += new System.EventHandler(this.salirTSMI_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +97,7 @@ namespace GridFreaks
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmInicio";
             this.Text = "Inicio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInicio_FormClosing);
             this.Load += new System.EventHandler(this.frmInicio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -103,6 +113,7 @@ namespace GridFreaks
         private System.Windows.Forms.ToolStripMenuItem iniciarSesionTSMI;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionTSMI;
         private System.Windows.Forms.ToolStripMenuItem usuariosTSMI;
+        private System.Windows.Forms.ToolStripMenuItem salirTSMI;
     }
 }
 

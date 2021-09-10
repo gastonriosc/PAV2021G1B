@@ -75,5 +75,93 @@ namespace GridFreaks.DataAccessLayer
 
             return null;
         }
+
+
+        internal bool Create(User oUsuario)
+        {
+            //CON PARAMETROS
+            //string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil, estado, borrado)" +
+            //                 "     VALUES (@usuario, @password, @email, @id_perfil, 'S', 0)";
+
+            // var parametros = new Dictionary<string, object>();
+            //parametros.Add("usuario", oUsuario.NombreUsuario);
+            //parametros.Add("password", oUsuario.Password);
+            //parametros.Add("email", oUsuario.Email);
+            //parametros.Add("id_perfil", oUsuario.Perfil.IdPerfil);
+
+            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
+            //con parametros
+            //return (DBHelper.GetDBHelper().EjecutarSQLConParametros(str_sql, parametros) == 1);
+
+            //SIN PARAMETROS
+
+            string str_sql = "INSERT INTO Usuarios (usuario, nombre, apellido, contra, mail, borrado)" +
+                            " VALUES (" +
+                            "'" + oUsuario.Usuario + "'" + "," +
+                            "'" + oUsuario.Nombre + "'" + "," +
+                            "'" + oUsuario.Apellido + "'" + "," +
+                            "'" + oUsuario.Contra + "'" + "," +
+                            "'" + oUsuario.Mail + "'"+ ",0)";
+
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
+
+        public IList<User> GetByFiltersSinParametros(String condiciones)
+        {
+
+            List<User> lst = new List<User>();
+            String strSql = string.Concat(" SELECT usuario, ",
+                                              "        nombre, ",
+                                              "        apellido, ",
+                                              "        mail, ",
+                                              "        contra ",
+                                              "   FROM Usuarios u",
+                                              "  WHERE u.borrado =0 ");
+
+            strSql += condiciones;
+            //if (parametros.ContainsKey("idPerfil"))
+            //   strSql += " AND (u.id_perfil = @idPerfil) ";
+
+
+            // if (parametros.ContainsKey("usuario"))
+            //    strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
+
+            var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
+
+
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
+
+            return lst;
+        }
+
+        internal bool Update(User oUsuario)
+        {
+            //SIN PARAMETROS
+
+            string str_sql = "UPDATE Usuarios " +
+                             "SET usuario=" + "'" + oUsuario.Usuario + "'" + "," +
+                             " nombre=" + "'" + oUsuario.Nombre + "'" + "," +
+                             " apellido=" + "'" + oUsuario.Apellido + "'" + "," +
+                             " mail=" + "'" + oUsuario.Mail + "'" + "," +
+                             " contra=" +"'" + oUsuario.Contra + "'"+
+                             " WHERE usuario=" + "'" + oUsuario.Usuario + "'";
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
+
+        internal bool DarBaja(User oUsuario)
+        {
+
+            string str_sql = "UPDATE Usuarios " +
+                             "SET borrado=1"+
+                             " WHERE usuario=" + "'" + oUsuario.Usuario + "'";
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
     }
+
+
+
 }
