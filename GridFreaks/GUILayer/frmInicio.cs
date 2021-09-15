@@ -37,6 +37,7 @@ namespace GridFreaks
         {
             this.cerrarSesionTSMI.Enabled = true;
             this.usuariosTSMI.Enabled = true;
+            this.prendasTSMI.Enabled = true;
         }
 
         private void usuariosTSMI_Click(object sender, EventArgs e)
@@ -63,6 +64,11 @@ namespace GridFreaks
                 e.Cancel = false;
             else
                 e.Cancel = true;
+        }
+
+        private void prendasTSMI_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

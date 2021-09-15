@@ -49,6 +49,9 @@
     <Compile Include="BusinessLayer\UserService.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\UserDao.cs" />
+    <Compile Include="Entities\Color.cs" />
+    <Compile Include="Entities\Marca.cs" />
+    <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="GUILayer\frmInicio.cs">
       <SubType>Form</SubType>
@@ -61,6 +64,12 @@
     </Compile>
     <Compile Include="GUILayer\Login\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Prendas\frmPrendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Prendas\frmPrendas.Designer.cs">
+      <DependentUpon>frmPrendas.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Usuarios\frmABMUsuario.cs">
       <SubType>Form</SubType>
@@ -81,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Prendas\frmPrendas.resx">
+      <DependentUpon>frmPrendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
@@ -121,6 +133,7 @@
     <None Include="Resources\Cancelar.png" />
     <None Include="Resources\informacion.png" />
     <None Include="Resources\Info.png" />
+    <None Include="Resources\Consultar.png" />
     <Content Include="Resources\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

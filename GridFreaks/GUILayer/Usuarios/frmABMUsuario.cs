@@ -177,7 +177,7 @@ namespace BugTracker.GUILayer.Usuarios
             }
 
             else
-                txtNombre.BackColor = Color.White;
+                txtNombre.BackColor = System.Drawing.Color.White;
             
             return true;
         }

@@ -29,6 +29,7 @@ namespace GridFreaks.GUILayer.Usuarios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,13 +37,13 @@ namespace GridFreaks.GUILayer.Usuarios
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,20 +51,22 @@ namespace GridFreaks.GUILayer.Usuarios
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblUsuario.Location = new System.Drawing.Point(57, 39);
+            this.lblUsuario.Location = new System.Drawing.Point(43, 39);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(61, 17);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblApellido.Location = new System.Drawing.Point(355, 39);
+            this.lblApellido.Location = new System.Drawing.Point(407, 39);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(47, 13);
+            this.lblApellido.Size = new System.Drawing.Size(62, 17);
             this.lblApellido.TabIndex = 1;
             this.lblApellido.Text = "Apellido:";
             // 
@@ -78,10 +81,11 @@ namespace GridFreaks.GUILayer.Usuarios
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNombre.Location = new System.Drawing.Point(57, 70);
+            this.lblNombre.Location = new System.Drawing.Point(43, 70);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(62, 17);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -94,7 +98,7 @@ namespace GridFreaks.GUILayer.Usuarios
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(408, 36);
+            this.txtApellido.Location = new System.Drawing.Point(475, 36);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(178, 20);
             this.txtApellido.TabIndex = 5;
@@ -106,16 +110,6 @@ namespace GridFreaks.GUILayer.Usuarios
             this.txtNombre.Size = new System.Drawing.Size(178, 20);
             this.txtNombre.TabIndex = 6;
             // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(511, 70);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 7;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
             // dgvUsuarios
             // 
             this.dgvUsuarios.AllowUserToAddRows = false;
@@ -126,14 +120,14 @@ namespace GridFreaks.GUILayer.Usuarios
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(526, 165);
+            this.dgvUsuarios.Size = new System.Drawing.Size(593, 165);
             this.dgvUsuarios.TabIndex = 8;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GridFreaks.Properties.Resources.LogoSample_ByTailorBrands_removebg_preview__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(552, 207);
+            this.pictureBox1.Location = new System.Drawing.Point(553, 210);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 201);
             this.pictureBox1.TabIndex = 13;
@@ -144,7 +138,7 @@ namespace GridFreaks.GUILayer.Usuarios
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Image = global::GridFreaks.Properties.Resources.Salir;
-            this.btnSalir.Location = new System.Drawing.Point(608, 311);
+            this.btnSalir.Location = new System.Drawing.Point(584, 311);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(69, 31);
             this.btnSalir.TabIndex = 12;
@@ -168,9 +162,9 @@ namespace GridFreaks.GUILayer.Usuarios
             this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Image = global::GridFreaks.Properties.Resources.ModificarUsuario;
-            this.btnModificar.Location = new System.Drawing.Point(218, 311);
+            this.btnModificar.Location = new System.Drawing.Point(213, 311);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(137, 31);
+            this.btnModificar.Size = new System.Drawing.Size(152, 31);
             this.btnModificar.TabIndex = 10;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -186,6 +180,18 @@ namespace GridFreaks.GUILayer.Usuarios
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
+            this.btnConsultar.Location = new System.Drawing.Point(546, 72);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(107, 30);
+            this.btnConsultar.TabIndex = 7;
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // frmUsuarios
             // 
@@ -209,6 +215,7 @@ namespace GridFreaks.GUILayer.Usuarios
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblUsuario);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Usuarios";

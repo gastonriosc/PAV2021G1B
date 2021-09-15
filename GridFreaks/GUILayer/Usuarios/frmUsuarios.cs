@@ -52,7 +52,7 @@ namespace GridFreaks.GUILayer.Usuarios
             // Cambia el estilo de la cabecera de la grilla.
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
 
-            columnHeaderStyle.BackColor = Color.Beige;
+            columnHeaderStyle.BackColor = System.Drawing.Color.Beige;
             columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
             dgvUsuarios.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 

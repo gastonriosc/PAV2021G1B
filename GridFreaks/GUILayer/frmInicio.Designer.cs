@@ -29,11 +29,13 @@ namespace GridFreaks
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sesionTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarSesionTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.prendasTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +46,7 @@ namespace GridFreaks
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sesionTSMI,
             this.usuariosTSMI,
+            this.prendasTSMI,
             this.salirTSMI});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -66,7 +69,7 @@ namespace GridFreaks
             this.iniciarSesionTSMI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.iniciarSesionTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.iniciarSesionTSMI.Name = "iniciarSesionTSMI";
-            this.iniciarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.iniciarSesionTSMI.Size = new System.Drawing.Size(143, 22);
             this.iniciarSesionTSMI.Text = "Iniciar Sesión";
             this.iniciarSesionTSMI.Click += new System.EventHandler(this.iniciarSesionTSMI_Click);
             // 
@@ -76,7 +79,7 @@ namespace GridFreaks
             this.cerrarSesionTSMI.Enabled = false;
             this.cerrarSesionTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cerrarSesionTSMI.Name = "cerrarSesionTSMI";
-            this.cerrarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionTSMI.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesionTSMI.Text = "Cerrar Sesión";
             // 
             // usuariosTSMI
@@ -87,6 +90,15 @@ namespace GridFreaks
             this.usuariosTSMI.Size = new System.Drawing.Size(64, 20);
             this.usuariosTSMI.Text = "Usuarios";
             this.usuariosTSMI.Click += new System.EventHandler(this.usuariosTSMI_Click);
+            // 
+            // prendasTSMI
+            // 
+            this.prendasTSMI.Enabled = false;
+            this.prendasTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.prendasTSMI.Name = "prendasTSMI";
+            this.prendasTSMI.Size = new System.Drawing.Size(61, 20);
+            this.prendasTSMI.Text = "Prendas";
+            this.prendasTSMI.Click += new System.EventHandler(this.prendasTSMI_Click);
             // 
             // salirTSMI
             // 
@@ -106,6 +118,7 @@ namespace GridFreaks
             this.ClientSize = new System.Drawing.Size(634, 343);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmInicio";
             this.Text = "Inicio";
@@ -126,6 +139,7 @@ namespace GridFreaks
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionTSMI;
         private System.Windows.Forms.ToolStripMenuItem usuariosTSMI;
         private System.Windows.Forms.ToolStripMenuItem salirTSMI;
+        private System.Windows.Forms.ToolStripMenuItem prendasTSMI;
     }
 }
 
