@@ -15,7 +15,7 @@ namespace GridFreaks.DataAccessLayer
 
         private DBHelper()
         {
-            string_conexion = "Data Source=DESKTOP-0AAMHAV\\SQLEXPRESS;Initial Catalog=gridFreaks;Integrated Security=True";
+            string_conexion = "Data Source=DESKTOP-VGC54OT\\SQLEXPRESS;Initial Catalog=gridFreaks;Integrated Security=True";
         }
 
         public static DBHelper GetDBHelper()

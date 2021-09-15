@@ -90,17 +90,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -112,19 +113,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Resources\agregar.png" />
-    <Content Include="Resources\BUSCAR01.bmp" />
-    <Content Include="Resources\cabecera.png" />
-    <Content Include="Resources\cerrarBug.png" />
-    <Content Include="Resources\comentar.png" />
-    <Content Include="Resources\editar.png" />
-    <Content Include="Resources\eliminar.png" />
-    <Content Include="Resources\Empty Recycle Bin 2000.ico" />
-    <Content Include="Resources\menu.png" />
+    <None Include="Resources\EliminarUsuario.png" />
+    <None Include="Resources\LogoSample_ByTailorBrands-removebg-preview %281%29.png" />
+    <None Include="Resources\RegistrarUsuario.png" />
+    <None Include="Resources\ModificarUsuario.png" />
+    <None Include="Resources\Aceptar.png" />
+    <None Include="Resources\Cancelar.png" />
+    <None Include="Resources\informacion.png" />
+    <None Include="Resources\Info.png" />
     <Content Include="Resources\salir.png" />
-    <Content Include="Resources\test.png" />
-    <Content Include="Resources\user.jpg" />
-    <Content Include="Resources\user_log.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

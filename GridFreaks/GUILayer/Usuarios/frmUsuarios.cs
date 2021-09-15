@@ -17,10 +17,12 @@ namespace GridFreaks.GUILayer.Usuarios
     {
         UserService oUsuarioService = new UserService();
 
+
         public frmUsuarios()
         {
             InitializeComponent();
             InitializeDataGridView();
+            pictureBox1.SendToBack();
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
