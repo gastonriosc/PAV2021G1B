@@ -57,21 +57,21 @@ namespace GridFreaks
             this.cerrarSesionTSMI});
             this.sesionTSMI.Name = "sesionTSMI";
             this.sesionTSMI.Size = new System.Drawing.Size(53, 20);
-            this.sesionTSMI.Text = "Sesion";
+            this.sesionTSMI.Text = "Sesión";
             // 
             // iniciarSesionTSMI
             // 
             this.iniciarSesionTSMI.Name = "iniciarSesionTSMI";
-            this.iniciarSesionTSMI.Size = new System.Drawing.Size(142, 22);
-            this.iniciarSesionTSMI.Text = "iniciar sesion";
+            this.iniciarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.iniciarSesionTSMI.Text = "Iniciar Sesión";
             this.iniciarSesionTSMI.Click += new System.EventHandler(this.iniciarSesionTSMI_Click);
             // 
             // cerrarSesionTSMI
             // 
             this.cerrarSesionTSMI.Enabled = false;
             this.cerrarSesionTSMI.Name = "cerrarSesionTSMI";
-            this.cerrarSesionTSMI.Size = new System.Drawing.Size(142, 22);
-            this.cerrarSesionTSMI.Text = "cerrar sesion";
+            this.cerrarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionTSMI.Text = "Cerrar Sesión";
             // 
             // usuariosTSMI
             // 

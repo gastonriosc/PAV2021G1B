@@ -111,21 +111,21 @@ namespace GridFreaks.GUILayer.Usuarios
                 {
                 // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
                 filters.Add("usuario", txtUsuario.Text);
-                condiciones += "AND u.usuario LIKE" + "'" + txtUsuario.Text + "%'";
+                condiciones += "AND u.usuario LIKE" + "'%" + txtUsuario.Text + "%'";
                 }
 
                 if (txtNombre.Text != string.Empty)
                 {
                 // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
                 filters.Add("nombre", txtNombre.Text);
-                condiciones += "AND u.nombre LIKE" + "'" + txtNombre.Text + "%'";
+                condiciones += "AND u.nombre LIKE" + "'%" + txtNombre.Text + "%'";
                 }
 
                 if (txtApellido.Text != string.Empty)
                 {
                 // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
                 filters.Add("apellido", txtApellido.Text);
-                condiciones += "AND u.apellido LIKE" + "'" + txtApellido.Text + "%'";
+                condiciones += "AND u.apellido LIKE" + "'%" + txtApellido.Text + "%'";
                 }
 
                 if (filters.Count > 0)

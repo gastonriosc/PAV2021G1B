@@ -48,7 +48,7 @@ namespace BugTracker.GUILayer.Usuarios
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Usuario";
-                        // Recuperar usuario seleccionado en la grilla 
+                        // Recupera el usuario seleccionado en la grilla 
                         MostrarDatos();
                         txtUsuario.Enabled = true;
                         txtNombre.Enabled = true;
@@ -56,7 +56,6 @@ namespace BugTracker.GUILayer.Usuarios
                         txtMail.Enabled = true;
                         txtContra.Enabled = true;
                         txtConfirmarContra.Enabled = true;
-                        //cboPerfil.Enabled = true;
                         break;
                     }
 
@@ -69,7 +68,6 @@ namespace BugTracker.GUILayer.Usuarios
                         txtApellido.Enabled = false;
                         txtMail.Enabled = false;
                         txtContra.Enabled = false;
-                        //cboPerfil.Enabled = false;
                         txtConfirmarContra.Enabled = false;
                         break;
                     }
@@ -92,7 +90,6 @@ namespace BugTracker.GUILayer.Usuarios
                 txtMail.Text = oUsuarioSelected.Mail;
                 txtContra.Text = oUsuarioSelected.Contra;
                 txtConfirmarContra.Text = txtContra.Text;
-                //cboPerfil.Text = oUsuarioSelected.Perfil.Nombre;
             }
         }
 
@@ -115,7 +112,7 @@ namespace BugTracker.GUILayer.Usuarios
 
                                 if (oUsuarioService.CrearUsuario(oUsuario))
                                 {
-                                    MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Usuario insertado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                             }
@@ -139,7 +136,7 @@ namespace BugTracker.GUILayer.Usuarios
 
                             if (oUsuarioService.ActualizarUsuario(oUsuarioSelected))
                             {
-                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Usuario actualizado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
@@ -152,12 +149,12 @@ namespace BugTracker.GUILayer.Usuarios
 
                 case FormMode.delete:
                     {
-                        if (MessageBox.Show("Seguro que desea deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                        if (MessageBox.Show("¿Seguro que desea deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                         {
 
                             if (oUsuarioService.ModificarEstadoUsuario(oUsuarioSelected))
                             {
-                                MessageBox.Show("Usuario Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Usuario Deshabilitado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else

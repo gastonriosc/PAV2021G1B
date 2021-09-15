@@ -48,7 +48,7 @@ namespace GridFreaks.GUILayer.Usuarios
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(57, 69);
+            this.lblUsuario.Location = new System.Drawing.Point(57, 39);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace GridFreaks.GUILayer.Usuarios
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(355, 69);
+            this.lblApellido.Location = new System.Drawing.Point(355, 39);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(47, 13);
             this.lblApellido.TabIndex = 1;
@@ -66,7 +66,7 @@ namespace GridFreaks.GUILayer.Usuarios
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(355, 100);
+            this.label3.Location = new System.Drawing.Point(355, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace GridFreaks.GUILayer.Usuarios
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(57, 100);
+            this.lblNombre.Location = new System.Drawing.Point(57, 70);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 3;
@@ -82,28 +82,28 @@ namespace GridFreaks.GUILayer.Usuarios
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(109, 66);
+            this.txtUsuario.Location = new System.Drawing.Point(109, 36);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(178, 20);
             this.txtUsuario.TabIndex = 4;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(408, 66);
+            this.txtApellido.Location = new System.Drawing.Point(408, 36);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(178, 20);
             this.txtApellido.TabIndex = 5;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(110, 100);
+            this.txtNombre.Location = new System.Drawing.Point(110, 70);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(178, 20);
             this.txtNombre.TabIndex = 6;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(511, 100);
+            this.btnConsultar.Location = new System.Drawing.Point(511, 70);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 7;
@@ -117,7 +117,7 @@ namespace GridFreaks.GUILayer.Usuarios
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(60, 150);
+            this.dgvUsuarios.Location = new System.Drawing.Point(60, 120);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -127,9 +127,9 @@ namespace GridFreaks.GUILayer.Usuarios
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(261, 350);
+            this.btnEliminar.Location = new System.Drawing.Point(257, 300);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 52);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@ namespace GridFreaks.GUILayer.Usuarios
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(163, 350);
+            this.btnModificar.Location = new System.Drawing.Point(157, 300);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(75, 52);
             this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -147,9 +147,9 @@ namespace GridFreaks.GUILayer.Usuarios
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(60, 350);
+            this.btnRegistrar.Location = new System.Drawing.Point(60, 300);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(75, 52);
             this.btnRegistrar.TabIndex = 11;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -157,9 +157,9 @@ namespace GridFreaks.GUILayer.Usuarios
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(511, 350);
+            this.btnSalir.Location = new System.Drawing.Point(511, 300);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(75, 52);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@ namespace GridFreaks.GUILayer.Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 406);
+            this.ClientSize = new System.Drawing.Size(652, 384);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnModificar);
@@ -184,6 +184,7 @@ namespace GridFreaks.GUILayer.Usuarios
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblUsuario);
             this.Name = "frmUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();

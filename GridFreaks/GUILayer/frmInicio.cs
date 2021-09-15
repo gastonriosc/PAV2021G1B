@@ -24,6 +24,7 @@ namespace GridFreaks
             frmLogin login = new frmLogin();
             login.ShowDialog();
             habilitarTodosCampos();
+            this.Text = "Inicio - Logueado";
         }
 
         private void frmInicio_Load(object sender, EventArgs e)
