@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace GridFreaks.BusinessLayer
 {
-    class UserService
+    public class UserService
     {
         private UserDao oUserDao;
 

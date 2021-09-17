@@ -33,28 +33,29 @@ namespace GridFreaks.GUILayer.Prendas
             this.lblTipoPrenda = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
             this.gbFiltrosPrendas = new System.Windows.Forms.GroupBox();
+            this.UpDownPrecioMax = new System.Windows.Forms.NumericUpDown();
+            this.UpDownPrecioMin = new System.Windows.Forms.NumericUpDown();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.lblPrecioMax = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboTemporada = new System.Windows.Forms.ComboBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblTemporada = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
+            this.comboColor = new System.Windows.Forms.ComboBox();
+            this.comboTipoPrenda = new System.Windows.Forms.ComboBox();
             this.dgvPrendas = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.pbPrenda = new System.Windows.Forms.PictureBox();
-            this.UpDownPrecioMin = new System.Windows.Forms.NumericUpDown();
-            this.UpDownPrecioMax = new System.Windows.Forms.NumericUpDown();
+            this.chkTodos = new System.Windows.Forms.CheckBox();
             this.gbFiltrosPrendas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrenda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMax)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTipoPrenda
@@ -84,26 +85,54 @@ namespace GridFreaks.GUILayer.Prendas
             // gbFiltrosPrendas
             // 
             this.gbFiltrosPrendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gbFiltrosPrendas.Controls.Add(this.chkTodos);
             this.gbFiltrosPrendas.Controls.Add(this.UpDownPrecioMax);
             this.gbFiltrosPrendas.Controls.Add(this.UpDownPrecioMin);
             this.gbFiltrosPrendas.Controls.Add(this.btnConsultar);
             this.gbFiltrosPrendas.Controls.Add(this.lblPrecioMax);
             this.gbFiltrosPrendas.Controls.Add(this.label2);
-            this.gbFiltrosPrendas.Controls.Add(this.comboBox3);
+            this.gbFiltrosPrendas.Controls.Add(this.comboTemporada);
             this.gbFiltrosPrendas.Controls.Add(this.lblMarca);
             this.gbFiltrosPrendas.Controls.Add(this.lblTemporada);
-            this.gbFiltrosPrendas.Controls.Add(this.comboBox4);
-            this.gbFiltrosPrendas.Controls.Add(this.comboBox8);
+            this.gbFiltrosPrendas.Controls.Add(this.comboMarca);
+            this.gbFiltrosPrendas.Controls.Add(this.comboColor);
             this.gbFiltrosPrendas.Controls.Add(this.lblTipoPrenda);
-            this.gbFiltrosPrendas.Controls.Add(this.comboBox7);
+            this.gbFiltrosPrendas.Controls.Add(this.comboTipoPrenda);
             this.gbFiltrosPrendas.Controls.Add(this.lblColor);
             this.gbFiltrosPrendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbFiltrosPrendas.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbFiltrosPrendas.Location = new System.Drawing.Point(12, 12);
             this.gbFiltrosPrendas.Name = "gbFiltrosPrendas";
             this.gbFiltrosPrendas.Size = new System.Drawing.Size(644, 155);
             this.gbFiltrosPrendas.TabIndex = 3;
             this.gbFiltrosPrendas.TabStop = false;
             this.gbFiltrosPrendas.Text = "Filtros";
+            // 
+            // UpDownPrecioMax
+            // 
+            this.UpDownPrecioMax.Location = new System.Drawing.Point(391, 108);
+            this.UpDownPrecioMax.Name = "UpDownPrecioMax";
+            this.UpDownPrecioMax.Size = new System.Drawing.Size(113, 23);
+            this.UpDownPrecioMax.TabIndex = 16;
+            // 
+            // UpDownPrecioMin
+            // 
+            this.UpDownPrecioMin.Location = new System.Drawing.Point(144, 108);
+            this.UpDownPrecioMin.Name = "UpDownPrecioMin";
+            this.UpDownPrecioMin.Size = new System.Drawing.Size(113, 23);
+            this.UpDownPrecioMin.TabIndex = 15;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
+            this.btnConsultar.Location = new System.Drawing.Point(522, 99);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(103, 32);
+            this.btnConsultar.TabIndex = 12;
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblPrecioMax
             // 
@@ -129,13 +158,14 @@ namespace GridFreaks.GUILayer.Prendas
             this.label2.TabIndex = 8;
             this.label2.Text = "Precio Mínimo:";
             // 
-            // comboBox3
+            // comboTemporada
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(391, 69);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(126, 25);
-            this.comboBox3.TabIndex = 7;
+            this.comboTemporada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTemporada.FormattingEnabled = true;
+            this.comboTemporada.Location = new System.Drawing.Point(391, 69);
+            this.comboTemporada.Name = "comboTemporada";
+            this.comboTemporada.Size = new System.Drawing.Size(113, 25);
+            this.comboTemporada.TabIndex = 7;
             // 
             // lblMarca
             // 
@@ -161,40 +191,32 @@ namespace GridFreaks.GUILayer.Prendas
             this.lblTemporada.TabIndex = 6;
             this.lblTemporada.Text = "Temporada:";
             // 
-            // comboBox4
+            // comboMarca
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(391, 31);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(126, 25);
-            this.comboBox4.TabIndex = 4;
+            this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(391, 31);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(113, 25);
+            this.comboMarca.TabIndex = 4;
             // 
-            // btnConsultar
+            // comboColor
             // 
-            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
-            this.btnConsultar.Location = new System.Drawing.Point(530, 64);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(103, 32);
-            this.btnConsultar.TabIndex = 12;
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.comboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboColor.FormattingEnabled = true;
+            this.comboColor.Location = new System.Drawing.Point(144, 69);
+            this.comboColor.Name = "comboColor";
+            this.comboColor.Size = new System.Drawing.Size(113, 25);
+            this.comboColor.TabIndex = 3;
             // 
-            // comboBox7
+            // comboTipoPrenda
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(144, 31);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(126, 25);
-            this.comboBox7.TabIndex = 0;
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(144, 69);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(126, 25);
-            this.comboBox8.TabIndex = 3;
+            this.comboTipoPrenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTipoPrenda.FormattingEnabled = true;
+            this.comboTipoPrenda.Location = new System.Drawing.Point(144, 31);
+            this.comboTipoPrenda.Name = "comboTipoPrenda";
+            this.comboTipoPrenda.Size = new System.Drawing.Size(113, 25);
+            this.comboTipoPrenda.TabIndex = 0;
             // 
             // dgvPrendas
             // 
@@ -256,26 +278,24 @@ namespace GridFreaks.GUILayer.Prendas
             this.pbPrenda.TabIndex = 19;
             this.pbPrenda.TabStop = false;
             // 
-            // UpDownPrecioMin
+            // chkTodos
             // 
-            this.UpDownPrecioMin.Location = new System.Drawing.Point(144, 108);
-            this.UpDownPrecioMin.Name = "UpDownPrecioMin";
-            this.UpDownPrecioMin.Size = new System.Drawing.Size(126, 23);
-            this.UpDownPrecioMin.TabIndex = 15;
-            // 
-            // UpDownPrecioMax
-            // 
-            this.UpDownPrecioMax.Location = new System.Drawing.Point(391, 108);
-            this.UpDownPrecioMax.Name = "UpDownPrecioMax";
-            this.UpDownPrecioMax.Size = new System.Drawing.Size(126, 23);
-            this.UpDownPrecioMax.TabIndex = 16;
+            this.chkTodos.AutoSize = true;
+            this.chkTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.chkTodos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chkTodos.Location = new System.Drawing.Point(539, 45);
+            this.chkTodos.Name = "chkTodos";
+            this.chkTodos.Size = new System.Drawing.Size(67, 21);
+            this.chkTodos.TabIndex = 18;
+            this.chkTodos.Text = "Todos";
+            this.chkTodos.UseVisualStyleBackColor = false;
             // 
             // frmPrendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(999, 466);
+            this.ClientSize = new System.Drawing.Size(1002, 472);
             this.Controls.Add(this.pbPrenda);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
@@ -286,12 +306,13 @@ namespace GridFreaks.GUILayer.Prendas
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrendas";
             this.Text = "frmPrendas";
+            this.Load += new System.EventHandler(this.frmPrendas_Load);
             this.gbFiltrosPrendas.ResumeLayout(false);
             this.gbFiltrosPrendas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrenda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,13 +324,13 @@ namespace GridFreaks.GUILayer.Prendas
         private System.Windows.Forms.GroupBox gbFiltrosPrendas;
         private System.Windows.Forms.Label lblPrecioMax;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboTemporada;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblTemporada;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboMarca;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboColor;
+        private System.Windows.Forms.ComboBox comboTipoPrenda;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
@@ -318,5 +339,6 @@ namespace GridFreaks.GUILayer.Prendas
         internal System.Windows.Forms.DataGridView dgvPrendas;
         private System.Windows.Forms.NumericUpDown UpDownPrecioMax;
         private System.Windows.Forms.NumericUpDown UpDownPrecioMin;
+        internal System.Windows.Forms.CheckBox chkTodos;
     }
 }

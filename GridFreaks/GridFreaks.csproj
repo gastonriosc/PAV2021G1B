@@ -46,11 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\ColorService.cs" />
+    <Compile Include="BusinessLayer\MarcaService.cs" />
+    <Compile Include="BusinessLayer\PrendaService.cs" />
+    <Compile Include="BusinessLayer\TipoPrendaService.cs" />
     <Compile Include="BusinessLayer\UserService.cs" />
+    <Compile Include="DataAccessLayer\ColorDao.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\MarcaDao.cs" />
+    <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="DataAccessLayer\TipoPrendaDao.cs" />
     <Compile Include="DataAccessLayer\UserDao.cs" />
-    <Compile Include="Entities\Color.cs" />
+    <Compile Include="Entities\ColorPrenda.cs" />
     <Compile Include="Entities\Marca.cs" />
+    <Compile Include="Entities\Prenda.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="GUILayer\frmInicio.cs">

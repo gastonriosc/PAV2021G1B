@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GridFreaks.DataAccessLayer
 {
-    class DBHelper
+    public class DBHelper
     {
         private string string_conexion;
         private static DBHelper instance = new DBHelper();

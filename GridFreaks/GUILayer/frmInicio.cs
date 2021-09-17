@@ -1,4 +1,5 @@
 ﻿using GridFreaks.GUILayer;
+using GridFreaks.GUILayer.Prendas;
 using GridFreaks.GUILayer.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -68,7 +69,8 @@ namespace GridFreaks
 
         private void prendasTSMI_Click(object sender, EventArgs e)
         {
-
+            frmPrendas ventanaPrendas = new frmPrendas();
+            ventanaPrendas.ShowDialog();
         }
     }
 }

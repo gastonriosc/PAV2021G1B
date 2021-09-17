@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GridFreaks.DataAccessLayer
 {
-    class UserDao
+    public class UserDao
     {
         // escribe la consulta a hacer a la base de datos y retorna una lista de objetos usuarios
         public IList<User> GetAll()
