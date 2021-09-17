@@ -93,6 +93,16 @@ namespace GridFreaks.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EliminarPrenda {
+            get {
+                object obj = ResourceManager.GetObject("EliminarPrenda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EliminarUsuario {
             get {
                 object obj = ResourceManager.GetObject("EliminarUsuario", resourceCulture);
@@ -153,9 +163,29 @@ namespace GridFreaks.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ModificarPrenda {
+            get {
+                object obj = ResourceManager.GetObject("ModificarPrenda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ModificarUsuario {
             get {
                 object obj = ResourceManager.GetObject("ModificarUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RegistrarPrenda {
+            get {
+                object obj = ResourceManager.GetObject("RegistrarPrenda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

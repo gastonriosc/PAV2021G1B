@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,32 +57,54 @@ namespace GridFreaks.GUILayer.Prendas
 
             if (!chkTodos.Checked)
             {
-                //// Validar si el combo 'Perfiles' esta seleccionado.
-                //if (cboPerfiles.Text != string.Empty)
-                //{
-                //    // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
-                //    filters.Add("idPerfil", cboPerfiles.SelectedValue);
-                //    condiciones += " AND u.idperfil=" + cboPerfiles.SelectedValue.ToString();
+                // Validar si el combo 'Perfiles' esta seleccionado.
+                if (comboTipoPrenda.Text != string.Empty)
+                {
+                    // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
+                    filters.Add("TipoPrenda", comboTipoPrenda.SelectedValue);
+                    condiciones += " AND P.idTipoPrenda=" + comboTipoPrenda.SelectedValue.ToString();
 
-                //}
+                }
 
-                //// Validar si el textBox 'Nombre' esta vacio.
-                //if (txtNombre.Text != string.Empty)
-                //{
-                //    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
-                //    filters.Add("usuario", txtNombre.Text);
-                //    condiciones += "AND u.usuario=" + "'" + txtNombre.Text + "'";
-                //}
+                // Validar si el textBox 'Nombre' esta vacio.
+                if (comboColor.Text != string.Empty)
+                {
+                    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
+                    filters.Add("Color", comboColor.SelectedValue);
+                    condiciones += "AND P.idColor=" + comboColor.SelectedValue.ToString();
+                }
 
-                //if (filters.Count > 0)
-                //    //SIN PARAMETROS
-                //    dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosSinParametros(condiciones);
+                // Validar si el textBox 'Nombre' esta vacio.
+                if (comboMarca.Text != string.Empty)
+                {
+                    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
+                    filters.Add("Marca", comboMarca.SelectedValue);
+                    condiciones += "AND P.idMarca=" + comboMarca.SelectedValue.ToString();
+                }
 
-                ////CON PARAMETROS
-                ////dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
+                // Validar si el textBox 'Nombre' esta vacio.
+                if (comboTemporada.Text != string.Empty)
+                {
+                    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
+                    filters.Add("Temporada", comboTemporada.SelectedValue);
+                    condiciones += "AND P.Temporada= '" + comboTemporada.SelectedItem.ToString() + "'";
+                }
 
-                //else
-                //    MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (UpDownPrecioMax.Value > 0 && (UpDownPrecioMin.Value < UpDownPrecioMax.Value))
+                {
+                    filters.Add("Precio", UpDownPrecioMax.Value);
+                    condiciones += "AND P.Precio BETWEEN " + UpDownPrecioMin.Value + " AND " + UpDownPrecioMax.Value;
+                }
+
+                if (filters.Count > 0)
+                    //SIN PARAMETROS
+                    dgvPrendas.DataSource = oPrendaService.ConsultarConFiltrosSinParametros(condiciones);
+
+                //CON PARAMETROS
+                //dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
+
+                else
+                    MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 dgvPrendas.DataSource = oPrendaService.ObtenerTodos();
@@ -127,6 +150,30 @@ namespace GridFreaks.GUILayer.Prendas
 
             // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
             dgvPrendas.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
+        }
+
+        private void dgvPrendas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // obtengo mi ruta de ejecucion y le agrego el nombre de la imagen para buscarla
+            string directorioEjecucion = Directory.GetCurrentDirectory();
+            string toRemove = "\\bin\\Debug";
+            string result = string.Empty;
+            int i = directorioEjecucion.IndexOf(toRemove);
+            if (i >= 0)
+            {
+                result = directorioEjecucion.Remove(i, toRemove.Length);
+            }
+            string direccionImagenes = result + "\\ImagenesPrendas";
+
+            string resultado = direccionImagenes + "\\" + ((Prenda)dgvPrendas.CurrentRow.DataBoundItem).NombreImagen;
+            Size = new Size(1179, 524);
+            pbPrenda.Image = Image.FromFile(resultado);
+            pbPrenda.Visible = true;
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

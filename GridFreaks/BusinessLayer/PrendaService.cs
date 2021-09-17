@@ -22,5 +22,10 @@ namespace GridFreaks.BusinessLayer
         {
             return oPrendaDao.GetAll();
         }
+
+        internal IList<Prenda> ConsultarConFiltrosSinParametros(String condiciones)
+        {
+            return oPrendaDao.GetByFiltersSinParametros(condiciones);
+        }
     }
 }

@@ -128,34 +128,43 @@ namespace GridFreaks.DataAccessLayer
         //    return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
         //}
 
-        //public IList<User> GetByFiltersSinParametros(String condiciones)
-        //{
+        public IList<Prenda> GetByFiltersSinParametros(String condiciones)
+        {
 
-        //    List<User> lst = new List<User>();
-        //    String strSql = string.Concat(" SELECT usuario, ",
-        //                                      "        nombre, ",
-        //                                      "        apellido, ",
-        //                                      "        mail, ",
-        //                                      "        contra ",
-        //                                      "   FROM Usuarios u",
-        //                                      "  WHERE u.borrado =0 ");
+            List<Prenda> lst = new List<Prenda>();
+            String strSql = string.Concat(" SELECT P.id, ",
+                                          " P.idTipoPrenda,",
+                                          " TP.nombre as tipoPrenda,",
+                                          " P.idColor,",
+                                          " C.nombre as color,",
+                                          " P.Temporada,",
+                                          " P.Stock,",
+                                          " P.Precio,",
+                                          " P.idMarca,",
+                                          " M.nombre as marca,",
+                                          " P.nombreImagen",
+                                          " FROM Prendas P",
+                                          " INNER JOIN TipoPrenda TP ON (P.idTipoPrenda = TP.id)",
+                                          " INNER JOIN Colores C ON (P.idColor = C.id)",
+                                          " INNER JOIN Marcas M ON (P.idMarca = M.id)",
+                                          " WHERE borrado=0 ");
 
-        //    strSql += condiciones;
-        //    //if (parametros.ContainsKey("idPerfil"))
-        //    //   strSql += " AND (u.id_perfil = @idPerfil) ";
+            strSql += condiciones;
+            //if (parametros.ContainsKey("idPerfil"))
+            //   strSql += " AND (u.id_perfil = @idPerfil) ";
 
 
-        //    // if (parametros.ContainsKey("usuario"))
-        //    //    strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
+            // if (parametros.ContainsKey("usuario"))
+            //    strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
 
-        //    var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
+            var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
 
 
-        //    foreach (DataRow row in resultado.Rows)
-        //        lst.Add(ObjectMapping(row));
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
 
-        //    return lst;
-        //}
+            return lst;
+        }
 
         //internal bool Update(User oUsuario)
         //{

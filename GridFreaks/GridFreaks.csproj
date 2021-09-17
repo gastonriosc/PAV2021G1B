@@ -74,6 +74,12 @@
     <Compile Include="GUILayer\Login\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Prendas\ABMCPrendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Prendas\ABMCPrendas.Designer.cs">
+      <DependentUpon>ABMCPrendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Prendas\frmPrendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Prendas\ABMCPrendas.resx">
+      <DependentUpon>ABMCPrendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Prendas\frmPrendas.resx">
       <DependentUpon>frmPrendas.cs</DependentUpon>
@@ -132,7 +141,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ImagenesPrendas\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EliminarUsuario.png" />
     <None Include="Resources\LogoSample_ByTailorBrands-removebg-preview %281%29.png" />
@@ -143,6 +154,9 @@
     <None Include="Resources\informacion.png" />
     <None Include="Resources\Info.png" />
     <None Include="Resources\Consultar.png" />
+    <None Include="Resources\EliminarPrenda.png" />
+    <None Include="Resources\ModificarPrenda.png" />
+    <None Include="Resources\RegistrarPrenda.png" />
     <Content Include="Resources\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

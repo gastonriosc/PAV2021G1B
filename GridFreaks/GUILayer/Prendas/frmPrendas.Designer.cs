@@ -33,6 +33,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.lblTipoPrenda = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
             this.gbFiltrosPrendas = new System.Windows.Forms.GroupBox();
+            this.chkTodos = new System.Windows.Forms.CheckBox();
             this.UpDownPrecioMax = new System.Windows.Forms.NumericUpDown();
             this.UpDownPrecioMin = new System.Windows.Forms.NumericUpDown();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -45,12 +46,11 @@ namespace GridFreaks.GUILayer.Prendas
             this.comboColor = new System.Windows.Forms.ComboBox();
             this.comboTipoPrenda = new System.Windows.Forms.ComboBox();
             this.dgvPrendas = new System.Windows.Forms.DataGridView();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.pbPrenda = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.pbPrenda = new System.Windows.Forms.PictureBox();
-            this.chkTodos = new System.Windows.Forms.CheckBox();
             this.gbFiltrosPrendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMin)).BeginInit();
@@ -108,9 +108,26 @@ namespace GridFreaks.GUILayer.Prendas
             this.gbFiltrosPrendas.TabStop = false;
             this.gbFiltrosPrendas.Text = "Filtros";
             // 
+            // chkTodos
+            // 
+            this.chkTodos.AutoSize = true;
+            this.chkTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.chkTodos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chkTodos.Location = new System.Drawing.Point(539, 45);
+            this.chkTodos.Name = "chkTodos";
+            this.chkTodos.Size = new System.Drawing.Size(67, 21);
+            this.chkTodos.TabIndex = 18;
+            this.chkTodos.Text = "Todos";
+            this.chkTodos.UseVisualStyleBackColor = false;
+            // 
             // UpDownPrecioMax
             // 
             this.UpDownPrecioMax.Location = new System.Drawing.Point(391, 108);
+            this.UpDownPrecioMax.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.UpDownPrecioMax.Name = "UpDownPrecioMax";
             this.UpDownPrecioMax.Size = new System.Drawing.Size(113, 23);
             this.UpDownPrecioMax.TabIndex = 16;
@@ -118,6 +135,11 @@ namespace GridFreaks.GUILayer.Prendas
             // UpDownPrecioMin
             // 
             this.UpDownPrecioMin.Location = new System.Drawing.Point(144, 108);
+            this.UpDownPrecioMin.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.UpDownPrecioMin.Name = "UpDownPrecioMin";
             this.UpDownPrecioMin.Size = new System.Drawing.Size(113, 23);
             this.UpDownPrecioMin.TabIndex = 15;
@@ -230,6 +252,29 @@ namespace GridFreaks.GUILayer.Prendas
             this.dgvPrendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPrendas.Size = new System.Drawing.Size(644, 221);
             this.dgvPrendas.TabIndex = 4;
+            this.dgvPrendas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrendas_CellClick);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Image = global::GridFreaks.Properties.Resources.RegistrarPrenda;
+            this.btnRegistrar.Location = new System.Drawing.Point(12, 418);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(133, 36);
+            this.btnRegistrar.TabIndex = 18;
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // pbPrenda
+            // 
+            this.pbPrenda.Location = new System.Drawing.Point(672, 18);
+            this.pbPrenda.Name = "pbPrenda";
+            this.pbPrenda.Size = new System.Drawing.Size(463, 436);
+            this.pbPrenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPrenda.TabIndex = 19;
+            this.pbPrenda.TabStop = false;
+            this.pbPrenda.Visible = false;
             // 
             // btnSalir
             // 
@@ -244,58 +289,32 @@ namespace GridFreaks.GUILayer.Prendas
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(237, 418);
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = global::GridFreaks.Properties.Resources.EliminarPrenda;
+            this.btnEliminar.Location = new System.Drawing.Point(315, 418);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 36);
+            this.btnEliminar.Size = new System.Drawing.Size(160, 36);
             this.btnEliminar.TabIndex = 16;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(124, 418);
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Image = global::GridFreaks.Properties.Resources.ModificarPrenda;
+            this.btnModificar.Location = new System.Drawing.Point(151, 418);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(86, 36);
+            this.btnModificar.Size = new System.Drawing.Size(158, 36);
             this.btnModificar.TabIndex = 17;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(12, 418);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(86, 36);
-            this.btnRegistrar.TabIndex = 18;
-            this.btnRegistrar.Text = "Nuevo";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            // 
-            // pbPrenda
-            // 
-            this.pbPrenda.Location = new System.Drawing.Point(672, 18);
-            this.pbPrenda.Name = "pbPrenda";
-            this.pbPrenda.Size = new System.Drawing.Size(315, 436);
-            this.pbPrenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPrenda.TabIndex = 19;
-            this.pbPrenda.TabStop = false;
-            // 
-            // chkTodos
-            // 
-            this.chkTodos.AutoSize = true;
-            this.chkTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkTodos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chkTodos.Location = new System.Drawing.Point(539, 45);
-            this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Size = new System.Drawing.Size(67, 21);
-            this.chkTodos.TabIndex = 18;
-            this.chkTodos.Text = "Todos";
-            this.chkTodos.UseVisualStyleBackColor = false;
             // 
             // frmPrendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1002, 472);
+            this.ClientSize = new System.Drawing.Size(667, 467);
             this.Controls.Add(this.pbPrenda);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
