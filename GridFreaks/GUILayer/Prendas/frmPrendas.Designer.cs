@@ -116,7 +116,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.chkTodos.Location = new System.Drawing.Point(539, 45);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(67, 21);
-            this.chkTodos.TabIndex = 18;
+            this.chkTodos.TabIndex = 7;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = false;
             // 
@@ -130,7 +130,7 @@ namespace GridFreaks.GUILayer.Prendas
             0});
             this.UpDownPrecioMax.Name = "UpDownPrecioMax";
             this.UpDownPrecioMax.Size = new System.Drawing.Size(113, 23);
-            this.UpDownPrecioMax.TabIndex = 16;
+            this.UpDownPrecioMax.TabIndex = 6;
             // 
             // UpDownPrecioMin
             // 
@@ -142,7 +142,7 @@ namespace GridFreaks.GUILayer.Prendas
             0});
             this.UpDownPrecioMin.Name = "UpDownPrecioMin";
             this.UpDownPrecioMin.Size = new System.Drawing.Size(113, 23);
-            this.UpDownPrecioMin.TabIndex = 15;
+            this.UpDownPrecioMin.TabIndex = 3;
             // 
             // btnConsultar
             // 
@@ -152,7 +152,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnConsultar.Location = new System.Drawing.Point(522, 99);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(103, 32);
-            this.btnConsultar.TabIndex = 12;
+            this.btnConsultar.TabIndex = 8;
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
@@ -187,7 +187,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.comboTemporada.Location = new System.Drawing.Point(391, 69);
             this.comboTemporada.Name = "comboTemporada";
             this.comboTemporada.Size = new System.Drawing.Size(113, 25);
-            this.comboTemporada.TabIndex = 7;
+            this.comboTemporada.TabIndex = 5;
             // 
             // lblMarca
             // 
@@ -229,7 +229,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.comboColor.Location = new System.Drawing.Point(144, 69);
             this.comboColor.Name = "comboColor";
             this.comboColor.Size = new System.Drawing.Size(113, 25);
-            this.comboColor.TabIndex = 3;
+            this.comboColor.TabIndex = 2;
             // 
             // comboTipoPrenda
             // 
@@ -262,13 +262,13 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnRegistrar.Location = new System.Drawing.Point(12, 418);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(133, 36);
-            this.btnRegistrar.TabIndex = 18;
+            this.btnRegistrar.TabIndex = 9;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // pbPrenda
             // 
-            this.pbPrenda.Location = new System.Drawing.Point(672, 18);
+            this.pbPrenda.Location = new System.Drawing.Point(675, 18);
             this.pbPrenda.Name = "pbPrenda";
             this.pbPrenda.Size = new System.Drawing.Size(463, 436);
             this.pbPrenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -281,10 +281,10 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Image = global::GridFreaks.Properties.Resources.Salir;
-            this.btnSalir.Location = new System.Drawing.Point(591, 418);
+            this.btnSalir.Location = new System.Drawing.Point(591, 424);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(65, 30);
-            this.btnSalir.TabIndex = 15;
+            this.btnSalir.TabIndex = 12;
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
@@ -295,7 +295,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnEliminar.Location = new System.Drawing.Point(315, 418);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(160, 36);
-            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.TabIndex = 11;
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
@@ -306,7 +306,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnModificar.Location = new System.Drawing.Point(151, 418);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(158, 36);
-            this.btnModificar.TabIndex = 17;
+            this.btnModificar.TabIndex = 10;
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // frmPrendas
@@ -314,7 +314,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(667, 467);
+            this.ClientSize = new System.Drawing.Size(669, 469);
             this.Controls.Add(this.pbPrenda);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);

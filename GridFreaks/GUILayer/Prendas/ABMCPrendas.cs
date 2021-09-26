@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GridFreaks.GUILayer.Prendas
 {
-    public partial class ABMCPrendas : Form
+    public partial class frmABMPrendas : Form
     {
-        public ABMCPrendas()
+        public frmABMPrendas()
         {
             InitializeComponent();
         }

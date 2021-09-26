@@ -108,6 +108,16 @@ namespace GridFreaks.GUILayer.Prendas
             }
             else
                 dgvPrendas.DataSource = oPrendaService.ObtenerTodos();
+
+            limpiarCombos();
+        }
+
+        private void limpiarCombos()
+        {
+            comboTipoPrenda.SelectedIndex = -1;
+            comboColor.SelectedIndex = -1;
+            comboMarca.SelectedIndex = -1;
+            comboTemporada.SelectedIndex = -1;
         }
 
         private void InitializeDataGridView()
@@ -166,14 +176,15 @@ namespace GridFreaks.GUILayer.Prendas
             string direccionImagenes = result + "\\ImagenesPrendas";
 
             string resultado = direccionImagenes + "\\" + ((Prenda)dgvPrendas.CurrentRow.DataBoundItem).NombreImagen;
-            Size = new Size(1179, 524);
+            Size = new Size(1168, 508);
             pbPrenda.Image = Image.FromFile(resultado);
             pbPrenda.Visible = true;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-
+            frmABMPrendas ventanaABMprendas = new frmABMPrendas();
+            ventanaABMprendas.ShowDialog();
         }
     }
 }
