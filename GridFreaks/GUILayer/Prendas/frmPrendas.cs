@@ -164,6 +164,7 @@ namespace GridFreaks.GUILayer.Prendas
 
         private void dgvPrendas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // no repetir imagen con id de producto
             // obtengo mi ruta de ejecucion y le agrego el nombre de la imagen para buscarla
             string directorioEjecucion = Directory.GetCurrentDirectory();
             string toRemove = "\\bin\\Debug";
