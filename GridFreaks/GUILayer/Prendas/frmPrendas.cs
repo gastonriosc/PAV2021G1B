@@ -73,7 +73,8 @@ namespace GridFreaks.GUILayer.Prendas
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(comboTemporada.SelectedItem.ToString());
+            Size = new Size(685, 508);
+            Location = new Point(617, 266);
 
             String condiciones = "";
             var filters = new Dictionary<string, object>();
@@ -191,7 +192,7 @@ namespace GridFreaks.GUILayer.Prendas
             cargarFotoPrenda();
 
             Size = new Size(1168, 508);
-            Location = new Point(360, 264);
+            Location = new Point(360, 266);
 
             pbPrenda.Visible = true;
         }
