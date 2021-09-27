@@ -42,6 +42,15 @@ namespace GridFreaks.DataAccessLayer
             return listadoPrendas;
         }
 
+        internal int GetLastIdPrenda()
+        {
+            String strSql = "SELECT MAX(id) FROM PRENDAS";
+
+            int ultimoId = int.Parse(DBHelper.GetDBHelper().ConsultaSQL(strSql).Rows[0][0].ToString());
+
+            return ultimoId;
+        }
+
 
 
         // materializa cada fila de la tabla de usuarios a un objeto Usuario
@@ -71,62 +80,87 @@ namespace GridFreaks.DataAccessLayer
             return oPrenda;
         }
 
-        //public User GetUserSinParametros(string nombreUsuario)
-        //{
-        //    //Construimos la consulta sql para buscar el usuario en la base de datos.
-        //    String strSql = string.Concat(" SELECT usuario, ",
-        //                                  "        nombre, ",
-        //                                  "        apellido, ",
-        //                                  "        contra, ",
-        //                                  "        mail ",
-        //                                  "  FROM Usuarios",
-        //                                  "  WHERE borrado =0 ");
+        public Prenda GetPrendaSinParametros(int idPrenda)
+        {
+            //Construimos la consulta sql para buscar el usuario en la base de datos.
+            String strSql = string.Concat(" SELECT *",
+                                          "  FROM Prendas",
+                                          "  WHERE borrado =0 ");
 
-        //    strSql += " AND usuario=" + "'" + nombreUsuario + "'";
+            strSql += " AND id=" + idPrenda;
 
 
-        //    //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
-        //    var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
+            //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
+            var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
 
-        //    // Validamos que el resultado tenga al menos una fila.
-        //    if (resultado.Rows.Count > 0)
-        //    {
-        //        return ObjectMapping(resultado.Rows[0]);
-        //    }
+            // Validamos que el resultado tenga al menos una fila.
+            if (resultado.Rows.Count > 0)
+            {
+                return ObjectMapping(resultado.Rows[0]);
+            }
 
-        //    return null;
-        //}
+            return null;
+        }
 
-
-        //internal bool Create(User oUsuario)
-        //{
-        //    //CON PARAMETROS
-        //    //string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil, estado, borrado)" +
-        //    //                 "     VALUES (@usuario, @password, @email, @id_perfil, 'S', 0)";
-
-        //    // var parametros = new Dictionary<string, object>();
-        //    //parametros.Add("usuario", oUsuario.NombreUsuario);
-        //    //parametros.Add("password", oUsuario.Password);
-        //    //parametros.Add("email", oUsuario.Email);
-        //    //parametros.Add("id_perfil", oUsuario.Perfil.IdPerfil);
-
-        //    // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
-        //    //con parametros
-        //    //return (DBHelper.GetDBHelper().EjecutarSQLConParametros(str_sql, parametros) == 1);
-
-        //    //SIN PARAMETROS
-
-        //    string str_sql = "INSERT INTO Usuarios (usuario, nombre, apellido, contra, mail, borrado)" +
-        //                    " VALUES (" +
-        //                    "'" + oUsuario.Usuario + "'" + "," +
-        //                    "'" + oUsuario.Nombre + "'" + "," +
-        //                    "'" + oUsuario.Apellido + "'" + "," +
-        //                    "'" + oUsuario.Contra + "'" + "," +
-        //                    "'" + oUsuario.Mail + "'" + ",0)";
+        public bool GetPrendaParametrizada(Prenda oPrenda)
+        {
+            //Construimos la consulta sql para buscar el usuario en la base de datos.
+            String strSql = string.Concat("SELECT idTipoPrenda, idColor, Temporada, Stock, Precio, idMarca, borrado, nombreImagen",
+                                          " FROM Prendas",
+                                          " WHERE borrado = 0",
+                                          " AND idTipoPrenda = " + oPrenda.TipoPrenda.Id +
+                                          " AND idColor = " + oPrenda.Color.Id +
+                                          " AND Temporada = " + "'" + oPrenda.Temporada + "'" +
+                                          " AND Stock = " + oPrenda.Stock +
+                                          " AND Precio = " + oPrenda.Precio +
+                                          " AND idMarca = " + oPrenda.Marca.Id +
+                                          " AND nombreImagen = " + "'" + oPrenda.NombreImagen + "'");
 
 
-        //    return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
-        //}
+            //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
+            var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
+
+            // Validamos que el resultado tenga al menos una fila.
+            if (resultado.Rows.Count > 0)
+                return true;
+
+            return false;
+        }
+
+
+        internal bool Create(Prenda oPrenda)
+        {
+            //CON PARAMETROS
+            //string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil, estado, borrado)" +
+            //                 "     VALUES (@usuario, @password, @email, @id_perfil, 'S', 0)";
+
+            // var parametros = new Dictionary<string, object>();
+            //parametros.Add("usuario", oUsuario.NombreUsuario);
+            //parametros.Add("password", oUsuario.Password);
+            //parametros.Add("email", oUsuario.Email);
+            //parametros.Add("id_perfil", oUsuario.Perfil.IdPerfil);
+
+            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
+            //con parametros
+            //return (DBHelper.GetDBHelper().EjecutarSQLConParametros(str_sql, parametros) == 1);
+
+            //SIN PARAMETROS
+
+            string str_sql = "INSERT INTO Prendas (id, idTipoPrenda, idColor, Temporada, Stock, Precio, idMarca, borrado, nombreImagen)" +
+                            " VALUES ("+
+                            oPrenda.Id + ", " +
+                            oPrenda.TipoPrenda.Id + ", " +
+                            oPrenda.Color.Id + ", " +
+                            "'" + oPrenda.Temporada + "'" + ", " +
+                            oPrenda.Stock + ", " +
+                            oPrenda.Precio + ", " +
+                            oPrenda.Marca.Id + ", " +
+                            " 0, " +
+                            "'" + oPrenda.NombreImagen + "')";
+
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
 
         public IList<Prenda> GetByFiltersSinParametros(String condiciones)
         {
@@ -166,30 +200,32 @@ namespace GridFreaks.DataAccessLayer
             return lst;
         }
 
-        //internal bool Update(User oUsuario)
-        //{
-        //    //SIN PARAMETROS
+        internal bool Update(Prenda oPrenda)
+        {
+            //SIN PARAMETROS
 
-        //    string str_sql = "UPDATE Usuarios " +
-        //                     "SET usuario=" + "'" + oUsuario.Usuario + "'" + "," +
-        //                     " nombre=" + "'" + oUsuario.Nombre + "'" + "," +
-        //                     " apellido=" + "'" + oUsuario.Apellido + "'" + "," +
-        //                     " mail=" + "'" + oUsuario.Mail + "'" + "," +
-        //                     " contra=" + "'" + oUsuario.Contra + "'" +
-        //                     " WHERE usuario=" + "'" + oUsuario.Usuario + "'";
+            string str_sql = "UPDATE Prendas " +
+                             "SET idTipoPrenda = " + oPrenda.TipoPrenda.Id + "," +
+                             " idColor = " + oPrenda.Color.Id + "," +
+                             " Temporada = " + "'" + oPrenda.Temporada + "'" + "," +
+                             " Stock = " + oPrenda.Stock + "," +
+                             " Precio = " + oPrenda.Precio + "," +
+                             " idMarca = " + oPrenda.Marca.Id + "," +
+                             " nombreImagen = " + "'" + oPrenda.NombreImagen + "'" +
+                             " WHERE id = " + "'" + oPrenda.Id + "'";
 
-        //    return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
-        //}
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
 
-        //internal bool DarBaja(User oUsuario)
-        //{
+        internal bool DarBaja(Prenda oPrenda)
+        {
 
-        //    string str_sql = "UPDATE Usuarios " +
-        //                     "SET borrado=1" +
-        //                     " WHERE usuario=" + "'" + oUsuario.Usuario + "'";
+            string str_sql = "UPDATE Prendas " +
+                             "SET borrado = 1" +
+                             " WHERE id=" + "'" + oPrenda.Id + "'";
 
-        //    return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
-        //}
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
     }
 }
 

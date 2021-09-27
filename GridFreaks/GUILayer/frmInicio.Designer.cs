@@ -36,6 +36,7 @@ namespace GridFreaks
             this.cerrarSesionTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.prendasTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.coloresTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace GridFreaks
             this.sesionTSMI,
             this.usuariosTSMI,
             this.prendasTSMI,
+            this.coloresTSMI,
             this.salirTSMI});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -100,6 +102,15 @@ namespace GridFreaks
             this.prendasTSMI.Text = "Prendas";
             this.prendasTSMI.Click += new System.EventHandler(this.prendasTSMI_Click);
             // 
+            // coloresTSMI
+            // 
+            this.coloresTSMI.Enabled = false;
+            this.coloresTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.coloresTSMI.Name = "coloresTSMI";
+            this.coloresTSMI.Size = new System.Drawing.Size(59, 20);
+            this.coloresTSMI.Text = "Colores";
+            this.coloresTSMI.Click += new System.EventHandler(this.coloresTSMI_Click);
+            // 
             // salirTSMI
             // 
             this.salirTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -140,6 +151,7 @@ namespace GridFreaks
         private System.Windows.Forms.ToolStripMenuItem usuariosTSMI;
         private System.Windows.Forms.ToolStripMenuItem salirTSMI;
         private System.Windows.Forms.ToolStripMenuItem prendasTSMI;
+        private System.Windows.Forms.ToolStripMenuItem coloresTSMI;
     }
 }
 

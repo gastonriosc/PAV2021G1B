@@ -27,5 +27,31 @@ namespace GridFreaks.BusinessLayer
         {
             return oPrendaDao.GetByFiltersSinParametros(condiciones);
         }
+
+        internal bool ObtenerPrenda(Prenda oPrenda)
+        {
+            //SIN PARAMETROS
+            return oPrendaDao.GetPrendaParametrizada(oPrenda);
+        }
+
+        internal int ObtenerUltimoIdPrenda()
+        {
+            return oPrendaDao.GetLastIdPrenda();
+        }
+
+        internal bool CrearPrenda(Prenda oPrenda)
+        {
+            return oPrendaDao.Create(oPrenda);
+        }
+
+        internal bool ActualizarPrenda(Prenda oPrendaSelected)
+        {
+            return oPrendaDao.Update(oPrendaSelected);
+        }
+
+        internal bool ModificarEstadoPrenda(Prenda oPrendaSelected)
+        {
+            return oPrendaDao.DarBaja(oPrendaSelected);
+        }
     }
 }

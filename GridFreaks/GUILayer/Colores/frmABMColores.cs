@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GridFreaks.GUILayer.Prendas
+namespace GridFreaks.GUILayer.Colores
 {
-    public partial class ABMCPrendas : Form
+    public partial class frmABMColores : Form
     {
-        public ABMCPrendas()
+        public frmABMColores()
         {
             InitializeComponent();
+            Location = new Point(970, 300);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace BugTracker.GUILayer.Usuarios
         {
             InitializeComponent();
             oUsuarioService = new UserService();
-            pictureBox1.SendToBack();
+            fotoGridFricks.SendToBack();
         }
 
         public enum FormMode
