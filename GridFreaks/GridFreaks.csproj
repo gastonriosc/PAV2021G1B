@@ -86,6 +86,12 @@
     <Compile Include="GUILayer\Login\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Marcas\frmMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Marcas\frmMarcas.Designer.cs">
+      <DependentUpon>frmMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Prendas\frmABMPrendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Marcas\frmMarcas.resx">
+      <DependentUpon>frmMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Prendas\frmABMPrendas.resx">
       <DependentUpon>frmABMPrendas.cs</DependentUpon>
@@ -175,6 +184,12 @@
     <None Include="Resources\EliminarPrenda.png" />
     <None Include="Resources\ModificarPrenda.png" />
     <None Include="Resources\RegistrarPrenda.png" />
+    <None Include="Resources\NuevoColor.png" />
+    <None Include="Resources\EliminarColor.png" />
+    <None Include="Resources\Buscar.png" />
+    <None Include="Resources\NuevaFoto.png" />
+    <None Include="Resources\NuevaMarca.png" />
+    <None Include="Resources\EliminarMarca.png" />
     <Content Include="Resources\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

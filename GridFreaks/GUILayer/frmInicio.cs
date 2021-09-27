@@ -41,6 +41,7 @@ namespace GridFreaks
             this.usuariosTSMI.Enabled = true;
             this.prendasTSMI.Enabled = true;
             this.coloresTSMI.Enabled = true;
+            this.marcasTSMI.Enabled = true;
         }
 
         private void frmInicio_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,6 +80,16 @@ namespace GridFreaks
         {
             frmColores ventanaColores = new frmColores();
             ventanaColores.ShowDialog();
+        }
+
+        private void sesionTSMI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void marcasTSMI_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
