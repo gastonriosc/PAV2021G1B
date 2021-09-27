@@ -38,6 +38,7 @@ namespace GridFreaks.GUILayer.Prendas
             comboTemporada.Items.Add("Invierno");
             comboTemporada.Items.Add("Verano");
             this.CenterToParent();
+
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -46,6 +47,28 @@ namespace GridFreaks.GUILayer.Prendas
             cbo.DisplayMember = display;
             cbo.ValueMember = value;
             cbo.SelectedIndex = -1;
+        }
+
+        private void habilitarCampos(bool x)
+        {
+            comboTipoPrenda.Enabled = x;
+            comboColor.Enabled = x;
+            comboTemporada.Enabled = x;
+            comboMarca.Enabled = x;
+            nudPrecioMin.Enabled = x;
+            nudPrecioMax.Enabled = x;
+        }
+
+        private void chkTodos_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkTodos.Checked)
+            {
+                habilitarCampos(false);
+            }
+            else
+            {
+                habilitarCampos(true);
+            }
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -90,19 +113,15 @@ namespace GridFreaks.GUILayer.Prendas
                     condiciones += "AND P.Temporada= '" + comboTemporada.SelectedItem.ToString() + "'";
                 }
 
-                if (UpDownPrecioMax.Value > 0 && (UpDownPrecioMin.Value < UpDownPrecioMax.Value))
+                if (nudPrecioMax.Value > 0 && (nudPrecioMin.Value < nudPrecioMax.Value))
                 {
-                    filters.Add("Precio", UpDownPrecioMax.Value);
-                    condiciones += "AND P.Precio BETWEEN " + UpDownPrecioMin.Value + " AND " + UpDownPrecioMax.Value;
+                    filters.Add("Precio", nudPrecioMax.Value);
+                    condiciones += "AND P.Precio BETWEEN " + nudPrecioMin.Value + " AND " + nudPrecioMax.Value;
                 }
 
                 if (filters.Count > 0)
                     //SIN PARAMETROS
                     dgvPrendas.DataSource = oPrendaService.ConsultarConFiltrosSinParametros(condiciones);
-
-                //CON PARAMETROS
-                //dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
-
                 else
                     MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -117,7 +136,8 @@ namespace GridFreaks.GUILayer.Prendas
             comboTipoPrenda.SelectedIndex = -1;
             comboColor.SelectedIndex = -1;
             comboMarca.SelectedIndex = -1;
-            comboTemporada.SelectedIndex = -1;
+            comboTemporada.SelectedIndex = -1;;
+            chkTodos.Checked = true;
         }
 
         private void InitializeDataGridView()
@@ -164,6 +184,20 @@ namespace GridFreaks.GUILayer.Prendas
 
         private void dgvPrendas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // habilita los botones de modificar y eliminar prenda.
+            this.btnModificar.Enabled = true;
+            this.btnEliminar.Enabled = true;
+
+            cargarFotoPrenda();
+
+            Size = new Size(1168, 508);
+            Location = new Point(360, 264);
+
+            pbPrenda.Visible = true;
+        }
+
+        private void cargarFotoPrenda()
+        {
             // no repetir imagen con id de producto
             // obtengo mi ruta de ejecucion y le agrego el nombre de la imagen para buscarla
             string directorioEjecucion = Directory.GetCurrentDirectory();
@@ -177,15 +211,37 @@ namespace GridFreaks.GUILayer.Prendas
             string direccionImagenes = result + "\\ImagenesPrendas";
 
             string resultado = direccionImagenes + "\\" + ((Prenda)dgvPrendas.CurrentRow.DataBoundItem).NombreImagen;
-            Size = new Size(1168, 508);
             pbPrenda.Image = Image.FromFile(resultado);
-            pbPrenda.Visible = true;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             frmABMPrendas ventanaABMprendas = new frmABMPrendas();
             ventanaABMprendas.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmABMPrendas formulario = new frmABMPrendas();
+            Prenda prendaSeleccionada = (Prenda)dgvPrendas.CurrentRow.DataBoundItem;
+            formulario.SeleccionarPrenda(frmABMPrendas.FormMode.update, prendaSeleccionada);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmABMPrendas formulario = new frmABMPrendas();
+            Prenda prendaSeleccionada = (Prenda)dgvPrendas.CurrentRow.DataBoundItem;
+            formulario.SeleccionarPrenda(frmABMPrendas.FormMode.delete, prendaSeleccionada);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

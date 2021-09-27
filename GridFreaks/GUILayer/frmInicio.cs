@@ -1,4 +1,5 @@
 ﻿using GridFreaks.GUILayer;
+using GridFreaks.GUILayer.Colores;
 using GridFreaks.GUILayer.Prendas;
 using GridFreaks.GUILayer.Usuarios;
 using System;
@@ -39,18 +40,7 @@ namespace GridFreaks
             this.cerrarSesionTSMI.Enabled = true;
             this.usuariosTSMI.Enabled = true;
             this.prendasTSMI.Enabled = true;
-        }
-
-        private void usuariosTSMI_Click(object sender, EventArgs e)
-        {
-            frmUsuarios ventanaUsuarios = new frmUsuarios();
-            ventanaUsuarios.ShowDialog();
-        }
-
-        private void salirTSMI_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
+            this.coloresTSMI.Enabled = true;
         }
 
         private void frmInicio_FormClosing(object sender, FormClosingEventArgs e)
@@ -67,10 +57,28 @@ namespace GridFreaks
                 e.Cancel = true;
         }
 
+        private void usuariosTSMI_Click(object sender, EventArgs e)
+        {
+            frmUsuarios ventanaUsuarios = new frmUsuarios();
+            ventanaUsuarios.ShowDialog();
+        }
+
+        private void salirTSMI_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
         private void prendasTSMI_Click(object sender, EventArgs e)
         {
             frmPrendas ventanaPrendas = new frmPrendas();
             ventanaPrendas.ShowDialog();
+        }
+
+        private void coloresTSMI_Click(object sender, EventArgs e)
+        {
+            frmColores ventanaColores = new frmColores();
+            ventanaColores.ShowDialog();
         }
     }
 }

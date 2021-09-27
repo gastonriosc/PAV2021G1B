@@ -62,6 +62,18 @@
     <Compile Include="Entities\Prenda.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="GUILayer\Colores\frmABMColores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Colores\frmABMColores.Designer.cs">
+      <DependentUpon>frmABMColores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Colores\frmColores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Colores\frmColores.Designer.cs">
+      <DependentUpon>frmColores.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +86,11 @@
     <Compile Include="GUILayer\Login\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Prendas\ABMCPrendas.cs">
+    <Compile Include="GUILayer\Prendas\frmABMPrendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Prendas\ABMCPrendas.Designer.cs">
-      <DependentUpon>ABMCPrendas.cs</DependentUpon>
+    <Compile Include="GUILayer\Prendas\frmABMPrendas.Designer.cs">
+      <DependentUpon>frmABMPrendas.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Prendas\frmPrendas.cs">
       <SubType>Form</SubType>
@@ -100,14 +112,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\Colores\frmABMColores.resx">
+      <DependentUpon>frmABMColores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Colores\frmColores.resx">
+      <DependentUpon>frmColores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Prendas\ABMCPrendas.resx">
-      <DependentUpon>ABMCPrendas.cs</DependentUpon>
+    <EmbeddedResource Include="GUILayer\Prendas\frmABMPrendas.resx">
+      <DependentUpon>frmABMPrendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Prendas\frmPrendas.resx">
       <DependentUpon>frmPrendas.cs</DependentUpon>

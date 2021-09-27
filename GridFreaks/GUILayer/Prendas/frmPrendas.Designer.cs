@@ -34,9 +34,8 @@ namespace GridFreaks.GUILayer.Prendas
             this.lblColor = new System.Windows.Forms.Label();
             this.gbFiltrosPrendas = new System.Windows.Forms.GroupBox();
             this.chkTodos = new System.Windows.Forms.CheckBox();
-            this.UpDownPrecioMax = new System.Windows.Forms.NumericUpDown();
-            this.UpDownPrecioMin = new System.Windows.Forms.NumericUpDown();
-            this.btnConsultar = new System.Windows.Forms.Button();
+            this.nudPrecioMax = new System.Windows.Forms.NumericUpDown();
+            this.nudPrecioMin = new System.Windows.Forms.NumericUpDown();
             this.lblPrecioMax = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboTemporada = new System.Windows.Forms.ComboBox();
@@ -46,14 +45,15 @@ namespace GridFreaks.GUILayer.Prendas
             this.comboColor = new System.Windows.Forms.ComboBox();
             this.comboTipoPrenda = new System.Windows.Forms.ComboBox();
             this.dgvPrendas = new System.Windows.Forms.DataGridView();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.pbPrenda = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.gbFiltrosPrendas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrenda)).BeginInit();
             this.SuspendLayout();
@@ -86,8 +86,8 @@ namespace GridFreaks.GUILayer.Prendas
             // 
             this.gbFiltrosPrendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gbFiltrosPrendas.Controls.Add(this.chkTodos);
-            this.gbFiltrosPrendas.Controls.Add(this.UpDownPrecioMax);
-            this.gbFiltrosPrendas.Controls.Add(this.UpDownPrecioMin);
+            this.gbFiltrosPrendas.Controls.Add(this.nudPrecioMax);
+            this.gbFiltrosPrendas.Controls.Add(this.nudPrecioMin);
             this.gbFiltrosPrendas.Controls.Add(this.btnConsultar);
             this.gbFiltrosPrendas.Controls.Add(this.lblPrecioMax);
             this.gbFiltrosPrendas.Controls.Add(this.label2);
@@ -119,42 +119,31 @@ namespace GridFreaks.GUILayer.Prendas
             this.chkTodos.TabIndex = 7;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = false;
+            this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged_1);
             // 
-            // UpDownPrecioMax
+            // nudPrecioMax
             // 
-            this.UpDownPrecioMax.Location = new System.Drawing.Point(391, 108);
-            this.UpDownPrecioMax.Maximum = new decimal(new int[] {
+            this.nudPrecioMax.Location = new System.Drawing.Point(391, 108);
+            this.nudPrecioMax.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.UpDownPrecioMax.Name = "UpDownPrecioMax";
-            this.UpDownPrecioMax.Size = new System.Drawing.Size(113, 23);
-            this.UpDownPrecioMax.TabIndex = 6;
+            this.nudPrecioMax.Name = "nudPrecioMax";
+            this.nudPrecioMax.Size = new System.Drawing.Size(113, 23);
+            this.nudPrecioMax.TabIndex = 6;
             // 
-            // UpDownPrecioMin
+            // nudPrecioMin
             // 
-            this.UpDownPrecioMin.Location = new System.Drawing.Point(144, 108);
-            this.UpDownPrecioMin.Maximum = new decimal(new int[] {
+            this.nudPrecioMin.Location = new System.Drawing.Point(144, 108);
+            this.nudPrecioMin.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.UpDownPrecioMin.Name = "UpDownPrecioMin";
-            this.UpDownPrecioMin.Size = new System.Drawing.Size(113, 23);
-            this.UpDownPrecioMin.TabIndex = 3;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
-            this.btnConsultar.Location = new System.Drawing.Point(522, 99);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(103, 32);
-            this.btnConsultar.TabIndex = 8;
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            this.nudPrecioMin.Name = "nudPrecioMin";
+            this.nudPrecioMin.Size = new System.Drawing.Size(113, 23);
+            this.nudPrecioMin.TabIndex = 3;
             // 
             // lblPrecioMax
             // 
@@ -254,18 +243,6 @@ namespace GridFreaks.GUILayer.Prendas
             this.dgvPrendas.TabIndex = 4;
             this.dgvPrendas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrendas_CellClick);
             // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Image = global::GridFreaks.Properties.Resources.RegistrarPrenda;
-            this.btnRegistrar.Location = new System.Drawing.Point(12, 418);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(133, 36);
-            this.btnRegistrar.TabIndex = 9;
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
             // pbPrenda
             // 
             this.pbPrenda.Location = new System.Drawing.Point(675, 18);
@@ -286,28 +263,57 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnSalir.Size = new System.Drawing.Size(65, 30);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::GridFreaks.Properties.Resources.EliminarPrenda;
-            this.btnEliminar.Location = new System.Drawing.Point(315, 418);
+            this.btnEliminar.Location = new System.Drawing.Point(314, 418);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(160, 36);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
+            this.btnModificar.Enabled = false;
             this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Image = global::GridFreaks.Properties.Resources.ModificarPrenda;
-            this.btnModificar.Location = new System.Drawing.Point(151, 418);
+            this.btnModificar.Location = new System.Drawing.Point(152, 418);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(158, 36);
             this.btnModificar.TabIndex = 10;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Image = global::GridFreaks.Properties.Resources.RegistrarPrenda;
+            this.btnRegistrar.Location = new System.Drawing.Point(12, 418);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(133, 36);
+            this.btnRegistrar.TabIndex = 9;
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
+            this.btnConsultar.Location = new System.Drawing.Point(522, 99);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(103, 32);
+            this.btnConsultar.TabIndex = 8;
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // frmPrendas
             // 
@@ -324,12 +330,13 @@ namespace GridFreaks.GUILayer.Prendas
             this.Controls.Add(this.gbFiltrosPrendas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmPrendas";
             this.Load += new System.EventHandler(this.frmPrendas_Load);
             this.gbFiltrosPrendas.ResumeLayout(false);
             this.gbFiltrosPrendas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDownPrecioMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrenda)).EndInit();
             this.ResumeLayout(false);
@@ -356,8 +363,8 @@ namespace GridFreaks.GUILayer.Prendas
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.PictureBox pbPrenda;
         internal System.Windows.Forms.DataGridView dgvPrendas;
-        private System.Windows.Forms.NumericUpDown UpDownPrecioMax;
-        private System.Windows.Forms.NumericUpDown UpDownPrecioMin;
+        private System.Windows.Forms.NumericUpDown nudPrecioMax;
+        private System.Windows.Forms.NumericUpDown nudPrecioMin;
         internal System.Windows.Forms.CheckBox chkTodos;
     }
 }

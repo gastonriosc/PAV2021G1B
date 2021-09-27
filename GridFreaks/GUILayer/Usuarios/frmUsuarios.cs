@@ -85,22 +85,6 @@ namespace GridFreaks.GUILayer.Usuarios
             btnRegistrar.Enabled = true;
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            frmABMUsuario formulario = new frmABMUsuario();
-            formulario.ShowDialog();
-
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            frmABMUsuario formulario = new frmABMUsuario();
-            User usuario = (User)dgvUsuarios.CurrentRow.DataBoundItem;
-            formulario.SeleccionarUsuario(frmABMUsuario.FormMode.update, usuario);
-            formulario.ShowDialog();
-            btnConsultar_Click(sender, e);
-        }
-
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             
@@ -138,6 +122,21 @@ namespace GridFreaks.GUILayer.Usuarios
                 //dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
                 else
                 dgvUsuarios.DataSource = oUsuarioService.ObtenerTodos();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            frmABMUsuario formulario = new frmABMUsuario();
+            formulario.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmABMUsuario formulario = new frmABMUsuario();
+            User usuario = (User)dgvUsuarios.CurrentRow.DataBoundItem;
+            formulario.SeleccionarUsuario(frmABMUsuario.FormMode.update, usuario);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

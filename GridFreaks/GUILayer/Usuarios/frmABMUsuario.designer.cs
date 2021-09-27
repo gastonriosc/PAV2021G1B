@@ -41,10 +41,10 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fotoGridFricks = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoGridFricks)).BeginInit();
             this.SuspendLayout();
             // 
             // Label4
@@ -157,15 +157,15 @@
             this.txtApellido.Size = new System.Drawing.Size(192, 20);
             this.txtApellido.TabIndex = 28;
             // 
-            // pictureBox1
+            // fotoGridFricks
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::GridFreaks.Properties.Resources.LogoSample_ByTailorBrands_removebg_preview__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(267, 82);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 199);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.fotoGridFricks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.fotoGridFricks.Image = global::GridFreaks.Properties.Resources.LogoSample_ByTailorBrands_removebg_preview__1_;
+            this.fotoGridFricks.Location = new System.Drawing.Point(267, 82);
+            this.fotoGridFricks.Name = "fotoGridFricks";
+            this.fotoGridFricks.Size = new System.Drawing.Size(177, 199);
+            this.fotoGridFricks.TabIndex = 29;
+            this.fotoGridFricks.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -198,7 +198,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(438, 276);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.fotoGridFricks);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
@@ -220,7 +220,7 @@
             this.Name = "frmABMUsuario";
             this.Text = "Nuevo Usuario";
             this.Load += new System.EventHandler(this.frmABMUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoGridFricks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,6 +242,6 @@
         internal System.Windows.Forms.Label lblUsuario;
         internal System.Windows.Forms.TextBox txtUsuario;
         internal System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox fotoGridFricks;
     }
 }
