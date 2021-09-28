@@ -86,6 +86,12 @@
     <Compile Include="GUILayer\Login\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Marcas\frmABMMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Marcas\frmABMMarcas.Designer.cs">
+      <DependentUpon>frmABMMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Marcas\frmMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Marcas\frmABMMarcas.resx">
+      <DependentUpon>frmABMMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Marcas\frmMarcas.resx">
       <DependentUpon>frmMarcas.cs</DependentUpon>

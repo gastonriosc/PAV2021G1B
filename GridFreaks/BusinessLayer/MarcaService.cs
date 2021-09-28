@@ -22,5 +22,35 @@ namespace GridFreaks.BusinessLayer
         {
             return oMarcaDao.GetAll();
         }
+
+        internal IList<Marca> ConsultarConFiltrosSinParametros(String condiciones)
+        {
+            return oMarcaDao.GetByFiltersSinParametros(condiciones);
+        }
+
+        internal bool RecuperarMarca(Marca oMarca)
+        {
+            return oMarcaDao.GetMarcaParametrizado(oMarca);
+        }
+
+        internal bool ActualizarMarca(Marca oMarcaSelected)
+        {
+            return oMarcaDao.Update(oMarcaSelected);
+        }
+
+        internal int ObtenerUltimoIdMarca()
+        {
+            return oMarcaDao.GetLastIdMarca();
+        }
+
+        internal bool CrearMarca(Marca oMarca)
+        {
+            return oMarcaDao.Create(oMarca);
+        }
+
+        internal bool ModificarEstadoMarca(Marca oMarca)
+        {
+            return oMarcaDao.DarBaja(oMarca);
+        }
     }
 }

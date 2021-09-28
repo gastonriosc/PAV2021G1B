@@ -1,4 +1,5 @@
 ﻿using GridFreaks.GUILayer.Colores;
+using GridFreaks.GUILayer.Marcas;
 using GridFreaks.GUILayer.Prendas;
 using GridFreaks.GUILayer.Usuarios;
 using System;
@@ -23,6 +24,7 @@ namespace GridFreaks
             //Application.Run(new frmUsuarios());
             //Application.Run(new frmPrendas());
             //Application.Run(new frmColores());
+            //Application.Run(new frmMarcas());
         }
     }
 }

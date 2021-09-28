@@ -1,5 +1,6 @@
 ﻿using GridFreaks.GUILayer;
 using GridFreaks.GUILayer.Colores;
+using GridFreaks.GUILayer.Marcas;
 using GridFreaks.GUILayer.Prendas;
 using GridFreaks.GUILayer.Usuarios;
 using System;
@@ -89,6 +90,8 @@ namespace GridFreaks
 
         private void marcasTSMI_Click(object sender, EventArgs e)
         {
+            frmMarcas ventanaMarcas = new frmMarcas();
+            ventanaMarcas.ShowDialog();
 
         }
     }

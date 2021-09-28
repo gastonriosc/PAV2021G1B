@@ -41,5 +41,89 @@ namespace GridFreaks.DataAccessLayer
 
             return oMarca;
         }
+
+        public IList<Marca> GetByFiltersSinParametros(String condiciones)
+        {
+
+            List<Marca> lst = new List<Marca>();
+            String strSql = string.Concat("SELECT * ",
+                                          " FROM Marcas",
+                                          " WHERE borrado = 0");
+
+            strSql += condiciones;
+            //if (parametros.ContainsKey("idPerfil"))
+            //   strSql += " AND (u.id_perfil = @idPerfil) ";
+
+
+            // if (parametros.ContainsKey("usuario"))
+            //    strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
+
+            var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
+
+
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
+
+            return lst;
+        }
+
+        public bool GetMarcaParametrizado(Marca oMarca)
+        {
+            //Construimos la consulta sql para buscar el usuario en la base de datos.
+            String strSql = string.Concat("SELECT nombre, borrado",
+                                          " FROM Marcas",
+                                          " WHERE borrado = 0",
+                                          " AND nombre = " + "'" + oMarca.Nombre + "'");
+
+
+            //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
+            var resultado = DBHelper.GetDBHelper().ConsultaSQL(strSql);
+
+            // Validamos que el resultado tenga al menos una fila.
+            if (resultado.Rows.Count > 0)
+                return true;
+
+            return false;
+        }
+
+        internal bool Update(Marca oMarca)
+        {
+            //SIN PARAMETROS
+
+            string str_sql = "UPDATE Marcas " +
+                             "SET nombre = " + "'" + oMarca.Nombre + "'" +
+                             " WHERE id = " + "'" + oMarca.Id + "'";
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
+        internal int GetLastIdMarca()
+        {
+            String strSql = "SELECT MAX(id) FROM Marcas";
+
+            int ultimoId = int.Parse(DBHelper.GetDBHelper().ConsultaSQL(strSql).Rows[0][0].ToString());
+
+            return ultimoId;
+        }
+
+        internal bool Create(Marca oMarca)
+        {
+            string str_sql = "INSERT INTO Marcas (id, nombre, borrado)" +
+                            " VALUES (" +
+                            oMarca.Id + ", " +
+                            "'" + oMarca.Nombre + "'" + ", " +
+                            " 0)";
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
+
+        internal bool DarBaja(Marca oMarca)
+        {
+
+            string str_sql = "UPDATE Marcas " +
+                             "SET borrado = 1" +
+                             " WHERE id=" + "'" + oMarca.Id + "'";
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        }
     }
 }
