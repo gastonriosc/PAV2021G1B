@@ -36,6 +36,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.chkTodos = new System.Windows.Forms.CheckBox();
             this.nudPrecioMax = new System.Windows.Forms.NumericUpDown();
             this.nudPrecioMin = new System.Windows.Forms.NumericUpDown();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.lblPrecioMax = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboTemporada = new System.Windows.Forms.ComboBox();
@@ -50,7 +51,6 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.gbFiltrosPrendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMin)).BeginInit();
@@ -144,6 +144,18 @@ namespace GridFreaks.GUILayer.Prendas
             this.nudPrecioMin.Name = "nudPrecioMin";
             this.nudPrecioMin.Size = new System.Drawing.Size(113, 23);
             this.nudPrecioMin.TabIndex = 3;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
+            this.btnConsultar.Location = new System.Drawing.Point(522, 99);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(103, 32);
+            this.btnConsultar.TabIndex = 8;
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblPrecioMax
             // 
@@ -242,6 +254,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.dgvPrendas.Size = new System.Drawing.Size(644, 221);
             this.dgvPrendas.TabIndex = 4;
             this.dgvPrendas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrendas_CellClick);
+            this.dgvPrendas.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvPrendas_DataError);
             // 
             // pbPrenda
             // 
@@ -302,18 +315,6 @@ namespace GridFreaks.GUILayer.Prendas
             this.btnRegistrar.TabIndex = 9;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
-            this.btnConsultar.Location = new System.Drawing.Point(522, 99);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(103, 32);
-            this.btnConsultar.TabIndex = 8;
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // frmPrendas
             // 

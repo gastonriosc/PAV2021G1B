@@ -22,7 +22,7 @@ namespace GridFreaks.GUILayer.Usuarios
         {
             InitializeComponent();
             InitializeDataGridView();
-            pictureBox1.SendToBack();
+            pbGridFreaks.SendToBack();
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)

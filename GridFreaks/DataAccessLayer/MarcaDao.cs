@@ -15,9 +15,10 @@ namespace GridFreaks.DataAccessLayer
         {
             List<Marca> listadoMarcas = new List<Marca>();
 
-            String strSql = string.Concat(" SELECT id, ",
-                                          "        nombre ",
-                                          "  FROM Marcas");
+            String strSql = string.Concat("SELECT id, ",
+                                          " nombre ",
+                                          " FROM Marcas",
+                                          " where borrado = 0");
             // aca obtenemos la datatable de la consulta
             var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSql);
             // por cada fila materializa

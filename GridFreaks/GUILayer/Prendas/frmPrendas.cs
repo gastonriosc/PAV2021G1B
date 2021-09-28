@@ -244,5 +244,10 @@ namespace GridFreaks.GUILayer.Prendas
         {
             this.Close();
         }
+
+        private void dgvPrendas_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
     }
 }

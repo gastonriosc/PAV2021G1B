@@ -27,10 +27,10 @@ namespace GridFreaks.DataAccessLayer
                                           " M.nombre as marca,",
                                           " P.nombreImagen",
                                           " FROM Prendas P",
-                                          " INNER JOIN TipoPrenda TP ON (P.idTipoPrenda = TP.id)",
-                                          " INNER JOIN Colores C ON (P.idColor = C.id)",
-                                          " INNER JOIN Marcas M ON (P.idMarca = M.id)",
-                                          " WHERE borrado=0 ");
+                                          " JOIN TipoPrenda TP ON (P.idTipoPrenda = TP.id)",
+                                          " JOIN Colores C ON (P.idColor = C.id)",
+                                          " JOIN Marcas M ON (P.idMarca = M.id)",
+                                          " WHERE P.borrado=0 AND C.borrado=0 AND M.borrado=0");
             // aca obtenemos la datatable de la consulta
             var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSql);
             // por cada fila materializa
@@ -130,22 +130,6 @@ namespace GridFreaks.DataAccessLayer
 
         internal bool Create(Prenda oPrenda)
         {
-            //CON PARAMETROS
-            //string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil, estado, borrado)" +
-            //                 "     VALUES (@usuario, @password, @email, @id_perfil, 'S', 0)";
-
-            // var parametros = new Dictionary<string, object>();
-            //parametros.Add("usuario", oUsuario.NombreUsuario);
-            //parametros.Add("password", oUsuario.Password);
-            //parametros.Add("email", oUsuario.Email);
-            //parametros.Add("id_perfil", oUsuario.Perfil.IdPerfil);
-
-            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
-            //con parametros
-            //return (DBHelper.GetDBHelper().EjecutarSQLConParametros(str_sql, parametros) == 1);
-
-            //SIN PARAMETROS
-
             string str_sql = "INSERT INTO Prendas (id, idTipoPrenda, idColor, Temporada, Stock, Precio, idMarca, borrado, nombreImagen)" +
                             " VALUES ("+
                             oPrenda.Id + ", " +
@@ -157,7 +141,6 @@ namespace GridFreaks.DataAccessLayer
                             oPrenda.Marca.Id + ", " +
                             " 0, " +
                             "'" + oPrenda.NombreImagen + "')";
-
 
             return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
         }
@@ -181,7 +164,7 @@ namespace GridFreaks.DataAccessLayer
                                           " INNER JOIN TipoPrenda TP ON (P.idTipoPrenda = TP.id)",
                                           " INNER JOIN Colores C ON (P.idColor = C.id)",
                                           " INNER JOIN Marcas M ON (P.idMarca = M.id)",
-                                          " WHERE borrado=0 ");
+                                          " WHERE P.borrado=0 AND C.borrado=0 AND M.borrado=0");
 
             strSql += condiciones;
             //if (parametros.ContainsKey("idPerfil"))

@@ -30,7 +30,7 @@ namespace GridFreaks.GUILayer.Colores
         private void InitializeComponent()
         {
             this.lblNuevoColor = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNuevoColor = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -47,13 +47,13 @@ namespace GridFreaks.GUILayer.Colores
             this.lblNuevoColor.TabIndex = 8;
             this.lblNuevoColor.Text = "Nuevo Color";
             // 
-            // textBox3
+            // txtNuevoColor
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(27, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 23);
-            this.textBox3.TabIndex = 10;
+            this.txtNuevoColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNuevoColor.Location = new System.Drawing.Point(27, 68);
+            this.txtNuevoColor.Name = "txtNuevoColor";
+            this.txtNuevoColor.Size = new System.Drawing.Size(182, 23);
+            this.txtNuevoColor.TabIndex = 10;
             // 
             // btnAceptar
             // 
@@ -64,6 +64,7 @@ namespace GridFreaks.GUILayer.Colores
             this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "OK";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -83,11 +84,12 @@ namespace GridFreaks.GUILayer.Colores
             this.ClientSize = new System.Drawing.Size(232, 162);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtNuevoColor);
             this.Controls.Add(this.lblNuevoColor);
             this.Name = "frmABMColores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Color";
+            this.Load += new System.EventHandler(this.frmABMColores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,7 +98,7 @@ namespace GridFreaks.GUILayer.Colores
         #endregion
 
         private System.Windows.Forms.Label lblNuevoColor;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNuevoColor;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

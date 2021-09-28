@@ -138,109 +138,26 @@ namespace GridFreaks.GUILayer.Prendas
         
         private void btnFoto_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fo = new OpenFileDialog();
-            DialogResult rs = fo.ShowDialog();
-            if (rs == DialogResult.OK)
+            try
             {
-                
-                pbPrenda.Image = Image.FromFile(fo.FileName);
-                //string nombreImagen = Path.GetFileName(fo.FileName);
-                pbPrenda.Tag = Path.GetFileName(fo.FileName);
+                OpenFileDialog fo = new OpenFileDialog();
+                DialogResult rs = fo.ShowDialog();
+                if (rs == DialogResult.OK)
+                {
 
+                    pbPrenda.Image = Image.FromFile(fo.FileName);
+                    //string nombreImagen = Path.GetFileName(fo.FileName);
+                    pbPrenda.Tag = Path.GetFileName(fo.FileName);
+
+                }
+
+                Size = new Size(778, 508);
             }
-            
-            Size = new Size(778, 508);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el archivo. Intente nuevamente.");
+            }
         }
-
-      //  private void btnRegistrar_Click(object sender, EventArgs e)
-       // {
-            //switch (formMode)
-            //{
-            //    case FormMode.insert:
-            //        {
-            //            if (ValidarCampos())
-            //            {
-            //                if (ExistePrenda() == false)
-            //                {
-            //                    var oPrenda = new Prenda();
-            //                    oPrenda.Id = oPrendaService.ObtenerUltimoIdPrenda() + 1;
-            //                    oPrenda.TipoPrenda = new TipoPrenda();
-            //                    oPrenda.TipoPrenda.Id = (int)cmbTipoPrenda.SelectedValue;
-            //                    oPrenda.Color = new ColorPrenda();
-            //                    oPrenda.Color.Id = (int)cmbColor.SelectedValue;
-            //                    oPrenda.Temporada = cmbTemporada.Text;
-            //                    oPrenda.Marca = new Marca();
-            //                    oPrenda.Marca.Id = (int)cmbMarca.SelectedValue;
-            //                    oPrenda.Stock = (int)nudStock.Value;
-            //                    oPrenda.Precio = (float)nudPrecio.Value;
-            //                    // guarda unicamente el nombre de la imagen
-            //                    // oPrenda.NombreImagen = Path.GetFileName(fo.FileName);
-            //                    //oPrenda.NombreImagen = nombreImagen;
-            //                    oPrenda.NombreImagen = (string) pbPrenda.Tag; // AGREGAR FOTO 
-
-            //                    if (oPrendaService.CrearPrenda(oPrenda))
-            //                    {
-            //                        MessageBox.Show("Prenda insertada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                        this.Close();
-            //                    }
-            //                    else
-            //                        MessageBox.Show("Error al actualizar la prenda!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                }
-            //                else
-            //                    MessageBox.Show("Prenda ya registrada anteriormente!. Ingrese una prenda diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            }
-            //            else
-            //                MessageBox.Show("Faltan campos por completar!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            break;
-            //        }
-
-            //    case FormMode.update:
-            //        {
-            //            if (ValidarCampos())
-            //            {
-            //                oPrendaSelected.TipoPrenda = new TipoPrenda();
-            //                oPrendaSelected.TipoPrenda.Id = (int)cmbTipoPrenda.SelectedValue;
-            //                oPrendaSelected.Color = new ColorPrenda();
-            //                oPrendaSelected.Color.Id = (int)cmbColor.SelectedValue;
-            //                oPrendaSelected.Temporada = cmbTemporada.Text;
-            //                oPrendaSelected.Marca = new Marca();
-            //                oPrendaSelected.Marca.Id = (int)cmbMarca.SelectedValue;
-            //                oPrendaSelected.Stock = (int)nudStock.Value;
-            //                oPrendaSelected.Precio = (float)nudPrecio.Value;
-            //                //oPrendaSelected.NombreImagen = nombreImagen;
-            //                oPrendaSelected.NombreImagen = (string)pbPrenda.Tag; // AGREGAR FOTO
-                            
-            //                if (oPrendaService.ActualizarPrenda(oPrendaSelected))
-            //                {
-            //                    MessageBox.Show("Prenda actualizada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                    this.Dispose();
-            //                }
-            //                else
-            //                    MessageBox.Show("Error al actualizar la prenda.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            }
-            //            else
-            //                MessageBox.Show("Faltan campos por completar!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            break;
-            //        }
-
-            //    case FormMode.delete:
-            //        {
-            //            if (MessageBox.Show("¿Seguro que desea borrar la prenda seleccioada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            //            {
-
-            //                if (oPrendaService.ModificarEstadoPrenda(oPrendaSelected))
-            //                {
-            //                    MessageBox.Show("Prenda borrada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                    this.Close();
-            //                }
-            //                else
-            //                    MessageBox.Show("Error al borrar la prenda.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            }
-
-            //            break;
-            //        }
-            //}
-       // }
 
         private bool ExistePrenda()
         {
@@ -256,7 +173,7 @@ namespace GridFreaks.GUILayer.Prendas
             oPrenda.Stock = (int)nudStock.Value;
             oPrenda.Precio = (float)nudPrecio.Value;
             //oPrenda.NombreImagen = nombreImagen;
-            oPrenda.NombreImagen = (string)pbPrenda.Tag; // AGREGAR FOTO
+            oPrenda.NombreImagen = (string)pbPrenda.Tag;
 
             return oPrendaService.ObtenerPrenda(oPrenda);
         }
@@ -300,12 +217,12 @@ namespace GridFreaks.GUILayer.Prendas
                                 // guarda unicamente el nombre de la imagen
                                 // oPrenda.NombreImagen = Path.GetFileName(fo.FileName);
                                 //oPrenda.NombreImagen = nombreImagen;
-                                oPrenda.NombreImagen = (string)pbPrenda.Tag; // AGREGAR FOTO 
+                                oPrenda.NombreImagen = (string)pbPrenda.Tag;
 
                                 if (oPrendaService.CrearPrenda(oPrenda))
                                 {
                                     MessageBox.Show("Prenda insertada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
+                                    //this.Close();
                                 }
                                 else
                                     MessageBox.Show("Error al actualizar la prenda!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -331,13 +248,16 @@ namespace GridFreaks.GUILayer.Prendas
                             oPrendaSelected.Marca.Id = (int)cmbMarca.SelectedValue;
                             oPrendaSelected.Stock = (int)nudStock.Value;
                             oPrendaSelected.Precio = (float)nudPrecio.Value;
-                            //oPrendaSelected.NombreImagen = nombreImagen;
-                            oPrendaSelected.NombreImagen = (string)pbPrenda.Tag; // AGREGAR FOTO
+                            if (pbPrenda.Tag != null)
+                            {
+                                oPrendaSelected.NombreImagen = (string)pbPrenda.Tag;
+                            }
+                            //oPrendaSelected.NombreImagen = (string)pbPrenda.Tag;
 
                             if (oPrendaService.ActualizarPrenda(oPrendaSelected))
                             {
                                 MessageBox.Show("Prenda actualizada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Dispose();
+                                this.Close();
                             }
                             else
                                 MessageBox.Show("Error al actualizar la prenda.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

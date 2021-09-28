@@ -38,14 +38,14 @@ namespace GridFreaks.GUILayer.Usuarios
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbGridFreaks = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGridFreaks)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -124,14 +124,14 @@ namespace GridFreaks.GUILayer.Usuarios
             this.dgvUsuarios.TabIndex = 8;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
-            // pictureBox1
+            // pbGridFreaks
             // 
-            this.pictureBox1.Image = global::GridFreaks.Properties.Resources.LogoSample_ByTailorBrands_removebg_preview__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(499, 156);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 201);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.pbGridFreaks.Image = global::GridFreaks.Properties.Resources.LogoSample_ByTailorBrands_removebg_preview__1_;
+            this.pbGridFreaks.Location = new System.Drawing.Point(499, 156);
+            this.pbGridFreaks.Name = "pbGridFreaks";
+            this.pbGridFreaks.Size = new System.Drawing.Size(171, 201);
+            this.pbGridFreaks.TabIndex = 13;
+            this.pbGridFreaks.TabStop = false;
             // 
             // btnSalir
             // 
@@ -200,7 +200,7 @@ namespace GridFreaks.GUILayer.Usuarios
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(670, 358);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbGridFreaks);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnModificar);
@@ -221,7 +221,7 @@ namespace GridFreaks.GUILayer.Usuarios
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGridFreaks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,6 +242,6 @@ namespace GridFreaks.GUILayer.Usuarios
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnSalir;
         internal System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbGridFreaks;
     }
 }
