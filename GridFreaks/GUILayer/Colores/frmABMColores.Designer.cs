@@ -75,6 +75,7 @@ namespace GridFreaks.GUILayer.Colores
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancel";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmABMColores
             // 

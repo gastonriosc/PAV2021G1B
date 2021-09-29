@@ -99,6 +99,7 @@ namespace GridFreaks.GUILayer.Colores
         {
             frmABMColores ventanaABM = new frmABMColores();
             ventanaABM.ShowDialog();
+            txtBusqueda.Text = "";
             btnConsultar_Click(sender, e);
         }
 

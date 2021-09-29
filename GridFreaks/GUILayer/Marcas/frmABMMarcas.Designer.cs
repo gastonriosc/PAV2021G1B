@@ -41,7 +41,7 @@ namespace GridFreaks.GUILayer.Marcas
             this.lblNuevaMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblNuevaMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNuevaMarca.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNuevaMarca.Location = new System.Drawing.Point(103, 28);
+            this.lblNuevaMarca.Location = new System.Drawing.Point(61, 30);
             this.lblNuevaMarca.Name = "lblNuevaMarca";
             this.lblNuevaMarca.Size = new System.Drawing.Size(122, 24);
             this.lblNuevaMarca.TabIndex = 9;
@@ -50,7 +50,7 @@ namespace GridFreaks.GUILayer.Marcas
             // txtNuevaMarca
             // 
             this.txtNuevaMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNuevaMarca.Location = new System.Drawing.Point(76, 75);
+            this.txtNuevaMarca.Location = new System.Drawing.Point(34, 77);
             this.txtNuevaMarca.Name = "txtNuevaMarca";
             this.txtNuevaMarca.Size = new System.Drawing.Size(182, 23);
             this.txtNuevaMarca.TabIndex = 11;
@@ -58,7 +58,7 @@ namespace GridFreaks.GUILayer.Marcas
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(76, 117);
+            this.btnAceptar.Location = new System.Drawing.Point(34, 119);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(70, 23);
             this.btnAceptar.TabIndex = 12;
@@ -69,24 +69,26 @@ namespace GridFreaks.GUILayer.Marcas
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(188, 117);
+            this.btnCancelar.Location = new System.Drawing.Point(146, 119);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(70, 23);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancel";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmABMCMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(334, 172);
+            this.ClientSize = new System.Drawing.Size(252, 172);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtNuevaMarca);
             this.Controls.Add(this.lblNuevaMarca);
             this.Name = "frmABMCMarcas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Marca";
             this.Load += new System.EventHandler(this.frmABMCMarcas_Load);
             this.ResumeLayout(false);

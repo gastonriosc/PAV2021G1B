@@ -103,6 +103,7 @@ namespace GridFreaks.GUILayer.Marcas
         {
             frmABMCMarcas ventanaABM = new frmABMCMarcas();
             ventanaABM.ShowDialog();
+            txtBusqueda.Text = "";
             btnConsultar_Click(sender, e);
         }
 
