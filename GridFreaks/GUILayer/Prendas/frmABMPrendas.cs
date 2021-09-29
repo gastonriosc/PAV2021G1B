@@ -181,7 +181,7 @@ namespace GridFreaks.GUILayer.Prendas
         private bool ValidarCampos()
         {
             // campos obligatorios, si alguno no esta modificado, devuelve false
-            if (cmbTipoPrenda.SelectedIndex == -1 || cmbColor.SelectedIndex == -1 || cmbTemporada.SelectedIndex == -1 || cmbMarca.SelectedIndex == -1 || nudPrecio.Value == 0 || nudStock.Value == 0) // agregar validacion foto
+            if (cmbTipoPrenda.SelectedIndex == -1 || cmbColor.SelectedIndex == -1 || cmbTemporada.SelectedIndex == -1 || cmbMarca.SelectedIndex == -1 || nudPrecio.Value == 0 || nudStock.Value == 0 || pbPrenda.Image == null) // agregar validacion foto
             {
                 return false;
             }
@@ -222,7 +222,7 @@ namespace GridFreaks.GUILayer.Prendas
                                 if (oPrendaService.CrearPrenda(oPrenda))
                                 {
                                     MessageBox.Show("Prenda insertada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    //this.Close();
+                                    this.Close();
                                 }
                                 else
                                     MessageBox.Show("Error al actualizar la prenda!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -252,6 +252,7 @@ namespace GridFreaks.GUILayer.Prendas
                             {
                                 oPrendaSelected.NombreImagen = (string)pbPrenda.Tag;
                             }
+                            
                             //oPrendaSelected.NombreImagen = (string)pbPrenda.Tag;
 
                             if (oPrendaService.ActualizarPrenda(oPrendaSelected))

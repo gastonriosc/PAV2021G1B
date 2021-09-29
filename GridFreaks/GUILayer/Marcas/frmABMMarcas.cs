@@ -54,7 +54,7 @@ namespace GridFreaks.GUILayer.Marcas
                 case FormMode.update:
                     {
                         this.Text = "Modificar Marca";
-                        lblNuevaMarca.Text = "Editar Color";
+                        lblNuevaMarca.Text = "Editar Marca";
                         // Recupera el color seleccionado en la grilla 
                         txtNuevaMarca.Text = oMarcaSelected.Nombre;
                         break;
@@ -62,8 +62,8 @@ namespace GridFreaks.GUILayer.Marcas
 
                 case FormMode.delete:
                     {
-                        this.Text = "Borrar Color";
-                        lblNuevaMarca.Text = "Borrar Color";
+                        this.Text = "Borrar Marca";
+                        lblNuevaMarca.Text = "Borrar Marca";
                         txtNuevaMarca.Text = oMarcaSelected.Nombre;
                         txtNuevaMarca.Enabled = false;
                         break;

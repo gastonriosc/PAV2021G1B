@@ -42,11 +42,13 @@ namespace GridFreaks.GUILayer.Marcas
             // 
             // dgvMarcas
             // 
+            this.dgvMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(24, 26);
+            this.dgvMarcas.Location = new System.Drawing.Point(32, 32);
+            this.dgvMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvMarcas.Name = "dgvMarcas";
-            this.dgvMarcas.RowHeadersWidth = 51;
-            this.dgvMarcas.Size = new System.Drawing.Size(143, 306);
+            this.dgvMarcas.RowHeadersWidth = 4;
+            this.dgvMarcas.Size = new System.Drawing.Size(191, 377);
             this.dgvMarcas.TabIndex = 1;
             this.dgvMarcas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarcas_CellClick);
             // 
@@ -56,25 +58,28 @@ namespace GridFreaks.GUILayer.Marcas
             this.lblBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblBuscar.Location = new System.Drawing.Point(196, 26);
+            this.lblBuscar.Location = new System.Drawing.Point(261, 32);
+            this.lblBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(76, 17);
+            this.lblBuscar.Size = new System.Drawing.Size(96, 22);
             this.lblBuscar.TabIndex = 6;
             this.lblBuscar.Text = "Busqueda:";
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(187, 58);
+            this.txtBusqueda.Location = new System.Drawing.Point(249, 71);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(125, 23);
+            this.txtBusqueda.Size = new System.Drawing.Size(165, 27);
             this.txtBusqueda.TabIndex = 7;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(187, 200);
+            this.btnEditar.Location = new System.Drawing.Point(265, 246);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(123, 26);
+            this.btnEditar.Size = new System.Drawing.Size(134, 31);
             this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -86,9 +91,10 @@ namespace GridFreaks.GUILayer.Marcas
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Image = global::GridFreaks.Properties.Resources.EliminarMarca;
-            this.btnEliminar.Location = new System.Drawing.Point(185, 241);
+            this.btnEliminar.Location = new System.Drawing.Point(247, 297);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(125, 31);
+            this.btnEliminar.Size = new System.Drawing.Size(167, 38);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -99,9 +105,10 @@ namespace GridFreaks.GUILayer.Marcas
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.Image = global::GridFreaks.Properties.Resources.NuevaMarca;
-            this.btnRegistrar.Location = new System.Drawing.Point(185, 151);
+            this.btnRegistrar.Location = new System.Drawing.Point(247, 183);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(125, 31);
+            this.btnRegistrar.Size = new System.Drawing.Size(167, 38);
             this.btnRegistrar.TabIndex = 10;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
@@ -112,9 +119,10 @@ namespace GridFreaks.GUILayer.Marcas
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = global::GridFreaks.Properties.Resources.Salir;
-            this.btnSalir.Location = new System.Drawing.Point(232, 310);
+            this.btnSalir.Location = new System.Drawing.Point(309, 382);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(88, 23);
+            this.btnSalir.Size = new System.Drawing.Size(117, 28);
             this.btnSalir.TabIndex = 9;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -125,19 +133,20 @@ namespace GridFreaks.GUILayer.Marcas
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Buscar;
-            this.btnConsultar.Location = new System.Drawing.Point(222, 101);
+            this.btnConsultar.Location = new System.Drawing.Point(282, 124);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(88, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(117, 28);
             this.btnConsultar.TabIndex = 8;
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // frmMarcas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(324, 355);
+            this.ClientSize = new System.Drawing.Size(432, 437);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnRegistrar);
@@ -146,7 +155,7 @@ namespace GridFreaks.GUILayer.Marcas
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.dgvMarcas);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMarcas";
             this.Text = "Marcas";
             this.Load += new System.EventHandler(this.frmMarcas_Load);
