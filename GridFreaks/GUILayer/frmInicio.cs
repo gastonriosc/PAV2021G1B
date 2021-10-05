@@ -27,7 +27,7 @@ namespace GridFreaks
             frmLogin login = new frmLogin();
             login.ShowDialog();
             habilitarTodosCampos();
-            this.Text = "Inicio - Logueado";
+            this.Text = "Inicio - Logueado: " + login.UsuarioLogueado;
         }
 
         private void frmInicio_Load(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace GridFreaks
             this.prendasTSMI.Enabled = true;
             this.coloresTSMI.Enabled = true;
             this.marcasTSMI.Enabled = true;
+            this.facturasTSMI.Enabled = true;
         }
 
         private void frmInicio_FormClosing(object sender, FormClosingEventArgs e)

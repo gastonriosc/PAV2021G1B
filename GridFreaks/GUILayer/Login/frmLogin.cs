@@ -52,7 +52,7 @@ namespace GridFreaks.GUILayer
             if (usr != null)
             {
                 // Login OK
-                UsuarioLogueado = usr.Nombre;
+                UsuarioLogueado = usr.Usuario;
                 this.Close();
             }
             else
