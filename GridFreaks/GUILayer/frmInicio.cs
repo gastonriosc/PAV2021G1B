@@ -1,5 +1,6 @@
 ﻿using GridFreaks.GUILayer;
 using GridFreaks.GUILayer.Colores;
+using GridFreaks.GUILayer.Facturas;
 using GridFreaks.GUILayer.Marcas;
 using GridFreaks.GUILayer.Prendas;
 using GridFreaks.GUILayer.Usuarios;
@@ -84,16 +85,17 @@ namespace GridFreaks
             ventanaColores.ShowDialog();
         }
 
-        private void sesionTSMI_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void marcasTSMI_Click(object sender, EventArgs e)
         {
             frmMarcas ventanaMarcas = new frmMarcas();
             ventanaMarcas.ShowDialog();
 
+        }
+
+        private void facturasTSMI_Click(object sender, EventArgs e)
+        {
+            frmFacturas ventanaFacturas = frmFacturas.GetfrmFacturas();
+            ventanaFacturas.ShowDialog();
         }
     }
 }

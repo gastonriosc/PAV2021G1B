@@ -38,8 +38,8 @@ namespace GridFreaks
             this.prendasTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.coloresTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +71,6 @@ namespace GridFreaks
             this.sesionTSMI.Name = "sesionTSMI";
             this.sesionTSMI.Size = new System.Drawing.Size(53, 20);
             this.sesionTSMI.Text = "Sesión";
-            this.sesionTSMI.Click += new System.EventHandler(this.sesionTSMI_Click);
             // 
             // iniciarSesionTSMI
             // 
@@ -127,14 +126,6 @@ namespace GridFreaks
             this.marcasTSMI.Text = "Marcas";
             this.marcasTSMI.Click += new System.EventHandler(this.marcasTSMI_Click);
             // 
-            // salirTSMI
-            // 
-            this.salirTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.salirTSMI.Name = "salirTSMI";
-            this.salirTSMI.Size = new System.Drawing.Size(41, 20);
-            this.salirTSMI.Text = "Salir";
-            this.salirTSMI.Click += new System.EventHandler(this.salirTSMI_Click);
-            // 
             // facturasTSMI
             // 
             this.facturasTSMI.Enabled = false;
@@ -142,6 +133,15 @@ namespace GridFreaks
             this.facturasTSMI.Name = "facturasTSMI";
             this.facturasTSMI.Size = new System.Drawing.Size(63, 20);
             this.facturasTSMI.Text = "Facturas";
+            this.facturasTSMI.Click += new System.EventHandler(this.facturasTSMI_Click);
+            // 
+            // salirTSMI
+            // 
+            this.salirTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.salirTSMI.Name = "salirTSMI";
+            this.salirTSMI.Size = new System.Drawing.Size(41, 20);
+            this.salirTSMI.Text = "Salir";
+            this.salirTSMI.Click += new System.EventHandler(this.salirTSMI_Click);
             // 
             // frmInicio
             // 
