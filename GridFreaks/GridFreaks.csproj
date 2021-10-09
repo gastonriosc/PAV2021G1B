@@ -46,20 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\ClienteService.cs" />
     <Compile Include="BusinessLayer\ColorService.cs" />
+    <Compile Include="BusinessLayer\FacturaService.cs" />
     <Compile Include="BusinessLayer\MarcaService.cs" />
     <Compile Include="BusinessLayer\PrendaService.cs" />
+    <Compile Include="BusinessLayer\TipoFacturaService.cs" />
     <Compile Include="BusinessLayer\TipoPrendaService.cs" />
     <Compile Include="BusinessLayer\UserService.cs" />
+    <Compile Include="DataAccessLayer\ClienteDao.cs" />
     <Compile Include="DataAccessLayer\ColorDao.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\FacturaDao.cs" />
     <Compile Include="DataAccessLayer\MarcaDao.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="DataAccessLayer\TipoFacturaDao.cs" />
     <Compile Include="DataAccessLayer\TipoPrendaDao.cs" />
     <Compile Include="DataAccessLayer\UserDao.cs" />
+    <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\ColorPrenda.cs" />
+    <Compile Include="Entities\DetalleFactura.cs" />
+    <Compile Include="Entities\Factura.cs" />
     <Compile Include="Entities\Marca.cs" />
     <Compile Include="Entities\Prenda.cs" />
+    <Compile Include="Entities\TipoFactura.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="GUILayer\Colores\frmABMColores.cs">
@@ -73,6 +83,18 @@
     </Compile>
     <Compile Include="GUILayer\Colores\frmColores.Designer.cs">
       <DependentUpon>frmColores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Facturas\frmFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Facturas\frmFacturas.Designer.cs">
+      <DependentUpon>frmFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Facturas\frmPrendasSelec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Facturas\frmPrendasSelec.Designer.cs">
+      <DependentUpon>frmPrendasSelec.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\frmInicio.cs">
       <SubType>Form</SubType>
@@ -130,6 +152,12 @@
     <EmbeddedResource Include="GUILayer\Colores\frmColores.resx">
       <DependentUpon>frmColores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Facturas\frmFacturas.resx">
+      <DependentUpon>frmFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Facturas\frmPrendasSelec.resx">
+      <DependentUpon>frmPrendasSelec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,9 +205,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ImagenesPrendas\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\EliminarUsuario.png" />
     <None Include="Resources\LogoSample_ByTailorBrands-removebg-preview %281%29.png" />
@@ -199,6 +225,7 @@
     <None Include="Resources\NuevaFoto.png" />
     <None Include="Resources\NuevaMarca.png" />
     <None Include="Resources\EliminarMarca.png" />
+    <None Include="ImagenesPrendas\BuzoNegroBH.png" />
     <Content Include="Resources\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

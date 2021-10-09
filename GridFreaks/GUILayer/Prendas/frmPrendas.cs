@@ -219,6 +219,7 @@ namespace GridFreaks.GUILayer.Prendas
         {
             frmABMPrendas ventanaABMprendas = new frmABMPrendas();
             ventanaABMprendas.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

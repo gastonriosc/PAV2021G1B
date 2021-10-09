@@ -62,7 +62,7 @@ namespace GridFreaks.GUILayer.Prendas
             {
                 case FormMode.insert:
                     {
-                        Size = new Size(296,508);
+                        Size = new Size(295,508);
                         this.Text = "Nueva Prenda";
                         break;
                     }

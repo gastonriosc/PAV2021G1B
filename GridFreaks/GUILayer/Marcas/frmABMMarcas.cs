@@ -22,7 +22,7 @@ namespace GridFreaks.GUILayer.Marcas
         public frmABMCMarcas()
         {
             InitializeComponent();
-
+            Location = new Point(970, 300);
             oMarcaService = new MarcaService();
         }
 
@@ -154,6 +154,11 @@ namespace GridFreaks.GUILayer.Marcas
                         break;
                     }
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

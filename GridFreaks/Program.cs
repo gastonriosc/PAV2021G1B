@@ -1,4 +1,5 @@
 ﻿using GridFreaks.GUILayer.Colores;
+using GridFreaks.GUILayer.Facturas;
 using GridFreaks.GUILayer.Marcas;
 using GridFreaks.GUILayer.Prendas;
 using GridFreaks.GUILayer.Usuarios;
@@ -20,12 +21,14 @@ namespace GridFreaks
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInicio());
+            
+            //Application.Run(new frmInicio());
             //Application.Run(new frmUsuarios());
             //Application.Run(new frmPrendas());
             //Application.Run(new frmColores());
             //Application.Run(new frmMarcas());
-            
+            Application.Run(frmFacturas.GetfrmFacturas());
+
         }
     }
 }
