@@ -16,5 +16,10 @@ namespace GridFreaks.Entities
         public float Precio { get; set; }
         public Marca Marca { get; set; }
         public string NombreImagen { get; set; }
+
+        public override string ToString()
+        {
+            return TipoPrenda.Nombre + " " + Color.Nombre + " " + Marca.Nombre; ;
+        }
     }
 }

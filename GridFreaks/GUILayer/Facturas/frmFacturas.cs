@@ -61,7 +61,15 @@ namespace GridFreaks.GUILayer.Facturas
             txtNroFactura.Text = (oFacturaService.ObtenerUltimoIdFactura()+1).ToString();
 
             dgvDetalle.DataSource = listaDetalleFactura;
-           
+
+            // Cambia el estilo de la cabecera de la grilla.
+            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
+            columnHeaderStyle.BackColor = System.Drawing.Color.Gray;
+            columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
+            cellStyle.ForeColor = Color.Black;
+            dgvDetalle.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+            dgvDetalle.DefaultCellStyle = cellStyle;
 
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
         }
@@ -80,6 +88,7 @@ namespace GridFreaks.GUILayer.Facturas
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+            instance = null;
         }
 
         private void btnSelecPrenda_Click(object sender, EventArgs e)
@@ -90,10 +99,13 @@ namespace GridFreaks.GUILayer.Facturas
 
             if (oPrendaSelected != null)
             {
-                txtPrendaSelected.Text = oPrendaSelected.TipoPrenda.Nombre + " " + oPrendaSelected.Color.Nombre + " " + oPrendaSelected.Marca.Nombre;
+                txtPrendaSelected.Text = oPrendaSelected.ToString();
                 txtPrecio.Text = oPrendaSelected.Precio.ToString();
                 int importe = (int)oPrendaSelected.Precio * (int)nudCantidad.Value;
                 txtImporte.Text = importe.ToString();
+                _btnAgregar.Enabled = true;
+                _btnQuitar.Enabled = true;
+                _btnCancelar.Enabled = true;
             }
         }
 
@@ -111,11 +123,11 @@ namespace GridFreaks.GUILayer.Facturas
 
         private void _btnAgregar_Click(object sender, EventArgs e)
         {
-
+            int ultimoIdDetalle = oDetalleFacturaService.ObtenerUltimoIdDetalleFactura();
             listaDetalleFactura.Add(new DetalleFactura()
             {
-                IdDetalle = oDetalleFacturaService.ObtenerUltimoIdDetalleFactura() + 1,
-                NroFactura = listaDetalleFactura.Count + 1,
+                IdDetalle = ultimoIdDetalle + listaDetalleFactura.Count + 1,
+                NroFactura = int.Parse(txtNroFactura.Text),
                 Cantidad = (int)nudCantidad.Value,
                 Prenda = oPrendaSelected
 
@@ -132,6 +144,7 @@ namespace GridFreaks.GUILayer.Facturas
             var subtotal = listaDetalleFactura.Sum(p => p.Subtotal);
             txtSubtotal.Text = subtotal.ToString();
 
+            txtDescuento.Enabled = true;
             double descuento = 0;
             double.TryParse(txtDescuento.Text, out descuento);
 
@@ -144,22 +157,27 @@ namespace GridFreaks.GUILayer.Facturas
         {
             
             nudCantidad.Value = 1;
-            txtPrendaSelected.Text = 0.ToString("N2");
+            txtPrendaSelected.Text = "";
             txtPrecio.Text = 0.ToString("N2");
             txtImporte.Text = 0.ToString("N2");
+            _btnAgregar.Enabled = false;
         }
 
         private void InicializarFormulario()
         {
 
-            
+            txtSubtotal.Text = (0).ToString("N2");
             txtDescuento.Text = (0).ToString("N2");
             txtNroFactura.Text = (oFacturaService.ObtenerUltimoIdFactura() + 1).ToString();
             cmbTipoFactura.SelectedIndex = -1;
-
+            dtpFecha.Value = DateTime.Today;
             cmbCliente.SelectedIndex = -1;
             txtDireccion.Text = "";
             txtCUIT.Text = "";
+
+            _btnAgregar.Enabled = false;
+            _btnQuitar.Enabled = false;
+            _btnCancelar.Enabled = false;
 
             InicializarDetalle();
 
@@ -172,24 +190,18 @@ namespace GridFreaks.GUILayer.Facturas
             InicializarFormulario();
         }
 
-
-        private bool ValidarDatos()
-        {
-            return true;
-        }
-
         private void btnGrabar_Click_1(object sender, EventArgs e)
         {
             try
             {
                 var factura = new Factura
                 {
-                    // hace falta pasar NroFactura?,
+                    NroFactura = int.Parse(txtNroFactura.Text),
                     Fecha = dtpFecha.Value,
                     Cliente = (Cliente)cmbCliente.SelectedItem,
                     TipoFactura = (TipoFactura)cmbTipoFactura.SelectedItem,
                     Detalles = listaDetalleFactura,
-                    Total = double.Parse(txtSubtotal.Text),
+                    Total = double.Parse(txtImporteTotal.Text),
                     Descuento = double.Parse(txtDescuento.Text)
                 };
 
@@ -197,7 +209,7 @@ namespace GridFreaks.GUILayer.Facturas
                 {
                     oFacturaService.Crear(factura);
 
-                    MessageBox.Show(string.Concat("La factura nro: ", factura.NroFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(string.Concat("La factura nro ", factura.NroFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     InicializarFormulario();
                 }
@@ -216,14 +228,22 @@ namespace GridFreaks.GUILayer.Facturas
                 var detalleSeleccionado = (DetalleFactura)dgvDetalle.CurrentRow.DataBoundItem;
                 listaDetalleFactura.Remove(detalleSeleccionado);
             }
+            CalcularTotales();
         }
 
         private void _btnCancelar_Click(object sender, EventArgs e)
         {
             InicializarDetalle();
         }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+            double total = double.Parse(txtSubtotal.Text) - double.Parse(txtSubtotal.Text) * double.Parse(txtDescuento.Text) / 100;
+            txtImporteTotal.Text = total.ToString();
+        }
+
     }
 
-    
+
 
 }

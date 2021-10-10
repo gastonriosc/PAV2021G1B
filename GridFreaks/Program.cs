@@ -22,7 +22,7 @@ namespace GridFreaks
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            Application.Run(frmInicio.GetfrmInicio());
+            Application.Run(new frmInicio());
             //Application.Run(new frmUsuarios());
             //Application.Run(new frmPrendas());
             //Application.Run(new frmColores());

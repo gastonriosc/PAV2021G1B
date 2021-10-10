@@ -14,7 +14,6 @@ namespace GridFreaks.Entities
         public TipoFactura TipoFactura { get; set; }
         public double Total { get; set; }
         public double Descuento { get; set; }
-        public User Usuario { get; set; }
         public IList<DetalleFactura> Detalles { get; set; }
 
         public double ImporteTotal

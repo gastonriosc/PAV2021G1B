@@ -21,9 +21,9 @@ namespace GridFreaks.DataAccessLayer
         {
             dbConnection = new SqlConnection();
             // cadena Targon
-            string_conexion = @"Data Source=DESKTOP-VGC54OT\SQLEXPRESS;Initial Catalog=gridFreaks2;Integrated Security=True";
+            //string_conexion = @"Data Source=DESKTOP-VGC54OT\SQLEXPRESS;Initial Catalog=gridFreaks2;Integrated Security=True";
             // cadena Rios
-            //string_conexion = @"Data Source=DESKTOP-0AAMHAV\SQLEXPRESS;Initial Catalog=gridFreaks2;Integrated Security=True";
+            string_conexion = @"Data Source=DESKTOP-0AAMHAV\SQLEXPRESS;Initial Catalog=gridFreaks;Integrated Security=True";
 
             dbConnection.ConnectionString = string_conexion;
         }

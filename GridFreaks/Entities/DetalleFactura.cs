@@ -13,7 +13,7 @@ namespace GridFreaks.Entities
         public Prenda Prenda { get; set; }
         public int Cantidad { get; set; }
 
-        public int IdProducto
+        public int IdPrenda
         {
             get
             {

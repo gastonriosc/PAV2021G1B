@@ -19,8 +19,6 @@ namespace GridFreaks
 {
     public partial class frmInicio : Form
     {
-        private string oUsuarioLoged;
-
         public frmInicio()
         {
             InitializeComponent();

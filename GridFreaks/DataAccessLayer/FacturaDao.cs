@@ -27,55 +27,51 @@ namespace GridFreaks.DataAccessLayer
                 dm.BeginTransaction();
 
                 string sql = string.Concat("INSERT INTO [dbo].[Facturas] ",
-                                            "           ([nroFactura]   ",
-                                            "           ,[fecha]         ",
-                                            "           ,[idCliente]       ",
+                                            "           ([fecha]         ",
+                                            "           ,[idCliente]     ",
                                             "           ,[tipoFactura]   ",
-                                            "           ,[total]    ",
-                                            "           ,[descuento]    ",
+                                            "           ,[total]         ",
+                                            "           ,[descuento]     ",
                                             "           ,[borrado])      ",
                                             "     VALUES                 ",
-                                            "           (@nroFactura   ",
-                                            "           ,@fecha          ",
-                                            "           ,@idCliente        ",
+                                            "           (@fecha          ",
+                                            "           ,@idCliente      ",
                                             "           ,@tipoFactura    ",
-                                            "           ,@total     ",
-                                            "           ,@descuento     ",
+                                            "           ,@total          ",
+                                            "           ,@descuento      ",
                                             "           ,@borrado)       ");
 
 
                 var parametros = new Dictionary<string, object>();
-                parametros.Add("nroFactura", factura.NroFactura);
-                parametros.Add("fecha", factura.Fecha);
+                parametros.Add("fecha", factura.Fecha.ToString("yyyy-MM-dd"));
                 parametros.Add("idCliente", factura.Cliente.Id);
                 parametros.Add("tipoFactura", factura.TipoFactura.Id);
                 parametros.Add("total", factura.Total);
                 parametros.Add("descuento", factura.Descuento);
                 parametros.Add("borrado", 0);
-                dm.EjecutarSQLConParametros (sql, parametros);
+                dm.EjecutarSQLConParametros(sql, parametros);
 
-                var newId = dm.ConsultaSQLScalar(" SELECT @@IDENTITY");
-                factura.NroFactura = Convert.ToInt32(newId);
-
+                //var newId = dm.ConsultaSQLScalar(" SELECT @@IDENTITY");
+                //factura.NroFactura = Convert.ToInt32(newId);
 
                 foreach (var itemFactura in factura.Detalles)
                 {
-                    string sqlDetalle = string.Concat(" INSERT INTO [dbo].[FacturasDetalle] ",
-                                                        "           ([nroFactura]          ",
-                                                        "           ,[idPrenda]          ",
-                                                        "           ,[cantidad]      ",
+                    string sqlDetalle = string.Concat(" INSERT INTO [dbo].[DetalleFactura] ",
+                                                        "           ([nroFactura]           ",
+                                                        "           ,[idPrenda]             ",
+                                                        "           ,[cantidad]             ",
                                                         "           ,[subtotal]             ",
                                                         "           ,[borrado])             ",
-                                                        "     VALUES                        ", 
-                                                        "           @nroFactura            ",
-                                                        "           ,@idPrenda           ",
-                                                        "           ,@cantidad       ",
+                                                        "     VALUES                        ",
+                                                        "           (@nroFactura            ",
+                                                        "           ,@idPrenda              ",
+                                                        "           ,@cantidad              ",
                                                         "           ,@subtotal              ",
-                                                        "           ,@borrado)               ");
+                                                        "           ,@borrado)              ");
 
                     var paramDetalle = new Dictionary<string, object>();
-                    paramDetalle.Add("id_factura", factura.NroFactura);
-                    paramDetalle.Add("idPrenda", itemFactura.IdProducto);
+                    paramDetalle.Add("nroFactura", factura.NroFactura);
+                    paramDetalle.Add("idPrenda", itemFactura.IdPrenda);
                     paramDetalle.Add("cantidad", itemFactura.Cantidad);
                     paramDetalle.Add("subtotal", itemFactura.Subtotal);
                     paramDetalle.Add("borrado", 0);
