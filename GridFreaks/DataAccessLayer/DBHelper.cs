@@ -11,14 +11,21 @@ namespace GridFreaks.DataAccessLayer
     public class DBHelper
     {
         private string string_conexion;
+        private SqlConnection dbConnection;
+        private SqlTransaction dbTransaction;
         private static DBHelper instance = new DBHelper();
 
+
+        //lo hice public para poder hacer la transaccion en el facturaDao
         private DBHelper()
         {
+            dbConnection = new SqlConnection();
             // cadena Targon
-            //string_conexion = @"Data Source=DESKTOP-VGC54OT\SQLEXPRESS;Initial Catalog=gridFreaks;Integrated Security=True";
+            string_conexion = @"Data Source=DESKTOP-VGC54OT\SQLEXPRESS;Initial Catalog=gridFreaks2;Integrated Security=True";
             // cadena Rios
-            string_conexion = @"Data Source=DESKTOP-0AAMHAV\SQLEXPRESS;Initial Catalog=gridFreaks2;Integrated Security=True";
+            //string_conexion = @"Data Source=DESKTOP-0AAMHAV\SQLEXPRESS;Initial Catalog=gridFreaks2;Integrated Security=True";
+
+            dbConnection.ConnectionString = string_conexion;
         }
 
         public static DBHelper GetDBHelper()
@@ -155,5 +162,51 @@ namespace GridFreaks.DataAccessLayer
             return rtdo;
         }
 
+        public void Rollback()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Rollback();
+        }
+        public void Open()
+        {
+            if (dbConnection.State != ConnectionState.Open)
+                dbConnection.Open();
+
+        }
+
+        public void Commit()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Commit();
+        }
+        public void BeginTransaction()
+        {
+            if (dbConnection.State == ConnectionState.Open)
+                dbTransaction = dbConnection.BeginTransaction();
+        }
+        public object ConsultaSQLScalar(string strSql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cmd.Connection = dbConnection;
+                cmd.Transaction = dbTransaction;
+                cmd.CommandType = CommandType.Text;
+                // Establece la instrucción a ejecutar
+                cmd.CommandText = strSql;
+                return cmd.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+        }
+        // otra forma de cerrar la conexion
+        public void Close()
+        {
+            if (dbConnection.State != ConnectionState.Closed)
+                dbConnection.Close();
+        }
     }
+
 }

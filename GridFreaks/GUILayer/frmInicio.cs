@@ -1,4 +1,5 @@
-﻿using GridFreaks.GUILayer;
+﻿using GridFreaks.Entities;
+using GridFreaks.GUILayer;
 using GridFreaks.GUILayer.Colores;
 using GridFreaks.GUILayer.Facturas;
 using GridFreaks.GUILayer.Marcas;
@@ -18,6 +19,8 @@ namespace GridFreaks
 {
     public partial class frmInicio : Form
     {
+        private string oUsuarioLoged;
+
         public frmInicio()
         {
             InitializeComponent();
@@ -29,7 +32,9 @@ namespace GridFreaks
             login.ShowDialog();
             habilitarTodosCampos();
             this.Text = "Inicio - Logueado: " + login.UsuarioLogueado;
+            
         }
+
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
@@ -91,6 +96,8 @@ namespace GridFreaks
             ventanaMarcas.ShowDialog();
 
         }
+
+
 
         private void facturasTSMI_Click(object sender, EventArgs e)
         {

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\ClienteService.cs" />
     <Compile Include="BusinessLayer\ColorService.cs" />
+    <Compile Include="BusinessLayer\DetalleFacturaService.cs" />
     <Compile Include="BusinessLayer\FacturaService.cs" />
     <Compile Include="BusinessLayer\MarcaService.cs" />
     <Compile Include="BusinessLayer\PrendaService.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="DataAccessLayer\ClienteDao.cs" />
     <Compile Include="DataAccessLayer\ColorDao.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\DetalleFacturaDao.cs" />
     <Compile Include="DataAccessLayer\FacturaDao.cs" />
     <Compile Include="DataAccessLayer\MarcaDao.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />

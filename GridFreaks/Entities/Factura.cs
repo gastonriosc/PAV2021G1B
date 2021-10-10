@@ -12,7 +12,7 @@ namespace GridFreaks.Entities
         public DateTime Fecha { get; set; }
         public Cliente Cliente { get; set; }
         public TipoFactura TipoFactura { get; set; }
-        public int Total { get; set; }
+        public double Total { get; set; }
         public double Descuento { get; set; }
         public User Usuario { get; set; }
         public IList<DetalleFactura> Detalles { get; set; }

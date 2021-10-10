@@ -43,6 +43,7 @@ namespace GridFreaks.GUILayer.Facturas
             this.txtCUIT = new System.Windows.Forms.MaskedTextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.dpbDetalle = new System.Windows.Forms.GroupBox();
+            this.txtPrendaSelected = new System.Windows.Forms.TextBox();
             this.btnSelecPrenda = new System.Windows.Forms.Button();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.txtImporteTotal = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@ namespace GridFreaks.GUILayer.Facturas
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtPrendaSelected = new System.Windows.Forms.TextBox();
             this.dpbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
@@ -74,9 +74,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.cmbTipoFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.cmbTipoFactura.FormattingEnabled = true;
-            this.cmbTipoFactura.Location = new System.Drawing.Point(110, 22);
+            this.cmbTipoFactura.Location = new System.Drawing.Point(147, 27);
+            this.cmbTipoFactura.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoFactura.Name = "cmbTipoFactura";
-            this.cmbTipoFactura.Size = new System.Drawing.Size(126, 25);
+            this.cmbTipoFactura.Size = new System.Drawing.Size(167, 28);
             this.cmbTipoFactura.TabIndex = 0;
             // 
             // lblTipoFactura
@@ -84,9 +85,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.lblTipoFactura.AutoSize = true;
             this.lblTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoFactura.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTipoFactura.Location = new System.Drawing.Point(14, 25);
+            this.lblTipoFactura.Location = new System.Drawing.Point(19, 31);
+            this.lblTipoFactura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipoFactura.Name = "lblTipoFactura";
-            this.lblTipoFactura.Size = new System.Drawing.Size(88, 17);
+            this.lblTipoFactura.Size = new System.Drawing.Size(112, 22);
             this.lblTipoFactura.TabIndex = 1;
             this.lblTipoFactura.Text = "Tipo Factura";
             // 
@@ -95,9 +97,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.lblClientes.AutoSize = true;
             this.lblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblClientes.Location = new System.Drawing.Point(51, 65);
+            this.lblClientes.Location = new System.Drawing.Point(68, 80);
+            this.lblClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(51, 17);
+            this.lblClientes.Size = new System.Drawing.Size(66, 22);
             this.lblClientes.TabIndex = 3;
             this.lblClientes.Text = "Cliente";
             // 
@@ -106,18 +109,20 @@ namespace GridFreaks.GUILayer.Facturas
             this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(110, 62);
+            this.cmbCliente.Location = new System.Drawing.Point(147, 76);
+            this.cmbCliente.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(126, 25);
+            this.cmbCliente.Size = new System.Drawing.Size(167, 28);
             this.cmbCliente.TabIndex = 2;
             // 
             // txtNroFactura
             // 
             this.txtNroFactura.Enabled = false;
             this.txtNroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.txtNroFactura.Location = new System.Drawing.Point(383, 22);
+            this.txtNroFactura.Location = new System.Drawing.Point(511, 27);
+            this.txtNroFactura.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroFactura.Name = "txtNroFactura";
-            this.txtNroFactura.Size = new System.Drawing.Size(126, 23);
+            this.txtNroFactura.Size = new System.Drawing.Size(167, 27);
             this.txtNroFactura.TabIndex = 4;
             // 
             // lblNroFactura
@@ -125,9 +130,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.lblNroFactura.AutoSize = true;
             this.lblNroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNroFactura.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNroFactura.Location = new System.Drawing.Point(294, 25);
+            this.lblNroFactura.Location = new System.Drawing.Point(392, 31);
+            this.lblNroFactura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNroFactura.Name = "lblNroFactura";
-            this.lblNroFactura.Size = new System.Drawing.Size(83, 17);
+            this.lblNroFactura.Size = new System.Drawing.Size(105, 22);
             this.lblNroFactura.TabIndex = 5;
             this.lblNroFactura.Text = "Nro Factura";
             // 
@@ -136,9 +142,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDireccion.Location = new System.Drawing.Point(310, 65);
+            this.lblDireccion.Location = new System.Drawing.Point(413, 80);
+            this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(67, 17);
+            this.lblDireccion.Size = new System.Drawing.Size(85, 22);
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Direccion";
             // 
@@ -146,9 +153,10 @@ namespace GridFreaks.GUILayer.Facturas
             // 
             this.txtDireccion.Enabled = false;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.txtDireccion.Location = new System.Drawing.Point(383, 62);
+            this.txtDireccion.Location = new System.Drawing.Point(511, 76);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(196, 23);
+            this.txtDireccion.Size = new System.Drawing.Size(260, 27);
             this.txtDireccion.TabIndex = 7;
             // 
             // dtpFecha
@@ -156,9 +164,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.dtpFecha.CustomFormat = "";
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(706, 22);
+            this.dtpFecha.Location = new System.Drawing.Point(941, 27);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(108, 23);
+            this.dtpFecha.Size = new System.Drawing.Size(143, 27);
             this.dtpFecha.TabIndex = 9;
             this.dtpFecha.Value = new System.DateTime(2021, 10, 8, 0, 0, 0, 0);
             // 
@@ -167,9 +176,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(653, 25);
+            this.label1.Location = new System.Drawing.Point(871, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.Size = new System.Drawing.Size(60, 22);
             this.label1.TabIndex = 10;
             this.label1.Text = "Fecha";
             // 
@@ -177,10 +187,11 @@ namespace GridFreaks.GUILayer.Facturas
             // 
             this.txtCUIT.Enabled = false;
             this.txtCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.txtCUIT.Location = new System.Drawing.Point(706, 62);
+            this.txtCUIT.Location = new System.Drawing.Point(941, 76);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4);
             this.txtCUIT.Mask = "00-00000000-0";
             this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(108, 23);
+            this.txtCUIT.Size = new System.Drawing.Size(143, 27);
             this.txtCUIT.TabIndex = 11;
             // 
             // lblCUIT
@@ -188,9 +199,10 @@ namespace GridFreaks.GUILayer.Facturas
             this.lblCUIT.AutoSize = true;
             this.lblCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCUIT.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCUIT.Location = new System.Drawing.Point(661, 65);
+            this.lblCUIT.Location = new System.Drawing.Point(881, 80);
+            this.lblCUIT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(39, 17);
+            this.lblCUIT.Size = new System.Drawing.Size(52, 22);
             this.lblCUIT.TabIndex = 12;
             this.lblCUIT.Text = "CUIT";
             // 
@@ -216,19 +228,32 @@ namespace GridFreaks.GUILayer.Facturas
             this.dpbDetalle.Controls.Add(this._lblCantidad);
             this.dpbDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpbDetalle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dpbDetalle.Location = new System.Drawing.Point(17, 97);
+            this.dpbDetalle.Location = new System.Drawing.Point(23, 119);
+            this.dpbDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.dpbDetalle.Name = "dpbDetalle";
-            this.dpbDetalle.Size = new System.Drawing.Size(797, 362);
+            this.dpbDetalle.Padding = new System.Windows.Forms.Padding(4);
+            this.dpbDetalle.Size = new System.Drawing.Size(1063, 446);
             this.dpbDetalle.TabIndex = 13;
             this.dpbDetalle.TabStop = false;
             this.dpbDetalle.Text = "Detalle";
             // 
+            // txtPrendaSelected
+            // 
+            this.txtPrendaSelected.Enabled = false;
+            this.txtPrendaSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.txtPrendaSelected.Location = new System.Drawing.Point(17, 74);
+            this.txtPrendaSelected.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrendaSelected.Name = "txtPrendaSelected";
+            this.txtPrendaSelected.Size = new System.Drawing.Size(324, 27);
+            this.txtPrendaSelected.TabIndex = 17;
+            // 
             // btnSelecPrenda
             // 
             this.btnSelecPrenda.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSelecPrenda.Location = new System.Drawing.Point(13, 23);
+            this.btnSelecPrenda.Location = new System.Drawing.Point(17, 28);
+            this.btnSelecPrenda.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelecPrenda.Name = "btnSelecPrenda";
-            this.btnSelecPrenda.Size = new System.Drawing.Size(145, 28);
+            this.btnSelecPrenda.Size = new System.Drawing.Size(193, 34);
             this.btnSelecPrenda.TabIndex = 17;
             this.btnSelecPrenda.Text = "Seleccionar Prenda";
             this.btnSelecPrenda.UseVisualStyleBackColor = true;
@@ -237,14 +262,15 @@ namespace GridFreaks.GUILayer.Facturas
             // nudCantidad
             // 
             this.nudCantidad.Enabled = false;
-            this.nudCantidad.Location = new System.Drawing.Point(357, 23);
+            this.nudCantidad.Location = new System.Drawing.Point(476, 28);
+            this.nudCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.nudCantidad.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(64, 23);
+            this.nudCantidad.Size = new System.Drawing.Size(85, 27);
             this.nudCantidad.TabIndex = 31;
             this.nudCantidad.Value = new decimal(new int[] {
             1,
@@ -256,184 +282,205 @@ namespace GridFreaks.GUILayer.Facturas
             // txtImporteTotal
             // 
             this.txtImporteTotal.Enabled = false;
-            this.txtImporteTotal.Location = new System.Drawing.Point(683, 324);
+            this.txtImporteTotal.Location = new System.Drawing.Point(911, 399);
+            this.txtImporteTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtImporteTotal.Name = "txtImporteTotal";
-            this.txtImporteTotal.Size = new System.Drawing.Size(100, 23);
+            this.txtImporteTotal.Size = new System.Drawing.Size(132, 27);
             this.txtImporteTotal.TabIndex = 27;
             this.txtImporteTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(462, 324);
+            this.txtDescuento.Location = new System.Drawing.Point(616, 399);
+            this.txtDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(100, 23);
+            this.txtDescuento.Size = new System.Drawing.Size(132, 27);
             this.txtDescuento.TabIndex = 26;
             this.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtSubtotal
             // 
             this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Location = new System.Drawing.Point(225, 324);
+            this.txtSubtotal.Location = new System.Drawing.Point(300, 399);
+            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(100, 23);
+            this.txtSubtotal.Size = new System.Drawing.Size(132, 27);
             this.txtSubtotal.TabIndex = 25;
             this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblImporteTotal
             // 
             this.lblImporteTotal.AutoSize = true;
-            this.lblImporteTotal.Location = new System.Drawing.Point(586, 327);
+            this.lblImporteTotal.Location = new System.Drawing.Point(781, 402);
+            this.lblImporteTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImporteTotal.Name = "lblImporteTotal";
-            this.lblImporteTotal.Size = new System.Drawing.Size(91, 17);
+            this.lblImporteTotal.Size = new System.Drawing.Size(115, 22);
             this.lblImporteTotal.TabIndex = 30;
             this.lblImporteTotal.Text = "Importe Total";
             // 
             // lblDescuento
             // 
             this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Location = new System.Drawing.Point(354, 327);
+            this.lblDescuento.Location = new System.Drawing.Point(472, 402);
+            this.lblDescuento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(102, 17);
+            this.lblDescuento.Size = new System.Drawing.Size(129, 22);
             this.lblDescuento.TabIndex = 29;
             this.lblDescuento.Text = "Descuento (%)";
             // 
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(159, 327);
+            this.lblSubtotal.Location = new System.Drawing.Point(212, 402);
+            this.lblSubtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(60, 17);
+            this.lblSubtotal.Size = new System.Drawing.Size(76, 22);
             this.lblSubtotal.TabIndex = 28;
             this.lblSubtotal.Text = "Subtotal";
             // 
             // txtImporte
             // 
             this.txtImporte.Enabled = false;
-            this.txtImporte.Location = new System.Drawing.Point(498, 23);
+            this.txtImporte.Location = new System.Drawing.Point(664, 28);
+            this.txtImporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.ReadOnly = true;
-            this.txtImporte.Size = new System.Drawing.Size(64, 23);
+            this.txtImporte.Size = new System.Drawing.Size(84, 27);
             this.txtImporte.TabIndex = 3;
             // 
             // lblImporte
             // 
             this.lblImporte.AutoSize = true;
-            this.lblImporte.Location = new System.Drawing.Point(437, 25);
+            this.lblImporte.Location = new System.Drawing.Point(583, 31);
+            this.lblImporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImporte.Name = "lblImporte";
-            this.lblImporte.Size = new System.Drawing.Size(55, 17);
+            this.lblImporte.Size = new System.Drawing.Size(69, 22);
             this.lblImporte.TabIndex = 8;
             this.lblImporte.Text = "Importe";
             // 
             // _btnCancelar
             // 
-            this._btnCancelar.Location = new System.Drawing.Point(724, 23);
+            this._btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this._btnCancelar.Location = new System.Drawing.Point(965, 28);
+            this._btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this._btnCancelar.Name = "_btnCancelar";
-            this._btnCancelar.Size = new System.Drawing.Size(60, 60);
+            this._btnCancelar.Size = new System.Drawing.Size(80, 74);
             this._btnCancelar.TabIndex = 7;
+            this._btnCancelar.Text = "cancel";
             this._btnCancelar.UseVisualStyleBackColor = true;
+            this._btnCancelar.Click += new System.EventHandler(this._btnCancelar_Click);
             // 
             // _btnQuitar
             // 
-            this._btnQuitar.Location = new System.Drawing.Point(657, 23);
+            this._btnQuitar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this._btnQuitar.Location = new System.Drawing.Point(876, 28);
+            this._btnQuitar.Margin = new System.Windows.Forms.Padding(4);
             this._btnQuitar.Name = "_btnQuitar";
-            this._btnQuitar.Size = new System.Drawing.Size(60, 60);
+            this._btnQuitar.Size = new System.Drawing.Size(80, 74);
             this._btnQuitar.TabIndex = 6;
+            this._btnQuitar.Text = "quitar";
             this._btnQuitar.UseVisualStyleBackColor = true;
+            this._btnQuitar.Click += new System.EventHandler(this._btnQuitar_Click);
             // 
             // _btnAgregar
             // 
-            this._btnAgregar.Location = new System.Drawing.Point(590, 23);
+            this._btnAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this._btnAgregar.Location = new System.Drawing.Point(787, 28);
+            this._btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this._btnAgregar.Name = "_btnAgregar";
-            this._btnAgregar.Size = new System.Drawing.Size(60, 60);
+            this._btnAgregar.Size = new System.Drawing.Size(80, 74);
             this._btnAgregar.TabIndex = 5;
+            this._btnAgregar.Text = "agregar";
             this._btnAgregar.UseVisualStyleBackColor = true;
+            this._btnAgregar.Click += new System.EventHandler(this._btnAgregar_Click);
             // 
             // dgvDetalle
             // 
             this.dgvDetalle.AllowUserToAddRows = false;
             this.dgvDetalle.AllowUserToDeleteRows = false;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalle.Location = new System.Drawing.Point(13, 92);
+            this.dgvDetalle.Location = new System.Drawing.Point(17, 113);
+            this.dgvDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetalle.MultiSelect = false;
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.ReadOnly = true;
+            this.dgvDetalle.RowHeadersWidth = 51;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(770, 221);
+            this.dgvDetalle.Size = new System.Drawing.Size(1027, 272);
             this.dgvDetalle.TabIndex = 7;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Enabled = false;
-            this.txtPrecio.Location = new System.Drawing.Point(357, 59);
+            this.txtPrecio.Location = new System.Drawing.Point(476, 73);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
-            this.txtPrecio.Size = new System.Drawing.Size(64, 23);
+            this.txtPrecio.Size = new System.Drawing.Size(84, 27);
             this.txtPrecio.TabIndex = 2;
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(303, 62);
+            this.lblPrecio.Location = new System.Drawing.Point(404, 76);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(48, 17);
+            this.lblPrecio.Size = new System.Drawing.Size(61, 22);
             this.lblPrecio.TabIndex = 4;
             this.lblPrecio.Text = "Precio";
             // 
             // _lblCantidad
             // 
             this._lblCantidad.AutoSize = true;
-            this._lblCantidad.Location = new System.Drawing.Point(287, 25);
+            this._lblCantidad.Location = new System.Drawing.Point(383, 31);
+            this._lblCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lblCantidad.Name = "_lblCantidad";
-            this._lblCantidad.Size = new System.Drawing.Size(64, 17);
+            this._lblCantidad.Size = new System.Drawing.Size(82, 22);
             this._lblCantidad.TabIndex = 2;
             this._lblCantidad.Text = "Cantidad";
             // 
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.btnNuevo.Location = new System.Drawing.Point(17, 470);
+            this.btnNuevo.Location = new System.Drawing.Point(23, 578);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(85, 28);
+            this.btnNuevo.Size = new System.Drawing.Size(113, 34);
             this.btnNuevo.TabIndex = 14;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGrabar
             // 
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.btnGrabar.Location = new System.Drawing.Point(110, 470);
+            this.btnGrabar.Location = new System.Drawing.Point(147, 578);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(85, 28);
+            this.btnGrabar.Size = new System.Drawing.Size(113, 34);
             this.btnGrabar.TabIndex = 15;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click_1);
             // 
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.btnSalir.Location = new System.Drawing.Point(729, 470);
+            this.btnSalir.Location = new System.Drawing.Point(972, 578);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(85, 28);
+            this.btnSalir.Size = new System.Drawing.Size(113, 34);
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtPrendaSelected
-            // 
-            this.txtPrendaSelected.Enabled = false;
-            this.txtPrendaSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.txtPrendaSelected.Location = new System.Drawing.Point(13, 60);
-            this.txtPrendaSelected.Name = "txtPrendaSelected";
-            this.txtPrendaSelected.Size = new System.Drawing.Size(244, 23);
-            this.txtPrendaSelected.TabIndex = 17;
-            // 
             // frmFacturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(833, 511);
+            this.ClientSize = new System.Drawing.Size(1111, 629);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.btnNuevo);
@@ -451,6 +498,7 @@ namespace GridFreaks.GUILayer.Facturas
             this.Controls.Add(this.lblTipoFactura);
             this.Controls.Add(this.cmbTipoFactura);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmFacturas";

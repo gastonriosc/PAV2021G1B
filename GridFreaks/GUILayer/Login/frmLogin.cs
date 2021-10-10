@@ -1,4 +1,5 @@
 ﻿using GridFreaks.BusinessLayer;
+using GridFreaks.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +19,15 @@ namespace GridFreaks.GUILayer
 
         public string UsuarioLogueado { get; internal set; }
 
+       
+
         public frmLogin()
         {
             //Se inicializan los controles del formulario, si se elimina el formulario se inicia vacio (sin controles ).
             InitializeComponent();
             usuarioService = new UserService();
         }
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -53,6 +57,7 @@ namespace GridFreaks.GUILayer
             {
                 // Login OK
                 UsuarioLogueado = usr.Usuario;
+                
                 this.Close();
             }
             else

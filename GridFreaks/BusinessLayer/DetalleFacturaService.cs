@@ -1,5 +1,4 @@
 ﻿using GridFreaks.DataAccessLayer;
-using GridFreaks.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace GridFreaks.BusinessLayer
 {
-    public class FacturaService
+    class DetalleFacturaService
     {
-        private FacturaDao oFacturaDao;
 
-        public FacturaService()
+        private DetalleFacturaDao oDetalleFacturaDao;
+
+        public DetalleFacturaService()
         {
-            oFacturaDao = new FacturaDao();
+            oDetalleFacturaDao = new DetalleFacturaDao();
         }
 
         //public IList<Prenda> ObtenerTodos()
@@ -33,9 +33,9 @@ namespace GridFreaks.BusinessLayer
         //    return oFacturaDao.GetPrendaParametrizada(oFactura);
         //}
 
-        internal int ObtenerUltimoIdFactura()
+        internal int ObtenerUltimoIdDetalleFactura()
         {
-            return oFacturaDao.GetLastIdFactura();
+            return oDetalleFacturaDao.GetLastIdDetalleFactura();
         }
 
         //internal bool CrearFactura(Factura oFactura)
@@ -52,22 +52,6 @@ namespace GridFreaks.BusinessLayer
         //{
         //    return oFacturaDao.DarBaja(oFacturaSelected);
         //}
-
-        internal bool ValidarDatos(Factura factura)
-        {
-            if (factura.Detalles.Count == 0)
-            {
-                throw new Exception("Debe ingresar al menos un item de factura.");
-            }
-
-            return true;
-        }
-
-        internal bool Crear(Factura factura)
-        {
-            return oFacturaDao.Create(factura);
-        }
     }
-
-
 }
+

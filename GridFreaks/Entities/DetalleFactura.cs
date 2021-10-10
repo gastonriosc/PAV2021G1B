@@ -10,14 +10,14 @@ namespace GridFreaks.Entities
     {
         public int IdDetalle { get; set; }
         public int NroFactura { get; set; }
-        public Prenda IdPrenda { get; set; }
+        public Prenda Prenda { get; set; }
         public int Cantidad { get; set; }
 
         public int IdProducto
         {
             get
             {
-                return IdPrenda.Id;
+                return Prenda.Id;
             }
         }
 
@@ -25,7 +25,7 @@ namespace GridFreaks.Entities
         {
             get
             {
-                return Cantidad * IdPrenda.Precio;
+                return Cantidad * Prenda.Precio;
             }
         }
     }

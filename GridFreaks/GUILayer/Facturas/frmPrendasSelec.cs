@@ -18,6 +18,7 @@ namespace GridFreaks.GUILayer.Facturas
         private Prenda oPrendaSelected;
         private PrendaService oPrendaService;
         private TipoPrendaService oTipoPrendaService;
+        private User oUsuario;
 
         public frmPrendasSelec()
         {
