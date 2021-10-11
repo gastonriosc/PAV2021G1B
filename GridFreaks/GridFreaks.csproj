@@ -209,6 +209,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\SeleccionarPrenda.png" />
     <None Include="Resources\EliminarUsuario.png" />
     <None Include="Resources\LogoSample_ByTailorBrands-removebg-preview %281%29.png" />
     <None Include="Resources\RegistrarUsuario.png" />
@@ -228,6 +229,12 @@
     <None Include="Resources\NuevaMarca.png" />
     <None Include="Resources\EliminarMarca.png" />
     <None Include="ImagenesPrendas\BuzoNegroBH.png" />
+    <None Include="Resources\AgregarIcon.png" />
+    <None Include="Resources\QuitarIcon.png" />
+    <None Include="Resources\CancelarIcon.png" />
+    <None Include="Resources\NuevoIcon.png" />
+    <None Include="Resources\salir %282%29.png" />
+    <None Include="Resources\GuardarIcon .png" />
     <Content Include="Resources\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
