@@ -332,7 +332,7 @@ namespace GridFreaks.GUILayer.Prendas
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmPrendas";
+            this.Text = "Prendas";
             this.Load += new System.EventHandler(this.frmPrendas_Load);
             this.gbFiltrosPrendas.ResumeLayout(false);
             this.gbFiltrosPrendas.PerformLayout();

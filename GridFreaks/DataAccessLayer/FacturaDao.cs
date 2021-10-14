@@ -51,9 +51,6 @@ namespace GridFreaks.DataAccessLayer
                 parametros.Add("borrado", 0);
                 dm.EjecutarSQLConParametros(sql, parametros);
 
-                //var newId = dm.ConsultaSQLScalar(" SELECT @@IDENTITY");
-                //factura.NroFactura = Convert.ToInt32(newId);
-
                 foreach (var itemFactura in factura.Detalles)
                 {
                     string sqlDetalle = string.Concat(" INSERT INTO [dbo].[DetalleFactura] ",
