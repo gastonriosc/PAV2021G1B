@@ -1,5 +1,6 @@
 ﻿using GridFreaks.BusinessLayer;
 using GridFreaks.Entities;
+using GridFreaks.GUILayer.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -110,6 +111,7 @@ namespace GridFreaks.GUILayer.Facturas
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             frmFacturas.GetfrmFacturas().setPrenda((Prenda)dgvPrendas.CurrentRow.DataBoundItem);
+            frmReportes.GetfrmReportes().setPrenda((Prenda)dgvPrendas.CurrentRow.DataBoundItem);
             this.Close();
         }
 

@@ -128,6 +128,7 @@ namespace GridFreaks.GUILayer.Prendas
             }
             else
                 dgvPrendas.DataSource = oPrendaService.ObtenerTodos();
+            MessageBox.Show(dgvPrendas.Rows[dgvPrendas.RowCount-1].Cells[1].Value.ToString());
 
             limpiarCombos();
         }

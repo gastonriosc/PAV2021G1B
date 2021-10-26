@@ -122,11 +122,10 @@ namespace GridFreaks.GUILayer.Facturas
         }
 
         private void _btnAgregar_Click(object sender, EventArgs e)
-        {
-            int ultimoIdDetalle = oDetalleFacturaService.ObtenerUltimoIdDetalleFactura();
+        {   
             listaDetalleFactura.Add(new DetalleFactura()
             {
-                IdDetalle = ultimoIdDetalle + listaDetalleFactura.Count + 1,
+                IdDetalle = /* ultimoIdDetalle + */listaDetalleFactura.Count + 1,
                 NroFactura = int.Parse(txtNroFactura.Text),
                 Cantidad = (int)nudCantidad.Value,
                 Prenda = oPrendaSelected
@@ -192,6 +191,11 @@ namespace GridFreaks.GUILayer.Facturas
 
         private void btnGrabar_Click_1(object sender, EventArgs e)
         {
+            int ultimoIdDetalle = oDetalleFacturaService.ObtenerUltimoIdDetalleFactura();
+            foreach (var detalle in listaDetalleFactura)
+            {
+                detalle.IdDetalle += ultimoIdDetalle;
+            }
             try
             {
                 var factura = new Factura
