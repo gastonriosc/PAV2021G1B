@@ -29,6 +29,7 @@ namespace GridFreaks.GUILayer.Colores
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMColores));
             this.lblNuevoColor = new System.Windows.Forms.Label();
             this.txtNuevoColor = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -87,6 +88,7 @@ namespace GridFreaks.GUILayer.Colores
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtNuevoColor);
             this.Controls.Add(this.lblNuevoColor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmABMColores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Color";

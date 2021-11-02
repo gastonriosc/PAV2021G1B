@@ -1,6 +1,7 @@
 ﻿using GridFreaks.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,6 +93,22 @@ namespace GridFreaks.DataAccessLayer
                 dm.Close();
             }
             return true;
+        }
+
+        public DataTable getFacturas(string condiciones)
+        {
+            string consulta = "SELECT D.idDetalle, F.nroFactura, F.fecha, C.nombre AS 'cliente', F.tipoFactura, T.nombre AS 'producto', M.nombre AS 'marca', F.total AS 'importe'"
+                            + " FROM Facturas AS F INNER JOIN"
+                            + " Clientes AS C ON F.idCliente = C.id INNER JOIN"
+                            + " DetalleFactura AS D ON F.nroFactura = D.nroFactura INNER JOIN"
+                            + " Prendas AS P ON D.idPrenda = P.id INNER JOIN"
+                            + " TipoPrenda AS T ON P.idTipoPrenda = T.id INNER JOIN"
+                            + " Marcas AS M ON P.idMarca = M.id"
+                            + " WHERE(F.borrado = 0)";
+
+            consulta += condiciones;
+
+            return DBHelper.GetDBHelper().ConsultaSQL(consulta);
         }
     }
 }

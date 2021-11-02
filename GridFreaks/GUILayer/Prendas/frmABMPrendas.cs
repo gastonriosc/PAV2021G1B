@@ -22,7 +22,7 @@ namespace GridFreaks.GUILayer.Prendas
         private MarcaService oMarcaService;
         private readonly PrendaService oPrendaService;
 
-        private Prenda oPrendaSelected;
+        private Entities.Prenda oPrendaSelected;
         public frmABMPrendas()
         {
             InitializeComponent();
@@ -129,7 +129,7 @@ namespace GridFreaks.GUILayer.Prendas
             pbPrenda.Image = Image.FromFile(resultado);
         }
 
-        public void SeleccionarPrenda(FormMode op, Prenda prendaSelected)
+        public void SeleccionarPrenda(FormMode op, Entities.Prenda prendaSelected)
         {
             formMode = op;
             oPrendaSelected = prendaSelected;
@@ -161,7 +161,7 @@ namespace GridFreaks.GUILayer.Prendas
 
         private bool ExistePrenda()
         {
-            var oPrenda = new Prenda();
+            var oPrenda = new Entities.Prenda();
             //oPrenda.Id = oPrendaService.ObtenerUltimoIdPrenda() + 1;
             oPrenda.TipoPrenda = new TipoPrenda();
             oPrenda.TipoPrenda.Id = (int)cmbTipoPrenda.SelectedValue;
@@ -203,7 +203,7 @@ namespace GridFreaks.GUILayer.Prendas
                         {
                             if (ExistePrenda() == false)
                             {
-                                var oPrenda = new Prenda();
+                                var oPrenda = new Entities.Prenda();
                                 oPrenda.Id = oPrendaService.ObtenerUltimoIdPrenda() + 1;
                                 oPrenda.TipoPrenda = new TipoPrenda();
                                 oPrenda.TipoPrenda.Id = (int)cmbTipoPrenda.SelectedValue;

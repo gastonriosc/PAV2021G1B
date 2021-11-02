@@ -29,6 +29,7 @@ namespace GridFreaks.GUILayer.Marcas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarcas));
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -147,7 +148,8 @@ namespace GridFreaks.GUILayer.Marcas
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.dgvMarcas);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Marcas";

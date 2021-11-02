@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetFacturas" targetNamespace="http://tempuri.org/DataSetFacturas.xsd" xmlns:mstns="http://tempuri.org/DataSetFacturas.xsd" xmlns="http://tempuri.org/DataSetFacturas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="gridFreaksConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="gridFreaksConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GridFreaks.Properties.Settings.GlobalReference.Default.gridFreaksConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetFacturas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetFacturas" msprop:Generator_UserDSName="DataSetFacturas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtFacturas" msprop:Generator_TableClassName="dtFacturasDataTable" msprop:Generator_TableVarName="tabledtFacturas" msprop:Generator_TablePropName="dtFacturas" msprop:Generator_RowDeletingName="dtFacturasRowDeleting" msprop:Generator_RowChangingName="dtFacturasRowChanging" msprop:Generator_RowEvHandlerName="dtFacturasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtFacturasRowDeleted" msprop:Generator_UserTableName="dtFacturas" msprop:Generator_RowChangedName="dtFacturasRowChanged" msprop:Generator_RowEvArgName="dtFacturasRowChangeEvent" msprop:Generator_RowClassName="dtFacturasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idDetalle" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" minOccurs="0" />
+              <xs:element name="nroFactura" msprop:Generator_ColumnVarNameInTable="columnnroFactura" msprop:Generator_ColumnPropNameInRow="nroFactura" msprop:Generator_ColumnPropNameInTable="nroFacturaColumn" msprop:Generator_UserColumnName="nroFactura" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cliente" msprop:Generator_ColumnVarNameInTable="columncliente" msprop:Generator_ColumnPropNameInRow="cliente" msprop:Generator_ColumnPropNameInTable="clienteColumn" msprop:Generator_UserColumnName="cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="tipoFactura" msprop:Generator_ColumnVarNameInTable="columntipoFactura" msprop:Generator_ColumnPropNameInRow="tipoFactura" msprop:Generator_ColumnPropNameInTable="tipoFacturaColumn" msprop:Generator_UserColumnName="tipoFactura" type="xs:string" minOccurs="0" />
+              <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
+              <xs:element name="marca" msprop:Generator_ColumnVarNameInTable="columnmarca" msprop:Generator_ColumnPropNameInRow="marca" msprop:Generator_ColumnPropNameInTable="marcaColumn" msprop:Generator_UserColumnName="marca" type="xs:string" minOccurs="0" />
+              <xs:element name="importe" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

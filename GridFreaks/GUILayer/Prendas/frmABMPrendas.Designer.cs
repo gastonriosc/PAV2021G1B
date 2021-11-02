@@ -29,6 +29,7 @@ namespace GridFreaks.GUILayer.Prendas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMPrendas));
             this.cmbTipoPrenda = new System.Windows.Forms.ComboBox();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.cmbTemporada = new System.Windows.Forms.ComboBox();
@@ -246,9 +247,10 @@ namespace GridFreaks.GUILayer.Prendas
             this.Controls.Add(this.cmbTemporada);
             this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.cmbTipoPrenda);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmABMPrendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ABMCPrendas";
+            this.Text = "Prendas";
             this.Load += new System.EventHandler(this.frmABMPrendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();

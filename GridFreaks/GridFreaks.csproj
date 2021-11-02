@@ -152,6 +152,11 @@
     <Compile Include="GUILayer\Prendas\frmPrendas.Designer.cs">
       <DependentUpon>frmPrendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reportes\DataSetFacturas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFacturas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reportes\frmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +211,7 @@
     <EmbeddedResource Include="GUILayer\Reportes\frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\Reporte.rdlc" />
     <EmbeddedResource Include="GUILayer\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +223,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="GUILayer\Reportes\DataSetFacturas.xsc">
+      <DependentUpon>DataSetFacturas.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\DataSetFacturas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFacturas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\DataSetFacturas.xss">
+      <DependentUpon>DataSetFacturas.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -67,6 +67,11 @@ namespace GridFreaks.BusinessLayer
         {
             return oFacturaDao.Create(factura);
         }
+
+        internal object ObtenerFacturas(string condiciones)
+        {
+            return oFacturaDao.getFacturas(condiciones);
+        }
     }
 
 

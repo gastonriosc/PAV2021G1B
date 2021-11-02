@@ -40,6 +40,7 @@ namespace GridFreaks
             this.marcasTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@ namespace GridFreaks
             this.coloresTSMI,
             this.marcasTSMI,
             this.facturasTSMI,
+            this.reportesTSMI,
             this.salirTSMI});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -143,6 +145,15 @@ namespace GridFreaks
             this.salirTSMI.Text = "Salir";
             this.salirTSMI.Click += new System.EventHandler(this.salirTSMI_Click);
             // 
+            // reportesTSMI
+            // 
+            this.reportesTSMI.Enabled = false;
+            this.reportesTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.reportesTSMI.Name = "reportesTSMI";
+            this.reportesTSMI.Size = new System.Drawing.Size(65, 20);
+            this.reportesTSMI.Text = "Reportes";
+            this.reportesTSMI.Click += new System.EventHandler(this.reportesTSMI_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +189,7 @@ namespace GridFreaks
         private System.Windows.Forms.ToolStripMenuItem coloresTSMI;
         private System.Windows.Forms.ToolStripMenuItem marcasTSMI;
         private System.Windows.Forms.ToolStripMenuItem facturasTSMI;
+        private System.Windows.Forms.ToolStripMenuItem reportesTSMI;
     }
 }
 

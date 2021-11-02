@@ -29,8 +29,16 @@ namespace GridFreaks.GUILayer.Reportes
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.nudPrecioMax = new System.Windows.Forms.NumericUpDown();
+            this.nudPrecioMin = new System.Windows.Forms.NumericUpDown();
+            this.lblPrecioMax = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPrendaSelec = new System.Windows.Forms.Button();
             this.lblMarca = new System.Windows.Forms.Label();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.txtPrendaSelected = new System.Windows.Forms.TextBox();
@@ -41,26 +49,17 @@ namespace GridFreaks.GUILayer.Reportes
             this.cmbTipoFactura = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFechaDesde = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.btnPrendaSelec = new System.Windows.Forms.Button();
-            this.nudPrecioMax = new System.Windows.Forms.NumericUpDown();
-            this.nudPrecioMin = new System.Windows.Forms.NumericUpDown();
-            this.lblPrecioMax = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dtFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetFacturas = new GridFreaks.GUILayer.Reportes.DataSetFacturas();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFacturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetFacturas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(11, 300);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(837, 362);
-            this.reportViewer1.TabIndex = 10;
             // 
             // gbFiltros
             // 
@@ -80,8 +79,8 @@ namespace GridFreaks.GUILayer.Reportes
             this.gbFiltros.Controls.Add(this.cmbTipoFactura);
             this.gbFiltros.Controls.Add(this.label2);
             this.gbFiltros.Controls.Add(this.lblFechaDesde);
-            this.gbFiltros.Controls.Add(this.dateTimePicker1);
-            this.gbFiltros.Controls.Add(this.dtpFecha);
+            this.gbFiltros.Controls.Add(this.dtpFechaHasta);
+            this.gbFiltros.Controls.Add(this.dtpFechaDesde);
             this.gbFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.gbFiltros.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbFiltros.Location = new System.Drawing.Point(11, 12);
@@ -90,6 +89,79 @@ namespace GridFreaks.GUILayer.Reportes
             this.gbFiltros.TabIndex = 1;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
+            this.btnConsultar.Location = new System.Drawing.Point(626, 219);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(114, 32);
+            this.btnConsultar.TabIndex = 9;
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // nudPrecioMax
+            // 
+            this.nudPrecioMax.Location = new System.Drawing.Point(605, 127);
+            this.nudPrecioMax.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudPrecioMax.Name = "nudPrecioMax";
+            this.nudPrecioMax.Size = new System.Drawing.Size(135, 23);
+            this.nudPrecioMax.TabIndex = 6;
+            // 
+            // nudPrecioMin
+            // 
+            this.nudPrecioMin.Location = new System.Drawing.Point(166, 127);
+            this.nudPrecioMin.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudPrecioMin.Name = "nudPrecioMin";
+            this.nudPrecioMin.Size = new System.Drawing.Size(135, 23);
+            this.nudPrecioMin.TabIndex = 5;
+            // 
+            // lblPrecioMax
+            // 
+            this.lblPrecioMax.AutoSize = true;
+            this.lblPrecioMax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblPrecioMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioMax.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPrecioMax.Location = new System.Drawing.Point(500, 129);
+            this.lblPrecioMax.Name = "lblPrecioMax";
+            this.lblPrecioMax.Size = new System.Drawing.Size(103, 17);
+            this.lblPrecioMax.TabIndex = 38;
+            this.lblPrecioMax.Text = "Precio Máximo:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(64, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 17);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Precio Mínimo:";
+            // 
+            // btnPrendaSelec
+            // 
+            this.btnPrendaSelec.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrendaSelec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrendaSelec.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPrendaSelec.Image = global::GridFreaks.Properties.Resources.Seleccionar;
+            this.btnPrendaSelec.Location = new System.Drawing.Point(166, 170);
+            this.btnPrendaSelec.Name = "btnPrendaSelec";
+            this.btnPrendaSelec.Size = new System.Drawing.Size(116, 25);
+            this.btnPrendaSelec.TabIndex = 7;
+            this.btnPrendaSelec.UseVisualStyleBackColor = true;
+            this.btnPrendaSelec.Click += new System.EventHandler(this.btnPrendaSelec_Click);
             // 
             // lblMarca
             // 
@@ -192,99 +264,49 @@ namespace GridFreaks.GUILayer.Reportes
             this.lblFechaDesde.TabIndex = 12;
             this.lblFechaDesde.Text = "Fecha Desde:";
             // 
-            // dateTimePicker1
+            // dtpFechaHasta
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(605, 37);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
-            this.dateTimePicker1.TabIndex = 2;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 10, 8, 0, 0, 0, 0);
+            this.dtpFechaHasta.CustomFormat = "";
+            this.dtpFechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaHasta.Location = new System.Drawing.Point(605, 37);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(135, 23);
+            this.dtpFechaHasta.TabIndex = 2;
+            this.dtpFechaHasta.Value = new System.DateTime(2021, 10, 8, 0, 0, 0, 0);
             // 
-            // dtpFecha
+            // dtpFechaDesde
             // 
-            this.dtpFecha.CustomFormat = "";
-            this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(166, 37);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(135, 23);
-            this.dtpFecha.TabIndex = 1;
-            this.dtpFecha.Value = new System.DateTime(2021, 10, 8, 0, 0, 0, 0);
+            this.dtpFechaDesde.CustomFormat = "";
+            this.dtpFechaDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(166, 37);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(135, 23);
+            this.dtpFechaDesde.TabIndex = 1;
+            this.dtpFechaDesde.Value = new System.DateTime(2021, 10, 8, 0, 0, 0, 0);
             // 
-            // btnPrendaSelec
+            // reportViewer1
             // 
-            this.btnPrendaSelec.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrendaSelec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrendaSelec.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPrendaSelec.Image = global::GridFreaks.Properties.Resources.Seleccionar;
-            this.btnPrendaSelec.Location = new System.Drawing.Point(166, 170);
-            this.btnPrendaSelec.Name = "btnPrendaSelec";
-            this.btnPrendaSelec.Size = new System.Drawing.Size(116, 25);
-            this.btnPrendaSelec.TabIndex = 7;
-            this.btnPrendaSelec.UseVisualStyleBackColor = true;
-            this.btnPrendaSelec.Click += new System.EventHandler(this.btnPrendaSelec_Click);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.dtFacturasBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GridFreaks.GUILayer.Reportes.Reporte.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(11, 295);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(836, 367);
+            this.reportViewer1.TabIndex = 2;
             // 
-            // nudPrecioMax
+            // dtFacturasBindingSource
             // 
-            this.nudPrecioMax.Location = new System.Drawing.Point(605, 127);
-            this.nudPrecioMax.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudPrecioMax.Name = "nudPrecioMax";
-            this.nudPrecioMax.Size = new System.Drawing.Size(135, 23);
-            this.nudPrecioMax.TabIndex = 6;
+            this.dtFacturasBindingSource.DataMember = "dtFacturas";
+            this.dtFacturasBindingSource.DataSource = this.DataSetFacturas;
             // 
-            // nudPrecioMin
+            // DataSetFacturas
             // 
-            this.nudPrecioMin.Location = new System.Drawing.Point(166, 127);
-            this.nudPrecioMin.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudPrecioMin.Name = "nudPrecioMin";
-            this.nudPrecioMin.Size = new System.Drawing.Size(135, 23);
-            this.nudPrecioMin.TabIndex = 5;
-            // 
-            // lblPrecioMax
-            // 
-            this.lblPrecioMax.AutoSize = true;
-            this.lblPrecioMax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPrecioMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioMax.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPrecioMax.Location = new System.Drawing.Point(500, 129);
-            this.lblPrecioMax.Name = "lblPrecioMax";
-            this.lblPrecioMax.Size = new System.Drawing.Size(103, 17);
-            this.lblPrecioMax.TabIndex = 38;
-            this.lblPrecioMax.Text = "Precio Máximo:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(64, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 17);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Precio Mínimo:";
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Image = global::GridFreaks.Properties.Resources.Consultar;
-            this.btnConsultar.Location = new System.Drawing.Point(626, 219);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(114, 32);
-            this.btnConsultar.TabIndex = 9;
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.DataSetFacturas.DataSetName = "DataSetFacturas";
+            this.DataSetFacturas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmReportes
             // 
@@ -292,27 +314,29 @@ namespace GridFreaks.GUILayer.Reportes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(860, 674);
-            this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.gbFiltros);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReportes";
-            this.Text = "frmReportes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Reportes";
             this.Load += new System.EventHandler(this.frmReportes_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFacturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetFacturas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.GroupBox gbFiltros;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFechaDesde;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label lblTipoFactura;
@@ -327,5 +351,8 @@ namespace GridFreaks.GUILayer.Reportes
         private System.Windows.Forms.Label lblPrecioMax;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConsultar;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource dtFacturasBindingSource;
+        private DataSetFacturas DataSetFacturas;
     }
 }

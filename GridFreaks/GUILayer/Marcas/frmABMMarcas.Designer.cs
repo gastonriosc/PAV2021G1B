@@ -29,6 +29,7 @@ namespace GridFreaks.GUILayer.Marcas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMCMarcas));
             this.lblNuevaMarca = new System.Windows.Forms.Label();
             this.txtNuevaMarca = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -87,6 +88,7 @@ namespace GridFreaks.GUILayer.Marcas
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtNuevaMarca);
             this.Controls.Add(this.lblNuevaMarca);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmABMCMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Marca";

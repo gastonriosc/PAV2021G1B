@@ -4,6 +4,7 @@ using GridFreaks.GUILayer.Colores;
 using GridFreaks.GUILayer.Facturas;
 using GridFreaks.GUILayer.Marcas;
 using GridFreaks.GUILayer.Prendas;
+using GridFreaks.GUILayer.Reportes;
 using GridFreaks.GUILayer.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,7 @@ namespace GridFreaks
             this.coloresTSMI.Enabled = true;
             this.marcasTSMI.Enabled = true;
             this.facturasTSMI.Enabled = true;
+            this.reportesTSMI.Enabled = true;
         }
 
         private void frmInicio_FormClosing(object sender, FormClosingEventArgs e)
@@ -73,7 +75,6 @@ namespace GridFreaks
         private void salirTSMI_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void prendasTSMI_Click(object sender, EventArgs e)
@@ -95,12 +96,16 @@ namespace GridFreaks
 
         }
 
-
-
         private void facturasTSMI_Click(object sender, EventArgs e)
         {
             frmFacturas ventanaFacturas = frmFacturas.GetfrmFacturas();
             ventanaFacturas.ShowDialog();
+        }
+
+        private void reportesTSMI_Click(object sender, EventArgs e)
+        {
+            frmReportes ventanaReportes = frmReportes.GetfrmReportes();
+            ventanaReportes.ShowDialog();
         }
     }
 }
