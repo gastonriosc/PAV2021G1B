@@ -106,6 +106,8 @@ namespace GridFreaks.GUILayer.Facturas
                 _btnAgregar.Enabled = true;
                 _btnQuitar.Enabled = true;
                 _btnCancelar.Enabled = true;
+
+                nudCantidad.Maximum = oPrendaSelected.Stock;
             }
         }
 

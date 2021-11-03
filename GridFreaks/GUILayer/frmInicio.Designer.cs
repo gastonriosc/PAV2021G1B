@@ -39,8 +39,10 @@ namespace GridFreaks
             this.coloresTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anularFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +81,7 @@ namespace GridFreaks
             this.iniciarSesionTSMI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.iniciarSesionTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.iniciarSesionTSMI.Name = "iniciarSesionTSMI";
-            this.iniciarSesionTSMI.Size = new System.Drawing.Size(143, 22);
+            this.iniciarSesionTSMI.Size = new System.Drawing.Size(180, 22);
             this.iniciarSesionTSMI.Text = "Iniciar Sesión";
             this.iniciarSesionTSMI.Click += new System.EventHandler(this.iniciarSesionTSMI_Click);
             // 
@@ -89,7 +91,7 @@ namespace GridFreaks
             this.cerrarSesionTSMI.Enabled = false;
             this.cerrarSesionTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cerrarSesionTSMI.Name = "cerrarSesionTSMI";
-            this.cerrarSesionTSMI.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesionTSMI.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesionTSMI.Text = "Cerrar Sesión";
             // 
             // usuariosTSMI
@@ -130,20 +132,31 @@ namespace GridFreaks
             // 
             // facturasTSMI
             // 
+            this.facturasTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaFacturaToolStripMenuItem,
+            this.anularFacturaToolStripMenuItem});
             this.facturasTSMI.Enabled = false;
             this.facturasTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.facturasTSMI.Name = "facturasTSMI";
             this.facturasTSMI.Size = new System.Drawing.Size(63, 20);
             this.facturasTSMI.Text = "Facturas";
-            this.facturasTSMI.Click += new System.EventHandler(this.facturasTSMI_Click);
             // 
-            // salirTSMI
+            // nuevaFacturaToolStripMenuItem
             // 
-            this.salirTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.salirTSMI.Name = "salirTSMI";
-            this.salirTSMI.Size = new System.Drawing.Size(41, 20);
-            this.salirTSMI.Text = "Salir";
-            this.salirTSMI.Click += new System.EventHandler(this.salirTSMI_Click);
+            this.nuevaFacturaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nuevaFacturaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
+            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
+            this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
+            // 
+            // anularFacturaToolStripMenuItem
+            // 
+            this.anularFacturaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.anularFacturaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.anularFacturaToolStripMenuItem.Name = "anularFacturaToolStripMenuItem";
+            this.anularFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.anularFacturaToolStripMenuItem.Text = "Anular Factura";
             // 
             // reportesTSMI
             // 
@@ -153,6 +166,14 @@ namespace GridFreaks
             this.reportesTSMI.Size = new System.Drawing.Size(65, 20);
             this.reportesTSMI.Text = "Reportes";
             this.reportesTSMI.Click += new System.EventHandler(this.reportesTSMI_Click);
+            // 
+            // salirTSMI
+            // 
+            this.salirTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.salirTSMI.Name = "salirTSMI";
+            this.salirTSMI.Size = new System.Drawing.Size(41, 20);
+            this.salirTSMI.Text = "Salir";
+            this.salirTSMI.Click += new System.EventHandler(this.salirTSMI_Click);
             // 
             // frmInicio
             // 
@@ -190,6 +211,8 @@ namespace GridFreaks
         private System.Windows.Forms.ToolStripMenuItem marcasTSMI;
         private System.Windows.Forms.ToolStripMenuItem facturasTSMI;
         private System.Windows.Forms.ToolStripMenuItem reportesTSMI;
+        private System.Windows.Forms.ToolStripMenuItem nuevaFacturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anularFacturaToolStripMenuItem;
     }
 }
 

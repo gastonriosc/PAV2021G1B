@@ -96,16 +96,16 @@ namespace GridFreaks
 
         }
 
-        private void facturasTSMI_Click(object sender, EventArgs e)
-        {
-            frmFacturas ventanaFacturas = frmFacturas.GetfrmFacturas();
-            ventanaFacturas.ShowDialog();
-        }
-
         private void reportesTSMI_Click(object sender, EventArgs e)
         {
             frmReportes ventanaReportes = frmReportes.GetfrmReportes();
             ventanaReportes.ShowDialog();
+        }
+
+        private void nuevaFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFacturas ventanaFacturas = frmFacturas.GetfrmFacturas();
+            ventanaFacturas.ShowDialog();
         }
     }
 }

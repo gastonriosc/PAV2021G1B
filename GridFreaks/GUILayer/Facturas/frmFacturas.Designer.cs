@@ -343,9 +343,9 @@ namespace GridFreaks.GUILayer.Facturas
             this._btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._btnCancelar.Image = global::GridFreaks.Properties.Resources.CancelarIcon;
-            this._btnCancelar.Location = new System.Drawing.Point(710, 25);
+            this._btnCancelar.Location = new System.Drawing.Point(689, 19);
             this._btnCancelar.Name = "_btnCancelar";
-            this._btnCancelar.Size = new System.Drawing.Size(68, 54);
+            this._btnCancelar.Size = new System.Drawing.Size(89, 57);
             this._btnCancelar.TabIndex = 7;
             this._btnCancelar.UseVisualStyleBackColor = true;
             this._btnCancelar.Click += new System.EventHandler(this._btnCancelar_Click);
@@ -356,9 +356,9 @@ namespace GridFreaks.GUILayer.Facturas
             this._btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnQuitar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._btnQuitar.Image = global::GridFreaks.Properties.Resources.QuitarIcon;
-            this._btnQuitar.Location = new System.Drawing.Point(655, 29);
+            this._btnQuitar.Location = new System.Drawing.Point(628, 21);
             this._btnQuitar.Name = "_btnQuitar";
-            this._btnQuitar.Size = new System.Drawing.Size(49, 47);
+            this._btnQuitar.Size = new System.Drawing.Size(61, 54);
             this._btnQuitar.TabIndex = 6;
             this._btnQuitar.UseVisualStyleBackColor = true;
             this._btnQuitar.Click += new System.EventHandler(this._btnQuitar_Click);
@@ -369,9 +369,9 @@ namespace GridFreaks.GUILayer.Facturas
             this._btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._btnAgregar.Image = global::GridFreaks.Properties.Resources.AgregarIcon;
-            this._btnAgregar.Location = new System.Drawing.Point(604, 29);
+            this._btnAgregar.Location = new System.Drawing.Point(575, 20);
             this._btnAgregar.Name = "_btnAgregar";
-            this._btnAgregar.Size = new System.Drawing.Size(45, 47);
+            this._btnAgregar.Size = new System.Drawing.Size(54, 54);
             this._btnAgregar.TabIndex = 5;
             this._btnAgregar.UseVisualStyleBackColor = true;
             this._btnAgregar.Click += new System.EventHandler(this._btnAgregar_Click);

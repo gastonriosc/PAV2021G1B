@@ -152,6 +152,9 @@
     <Compile Include="GUILayer\Prendas\frmPrendas.Designer.cs">
       <DependentUpon>frmPrendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reportes\DataSetFacturas.cs">
+      <DependentUpon>DataSetFacturas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reportes\DataSetFacturas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

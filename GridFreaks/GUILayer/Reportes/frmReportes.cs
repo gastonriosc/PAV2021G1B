@@ -67,7 +67,7 @@ namespace GridFreaks.GUILayer.Reportes
         {
             frmPrendasSelec ventana = new frmPrendasSelec();
             ventana.ShowDialog();
-            if (oPrendaSelected != null)
+            if (oPrendaSelected.Id != 0)
             {
                 txtPrendaSelected.Text = oPrendaSelected.ToString();
             }

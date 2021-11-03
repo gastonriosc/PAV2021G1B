@@ -75,9 +75,17 @@ namespace GridFreaks.DataAccessLayer
                     paramDetalle.Add("borrado", 0);
 
                     dm.EjecutarSQLConParametros(sqlDetalle, paramDetalle);
+
+                    string sqlPrenda = string.Concat(" UPDATE Prendas",
+                                                     " SET Stock-=@cant WHERE id=@idPrenda");
+
+                    var paramPrenda = new Dictionary<string, object>();
+                    paramPrenda.Add("cant", itemFactura.Cantidad);
+                    paramPrenda.Add("idPrenda", itemFactura.IdPrenda);
+
+
+                    dm.EjecutarSQLConParametros(sqlPrenda, paramPrenda);
                 }
-
-
 
                 dm.Commit();
 
@@ -97,7 +105,7 @@ namespace GridFreaks.DataAccessLayer
 
         public DataTable getFacturas(string condiciones)
         {
-            string consulta = "SELECT D.idDetalle, F.nroFactura, F.fecha, C.nombre AS 'cliente', F.tipoFactura, T.nombre AS 'producto', M.nombre AS 'marca', F.total AS 'importe'"
+            string consulta = "SELECT D.idDetalle, F.nroFactura, F.fecha, C.nombre AS 'cliente', F.tipoFactura, T.nombre AS 'producto', M.nombre AS 'marca', D.subtotal AS 'importe'"
                             + " FROM Facturas AS F INNER JOIN"
                             + " Clientes AS C ON F.idCliente = C.id INNER JOIN"
                             + " DetalleFactura AS D ON F.nroFactura = D.nroFactura INNER JOIN"
