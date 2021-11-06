@@ -72,6 +72,16 @@ namespace GridFreaks.BusinessLayer
         {
             return oFacturaDao.getFacturas(condiciones);
         }
+
+        internal object RecuperarFacturas(string condiciones)
+        {
+            return oFacturaDao.getAll(condiciones);
+        }
+
+        internal bool AnularFactura(Factura factura)
+        {
+            return oFacturaDao.anular(factura);
+        }
     }
 
 

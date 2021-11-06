@@ -23,7 +23,7 @@ namespace GridFreaks.DataAccessLayer
             // cadena Targon
             //string_conexion = @"Data Source=DESKTOP-VGC54OT\SQLEXPRESS;Initial Catalog=gridFreaks;Integrated Security=True";
             // cadena Rios
-            string_conexion = @"Data Source=DESKTOP-0AAMHAV\SQLEXPRESS;Initial Catalog=gridFreaks;Integrated Security=True";
+            string_conexion = @"Data Source=DESKTOP-0AAMHAV\SQLEXPRESS;Initial Catalog=gridFreaks2;Integrated Security=True";
 
             dbConnection.ConnectionString = string_conexion;
         }
@@ -60,9 +60,12 @@ namespace GridFreaks.DataAccessLayer
                 // Establece la instrucción a ejecutar
                 cmd.CommandText = strSql;
                 //Agregamos a la colección de parámetros del comando los filtros recibidos
-                foreach (var item in parametros)
+                if (parametros != null)
                 {
-                    cmd.Parameters.AddWithValue(item.Key, item.Value);
+                    foreach (var item in parametros)
+                    {
+                        cmd.Parameters.AddWithValue(item.Key, item.Value);
+                    }
                 }
 
                 // Retorna el resultado de ejecutar el comando
@@ -110,6 +113,36 @@ namespace GridFreaks.DataAccessLayer
             }
         }
 
+        public DataTable ConsultaSQL(string strSql, Dictionary<string, object> parametros)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                cnn.ConnectionString = string_conexion;
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = strSql;
+                foreach (var item in parametros)
+                {
+                    cmd.Parameters.AddWithValue(item.Key, item.Value);
+                }
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                this.CloseConnection(cnn);
+            }
+        }
+
         private void CloseConnection(SqlConnection cnn)
         {
             if (cnn.State == ConnectionState.Open)
@@ -118,6 +151,8 @@ namespace GridFreaks.DataAccessLayer
                 cnn.Dispose();
             }
         }
+
+
 
         public int EjecutarSQL(string strSql)
         {

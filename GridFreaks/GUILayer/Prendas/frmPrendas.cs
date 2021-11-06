@@ -87,7 +87,6 @@ namespace GridFreaks.GUILayer.Prendas
                     // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
                     filters.Add("TipoPrenda", comboTipoPrenda.SelectedValue);
                     condiciones += " AND P.idTipoPrenda=" + comboTipoPrenda.SelectedValue.ToString();
-
                 }
 
                 // Validar si el textBox 'Nombre' esta vacio.

@@ -15,6 +15,7 @@ namespace GridFreaks.Entities
         public double Total { get; set; }
         public double Descuento { get; set; }
         public IList<DetalleFactura> Detalles { get; set; }
+        public int Anulado { get; set; }
 
         public double ImporteTotal
         {

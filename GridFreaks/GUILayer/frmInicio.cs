@@ -107,5 +107,11 @@ namespace GridFreaks
             frmFacturas ventanaFacturas = frmFacturas.GetfrmFacturas();
             ventanaFacturas.ShowDialog();
         }
+
+        private void anularFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoFacturas ventana = new frmListadoFacturas();
+            ventana.ShowDialog();
+        }
     }
 }

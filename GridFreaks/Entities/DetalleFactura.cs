@@ -12,6 +12,7 @@ namespace GridFreaks.Entities
         public int NroFactura { get; set; }
         public Prenda Prenda { get; set; }
         public int Cantidad { get; set; }
+        public int Anulado { get; set; }
 
         public int IdPrenda
         {

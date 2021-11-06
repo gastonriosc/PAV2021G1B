@@ -10,6 +10,7 @@ namespace GridFreaks.DataAccessLayer
 {
     public class FacturaDao
     {
+        DetalleFacturaDao oDetalleDao = new DetalleFacturaDao();
         internal int GetLastIdFactura()
         {
             String strSql = "SELECT MAX(nroFactura) FROM Facturas";
@@ -33,14 +34,16 @@ namespace GridFreaks.DataAccessLayer
                                             "           ,[tipoFactura]   ",
                                             "           ,[total]         ",
                                             "           ,[descuento]     ",
-                                            "           ,[borrado])      ",
+                                            "           ,[borrado]       ",
+                                            "           ,[anulado])      ",
                                             "     VALUES                 ",
                                             "           (@fecha          ",
                                             "           ,@idCliente      ",
                                             "           ,@tipoFactura    ",
                                             "           ,@total          ",
                                             "           ,@descuento      ",
-                                            "           ,@borrado)       ");
+                                            "           ,@borrado        ",
+                                            "           ,@anulado)       ");
 
 
                 var parametros = new Dictionary<string, object>();
@@ -50,6 +53,7 @@ namespace GridFreaks.DataAccessLayer
                 parametros.Add("total", factura.Total);
                 parametros.Add("descuento", factura.Descuento);
                 parametros.Add("borrado", 0);
+                parametros.Add("anulado", 0);
                 dm.EjecutarSQLConParametros(sql, parametros);
 
                 foreach (var itemFactura in factura.Detalles)
@@ -59,13 +63,15 @@ namespace GridFreaks.DataAccessLayer
                                                         "           ,[idPrenda]             ",
                                                         "           ,[cantidad]             ",
                                                         "           ,[subtotal]             ",
-                                                        "           ,[borrado])             ",
+                                                        "           ,[borrado]              ",
+                                                        "           ,[anulado])             ",
                                                         "     VALUES                        ",
                                                         "           (@nroFactura            ",
                                                         "           ,@idPrenda              ",
                                                         "           ,@cantidad              ",
                                                         "           ,@subtotal              ",
-                                                        "           ,@borrado)              ");
+                                                        "           ,@borrado               ",
+                                                        "           ,@anulado)              ");
 
                     var paramDetalle = new Dictionary<string, object>();
                     paramDetalle.Add("nroFactura", factura.NroFactura);
@@ -73,6 +79,7 @@ namespace GridFreaks.DataAccessLayer
                     paramDetalle.Add("cantidad", itemFactura.Cantidad);
                     paramDetalle.Add("subtotal", itemFactura.Subtotal);
                     paramDetalle.Add("borrado", 0);
+                    paramDetalle.Add("anulado", 0);
 
                     dm.EjecutarSQLConParametros(sqlDetalle, paramDetalle);
 
@@ -96,11 +103,116 @@ namespace GridFreaks.DataAccessLayer
                 throw ex;
             }
             finally
-            {
-                // Cierra la conexión 
+            { 
                 dm.Close();
             }
             return true;
+        }
+
+        internal bool anular(Factura factura)
+        {
+            DBHelper dm = DBHelper.GetDBHelper();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+                string sqlFactura = " UPDATE Facturas" +
+                                    " SET anulado = 1" +
+                                    " WHERE nroFactura=" + "'" + factura.NroFactura + "'";
+
+                dm.EjecutarSQLConParametros(sqlFactura);
+
+                foreach (var detalle in factura.Detalles)
+                {
+                    string sqlDetalle = " UPDATE DetalleFactura" +
+                                 " SET anulado = 1" +
+                                 " WHERE idDetalle=" + "'" + detalle.IdDetalle + "'";
+
+                    dm.EjecutarSQLConParametros(sqlDetalle);
+
+                    string sqlPrenda = string.Concat(" UPDATE Prendas",
+                                                         " SET Stock+=@cant WHERE id=@idPrenda");
+
+                    var paramPrenda = new Dictionary<string, object>();
+                    paramPrenda.Add("cant", detalle.Cantidad);
+                    paramPrenda.Add("idPrenda", detalle.IdPrenda);
+
+                    dm.EjecutarSQLConParametros(sqlPrenda, paramPrenda);
+                }
+
+                dm.Commit();
+            }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                dm.Close();
+            }
+            return true;
+
+
+        }
+
+        internal IList<Factura> getAll(string condiciones)
+        {
+            List<Factura> listadoFacturas = new List<Factura>();
+
+            String strSql = string.Concat(" SELECT F.nroFactura, ",
+                                          " F.fecha, ",
+                                          " F.idCliente, ",
+                                          " C.nombre, ",
+                                          " F.tipoFactura, ",
+                                          " F.total, ",
+                                          " F.descuento,",
+                                          " F.anulado",
+                                          " FROM Facturas F",
+                                          " INNER JOIN Clientes C ON (F.idCliente = C.id)",
+                                          " WHERE F.borrado=0");
+
+            strSql += condiciones;
+
+            var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSql);
+
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listadoFacturas.Add(ObjectMapping(row));
+            }
+
+            foreach(Factura fac in listadoFacturas)
+            {
+                IList<DetalleFactura> detalles = oDetalleDao.GetAllFromFactura(fac.NroFactura);
+
+                fac.Detalles = detalles;
+            }
+
+            return listadoFacturas;
+        }
+
+        private Factura ObjectMapping(DataRow row)
+        {
+            Factura oFactura = new Factura
+            {
+                NroFactura = Convert.ToInt32(row["nroFactura"].ToString()),
+                Fecha = Convert.ToDateTime(row["fecha"].ToString()),
+                Cliente = new Cliente()
+                {
+                    Id = Convert.ToInt32(row["idCliente"].ToString()),
+                    Nombre = row["nombre"].ToString()
+                },
+                TipoFactura = new TipoFactura()
+                {
+                    Id = row["tipoFactura"].ToString()
+                }, 
+                Total = Convert.ToInt32(row["total"].ToString()),
+                Descuento = Convert.ToDouble(row["descuento"].ToString()),
+                Anulado = Convert.ToInt32(row["anulado"].ToString()),
+            };
+
+            return oFactura;
         }
 
         public DataTable getFacturas(string condiciones)

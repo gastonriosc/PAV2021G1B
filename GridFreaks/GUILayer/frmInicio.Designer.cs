@@ -81,7 +81,7 @@ namespace GridFreaks
             this.iniciarSesionTSMI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.iniciarSesionTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.iniciarSesionTSMI.Name = "iniciarSesionTSMI";
-            this.iniciarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.iniciarSesionTSMI.Size = new System.Drawing.Size(143, 22);
             this.iniciarSesionTSMI.Text = "Iniciar Sesión";
             this.iniciarSesionTSMI.Click += new System.EventHandler(this.iniciarSesionTSMI_Click);
             // 
@@ -91,7 +91,7 @@ namespace GridFreaks
             this.cerrarSesionTSMI.Enabled = false;
             this.cerrarSesionTSMI.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cerrarSesionTSMI.Name = "cerrarSesionTSMI";
-            this.cerrarSesionTSMI.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionTSMI.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesionTSMI.Text = "Cerrar Sesión";
             // 
             // usuariosTSMI
@@ -157,6 +157,7 @@ namespace GridFreaks
             this.anularFacturaToolStripMenuItem.Name = "anularFacturaToolStripMenuItem";
             this.anularFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.anularFacturaToolStripMenuItem.Text = "Anular Factura";
+            this.anularFacturaToolStripMenuItem.Click += new System.EventHandler(this.anularFacturaToolStripMenuItem_Click);
             // 
             // reportesTSMI
             // 

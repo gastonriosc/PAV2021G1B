@@ -13,7 +13,7 @@ namespace GridFreaks.Entities
 
         public override string ToString()
         {
-            return Descripcion;
+            return Id;
         }
     }
 }
