@@ -29,6 +29,7 @@ namespace GridFreaks.GUILayer.Facturas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrendasSelec));
             this.cmbTipoPrenda = new System.Windows.Forms.ComboBox();
             this.lblTipoPrenda = new System.Windows.Forms.Label();
             this.dgvPrendas = new System.Windows.Forms.DataGridView();
@@ -124,6 +125,7 @@ namespace GridFreaks.GUILayer.Facturas
             this.Controls.Add(this.lblTipoPrenda);
             this.Controls.Add(this.cmbTipoPrenda);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrendasSelec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccionar Prenda";
